@@ -8,7 +8,6 @@ import gamePack.gfx.SpriteSheet;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
-import java.awt.event.KeyEvent;
 
 import javax.swing.*;
 
