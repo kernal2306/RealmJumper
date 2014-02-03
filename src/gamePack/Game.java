@@ -2,11 +2,14 @@ package gamePack;
 
 import gamePack.entities.Player;
 import gamePack.gfx.ImageLoader;
+import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
+
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.event.KeyEvent;
+
 import javax.swing.*;
 
 public class Game extends Canvas implements Runnable
@@ -17,8 +20,9 @@ public class Game extends Canvas implements Runnable
 	public Thread gameThread;
 	
 	private BufferedImage spriteSheet;
+	private ImageManager im;
 	
-	private Player player;
+	private static Player player;
 	
 	public void init()
 	{
@@ -27,7 +31,11 @@ public class Game extends Canvas implements Runnable
 		
 		SpriteSheet ss = new SpriteSheet(spriteSheet);
 		
-		player = new Player(50,600,ss);
+		im = new ImageManager(ss);
+		
+		player = new Player(50,600,im);
+		
+		this.addKeyListener(new KeyManager());
 	}
 	
 	public synchronized void start()
@@ -92,26 +100,6 @@ public class Game extends Canvas implements Runnable
 		bs.show();
 	}
 	
-	public void KeyTyped(KeyEvent event)
-	{
-		if(event.getKeyChar()=='w')
-		{
-			
-		}
-		if(event.getKeyChar()=='s')
-		{
-			
-		}
-		if(event.getKeyChar()=='a')
-		{
-			
-		}
-		if(event.getKeyChar()=='d')
-		{
-			
-		}
-		repaint();
-	}
 	
 	public static void main(String[] args)
 	{
@@ -130,5 +118,10 @@ public class Game extends Canvas implements Runnable
 		frame.setVisible(true);
 		
 		game.start();
+	}
+	
+	public static Player getPlayer()
+	{
+		return player;
 	}
 }
