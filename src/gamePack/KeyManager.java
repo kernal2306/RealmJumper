@@ -8,7 +8,11 @@ public class KeyManager implements KeyListener
 	@Override
 	public void keyPressed(KeyEvent e) 
 	{
+<<<<<<< HEAD
 		if(e.getKeyCode() == KeyEvent.VK_W)
+=======
+		if(e.getKeyCode() == KeyEvent.VK_SPACE)
+>>>>>>> e8b888d2b8cd81597c55689d71cd129f310c9d35
 		{
 			Game.getPlayer().up = true;
 		}
