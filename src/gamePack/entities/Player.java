@@ -6,7 +6,9 @@ import gamePack.gfx.ImageManager;
 
 public class Player 
 {
-	private int x, y, t;
+	public int x;
+	public int y;
+	private int t;
 	private ImageManager im;
 	public boolean up = false, down = false, lt = false, rt = false, jump = false;
 	private final int SPEED = 3;
