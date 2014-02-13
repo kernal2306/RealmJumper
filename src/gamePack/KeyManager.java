@@ -8,7 +8,6 @@ import java.awt.event.KeyListener;
 public class KeyManager implements KeyListener
 {
 	public boolean editMode = false;
-	@Override
 	public void keyPressed(KeyEvent e) 
 	{
 
@@ -57,8 +56,7 @@ public class KeyManager implements KeyListener
 		}
 		
 	}
-
-	@Override
+	
 	public void keyReleased(KeyEvent e) 
 	{
 		if(e.getKeyCode() == KeyEvent.VK_W)
