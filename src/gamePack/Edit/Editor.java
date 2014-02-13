@@ -9,7 +9,7 @@ public class Editor {
 	
 	public void dialog()
 	{
-		
+		System.out.println("You are in edit mode");
 	}
 
 }

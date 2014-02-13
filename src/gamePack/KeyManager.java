@@ -35,7 +35,14 @@ public class KeyManager implements KeyListener
 		}
 		if(e.getKeyCode() == KeyEvent.VK_BACK_SLASH)
 		{
-			editMode = true;
+			if(!editMode) 
+			{
+				editMode = true;
+			}
+			else
+			{
+				editMode = false;
+			}
 			if(editMode)
 			{
 				Editor edit = new Editor();
@@ -45,6 +52,7 @@ public class KeyManager implements KeyListener
 			if(!editMode)
 			{
 				editMode = false;
+				System.out.println("You are no longer in edit mode");
 			}
 		}
 		
