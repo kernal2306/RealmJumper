@@ -1,10 +1,13 @@
 package gamePack;
 
+import gamePack.Edit.Editor;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyManager implements KeyListener
 {
+	public boolean editMode = false;
 	@Override
 	public void keyPressed(KeyEvent e) 
 	{
@@ -29,6 +32,20 @@ public class KeyManager implements KeyListener
 		if(e.getKeyCode() == KeyEvent.VK_SPACE)
 		{
 			Game.getPlayer().jump = true;
+		}
+		if(e.getKeyCode() == KeyEvent.VK_BACK_SLASH)
+		{
+			editMode = true;
+			if(editMode)
+			{
+				Editor edit = new Editor();
+				edit.coord();
+				edit.dialog();
+			}
+			if(!editMode)
+			{
+				editMode = false;
+			}
 		}
 		
 	}

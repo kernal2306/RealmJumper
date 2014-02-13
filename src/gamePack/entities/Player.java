@@ -36,6 +36,10 @@ public class Player
 		}
 		if(rt)
 		{
+			if(x > 1000)
+			{
+				this.x = 0;
+			}
 			x += SPEED;
 		}
 		if (jump)
