@@ -16,15 +16,20 @@ public class Physics {
 
 	public void Jump(int y, int x, double t)
 	{
-		x = getX(x, t);
-		y = getY(y,t);
 		
 		if(t > 0)
 		{
 			while (t > 0)
 			{
-				
+				x = getX(x, t);
+				y = getY(y,t);
+				t--;
 			}
 		}
+	}
+	
+	public void falling(int y, int x, double t)
+	{
+		
 	}
 }

@@ -1,10 +1,12 @@
 package gamePack.entities;
 
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 
 import gamePack.Game;
 import gamePack.Physics;
 import gamePack.gfx.ImageManager;
+import gamePack.gfx.SpriteSheet;
 
 public class Player 
 {
@@ -15,19 +17,21 @@ public class Player
 	public boolean up = false, down = false, lt = false, rt = false, jump = false;
 	private final int SPEED = 3;
 	Physics p = new Physics();
+	private SpriteSheet ss;
 	
-	public Player(int x, int y, ImageManager im)
+	public Player(int x, int y, ImageManager im, SpriteSheet ss)
 	{
 		this.x = x;
 		this.y = y;
 		this.im = im;
+		this.ss = ss;
 	}
 	
 	public void tick()
 	{
 		if (up)
 		{
-			y -= SPEED;
+			//y -= SPEED;
 		}
 		if (down)
 		{
@@ -47,6 +51,7 @@ public class Player
 		}
 		if(rt)
 		{
+			im.player = ss.crop(2, 1, 32, 32);
 			if(x > 1000)
 			{
 				this.x = -40;
@@ -56,6 +61,8 @@ public class Player
 		if (jump)
 		{
 			t = 10;
+			//if(y )
+			y -= SPEED *3;
 			p.Jump(x, y, t);
 		}
 	}
