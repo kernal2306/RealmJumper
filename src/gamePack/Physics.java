@@ -18,6 +18,13 @@ public class Physics {
 	{
 		x = getX(x, t);
 		y = getY(y,t);
+		
+		if(t > 0)
+		{
+			while (t > 0)
+			{
+				
+			}
+		}
 	}
-	
 }

@@ -1,7 +1,9 @@
 package gamePack.entities;
 
 import java.awt.Graphics;
+
 import gamePack.Game;
+import gamePack.Physics;
 import gamePack.gfx.ImageManager;
 
 public class Player 
@@ -12,6 +14,7 @@ public class Player
 	private ImageManager im;
 	public boolean up = false, down = false, lt = false, rt = false, jump = false;
 	private final int SPEED = 3;
+	Physics p = new Physics();
 	
 	public Player(int x, int y, ImageManager im)
 	{
@@ -28,23 +31,32 @@ public class Player
 		}
 		if (down)
 		{
+			if(y >= 640)
+			{
+				this.y = 640;
+			}
 			y += SPEED;
 		} 
 		if (lt)
 		{
+			if(x <= 0)
+			{
+				this.x = 0;
+			}
 			x -= SPEED;
 		}
 		if(rt)
 		{
 			if(x > 1000)
 			{
-				this.x = 0;
+				this.x = -40;
 			}
 			x += SPEED;
 		}
 		if (jump)
 		{
-			y -= SPEED * 3;
+			t = 10;
+			p.Jump(x, y, t);
 		}
 	}
 	
