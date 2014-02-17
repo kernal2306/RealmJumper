@@ -43,6 +43,7 @@ public class Player
 		} 
 		if (lt)
 		{
+			im.Backwards(ss);
 			if(x <= 0)
 			{
 				this.x = 0;
@@ -51,7 +52,8 @@ public class Player
 		}
 		if(rt)
 		{
-			im.player = ss.crop(2, 1, 32, 32);
+			int count = 1;
+			im.Forward(ss, count);
 			if(x > 1000)
 			{
 				this.x = -40;
