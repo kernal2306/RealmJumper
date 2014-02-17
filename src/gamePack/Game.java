@@ -88,6 +88,7 @@ public class Game extends Canvas implements Runnable
 	public void render()
 	{
 		BufferStrategy bs = this.getBufferStrategy();
+		
 		if(bs == null)
 		{
 			createBufferStrategy(3);
@@ -121,6 +122,7 @@ public class Game extends Canvas implements Runnable
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		frame.add(game);
+		
 		//JTextArea coord = new JTextArea(30, 80);
 		//frame.add(coord, BorderLayout.CENTER);
 		//g.setFont(g.getFont().deriveFont(30f));
