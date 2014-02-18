@@ -13,6 +13,7 @@ public class Player
 	public int x;
 	public int y;
 	private int t;
+	double count = 1;
 	private ImageManager im;
 	public boolean up = false, down = false, lt = false, rt = false, jump = false;
 	private final int SPEED = 3;
@@ -43,7 +44,7 @@ public class Player
 		} 
 		if (lt)
 		{
-			im.Backwards(ss);
+			im.player = ss.crop(0, 0, 32, 32);
 			if(x <= 0)
 			{
 				this.x = 0;
@@ -52,8 +53,8 @@ public class Player
 		}
 		if(rt)
 		{
-			int count = 1;
-			im.Forward(ss, count);
+			
+			im.player = ss.crop(2, 1, 32, 32);
 			if(x > 1000)
 			{
 				this.x = -40;
@@ -62,10 +63,16 @@ public class Player
 		}
 		if (jump)
 		{
-			t = 10;
 			//if(y )
 			y -= SPEED *3;
-			p.Jump(x, y, t);
+		    p.Jump(x, y, t);
+		}
+		else
+		{
+			if(y <= 640)
+			{
+			p.falling(y, x, t);
+			}
 		}
 	}
 	

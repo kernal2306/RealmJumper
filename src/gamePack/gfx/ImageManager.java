@@ -8,15 +8,11 @@ public class ImageManager
 	
 	public ImageManager(SpriteSheet ss)
 	{
+		SpriteSheet character[];
+		SpriteSheet objects[];
 		player = ss.crop(0, 0, 32, 32);
+		
+		
 	}
-	public void Forward(SpriteSheet ss, int count)
-	{
-		player = ss.crop(0, 1, 32, 32);
-	}
-	public void Backwards(SpriteSheet ss)
-	{
-		player = ss.crop(1, 0, 32, 32);
 
-	}
 }

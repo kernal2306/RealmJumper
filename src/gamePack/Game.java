@@ -117,7 +117,7 @@ public class Game extends Canvas implements Runnable
 		
 		
 		JFrame frame = new JFrame("Realm Jumper");
-		frame.setSize(WIDTH * SCALE, HEIGHT * SCALE);
+		frame.setBounds(400, 100, WIDTH * SCALE, HEIGHT * SCALE);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		frame.add(game);
