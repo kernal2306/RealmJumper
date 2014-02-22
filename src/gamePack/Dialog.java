@@ -7,10 +7,12 @@ import java.io.IOException;
 public class Dialog {
 	
 	DialogList dialog= new DialogList();
+	Node node = new Node();
 	
 	public void load(){
 	
-	String line;
+	String line, dialog;
+	int x, y;
 	try
 	{
 		@SuppressWarnings("resource")
@@ -20,13 +22,19 @@ public class Dialog {
 		
 		while(line != null)
 		{
-			System.out.println(line);
+			x = Integer.parseInt(line);
 			line = br.readLine();
+			y = Integer.parseInt(line);
+			line = br.readLine();
+			dialog = line;
+			node.newNode(x, y, dialog);
+			line = br.readLine();
+			System.out.println(x + " "+ y + " " + dialog);
 		}
 	}
 	catch (IOException e)
 	{
-		
+		e.printStackTrace();
 	}
 	}
 }

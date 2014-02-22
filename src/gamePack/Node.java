@@ -21,7 +21,7 @@ public class Node {
 	public void newNode(int x, int y, String newDialog)
 	{
 		setData(x, y, newDialog);
-		item = previous.item +1;
+		//item = previous.item +1;
 		
 	}
 	
