@@ -22,6 +22,7 @@ public class Node {
 	{
 		setData(x, y, newDialog);
 		item = previous.item +1;
+		
 	}
 	
 	public void setData(int x, int y, String newDialog)

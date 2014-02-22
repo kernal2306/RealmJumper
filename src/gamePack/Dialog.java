@@ -10,16 +10,18 @@ public class Dialog {
 	
 	public void load(){
 	
+	String line;
 	try
 	{
 		@SuppressWarnings("resource")
-		BufferedReader br = new BufferedReader(new FileReader("dialog.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("res/dialog.txt"));
 		//StringBuilder sb = new StringBuilder();
-		String line = br.readLine();
+		line = br.readLine();
 		
 		while(line != null)
 		{
-			System.out.print(line + " end of line\n");
+			System.out.println(line);
+			line = br.readLine();
 		}
 	}
 	catch (IOException e)
