@@ -2,11 +2,16 @@ package gamePack.Edit;
 
 import gamePack.Dialog;
 import gamePack.Game;
+import gamePack.MyCanvas;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.TextField;
+
+import javax.swing.JTextArea;
 
 public class Editor {
 	Game game = new Game();
@@ -35,13 +40,20 @@ public class Editor {
 	
 	public void render(Graphics g)
 	{
-		
-		//coord = "x: "+x +" y "+y;
-		//Font font = new Font("Verdana", Font.BOLD, 12);
-		//coord.setFont(font);
-		//coord.setForeground(Color.WHITE);
 		g.drawString("x: "+x +" y "+y, 800,20);
 	}
 	
+	public void tick()
+	{
+		//JTextArea coord = new JTextArea(30, 80);
+		//game.frame.add(coord, BorderLayout.CENTER);
+		
+		//g.setFont(g.getFont().deriveFont(30f));
+		//g.drawString("X: " + player.x, 100, 300);
+		//g.drawString("Y: " + player.y, 100, 320);
+		Container cp = Game.frame.getContentPane();
+		MyCanvas tl = new MyCanvas();
+		cp.add(tl);
+	}
 
 }
