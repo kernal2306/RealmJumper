@@ -35,7 +35,7 @@ public class Game extends Canvas implements Runnable
 		im = new ImageManager(ss);
 		
 		editor = new Editor();
-		player = new Player(50,600,im);
+		player = new Player(50,600,im, ss);
 		
 		this.addKeyListener(new KeyManager());
 	}
@@ -98,7 +98,6 @@ public class Game extends Canvas implements Runnable
 		//RENDER HERE
 		g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE);
 		editor.render(g);
-		
 		player.render(g);
 		//END RENDER
 		bs.show();
@@ -118,7 +117,7 @@ public class Game extends Canvas implements Runnable
 		
 		
 		JFrame frame = new JFrame("Realm Jumper");
-		frame.setSize(WIDTH * SCALE, HEIGHT * SCALE);
+		frame.setBounds(400, 100, WIDTH * SCALE, HEIGHT * SCALE);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		frame.add(game);
