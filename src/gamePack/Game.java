@@ -123,7 +123,7 @@ public class Game extends Canvas implements Runnable
 		frame.setResizable(false);
 		frame.add(game);
 		
-		//JTextArea coord = new JTextArea(30, 80);
+		JTextArea coord = new JTextArea(30, 80);
 		//frame.add(coord, BorderLayout.CENTER);
 		//g.setFont(g.getFont().deriveFont(30f));
 		//g.drawString("X: " + player.x, 100, 300);
