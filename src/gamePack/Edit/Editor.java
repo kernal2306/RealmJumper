@@ -1,5 +1,6 @@
 package gamePack.Edit;
 
+import gamePack.Dialog;
 import gamePack.Game;
 
 import java.awt.Color;
@@ -9,6 +10,7 @@ import java.awt.TextField;
 
 public class Editor {
 	Game game = new Game();
+	Dialog dialog = new Dialog();
 	TextField coordText;
 	int x, y;
 	String coord;
@@ -28,6 +30,7 @@ public class Editor {
 	public void dialog()
 	{
 		System.out.println("You are in edit mode");
+		dialog.load();
 	}
 	
 	public void render(Graphics g)
