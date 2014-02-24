@@ -53,7 +53,6 @@ public class Player
 		}
 		if(rt)
 		{
-			
 			im.player = ss.crop(2, 1, 32, 32);
 			if(x > 1000)
 			{
@@ -71,7 +70,8 @@ public class Player
 		{
 			if(y <= 640)
 			{
-			p.falling(y, x, t);
+			y += p.falling(y, x, t);
+			//y += SPEED * 3;
 			}
 		}
 	}

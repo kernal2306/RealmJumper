@@ -23,12 +23,9 @@ public class Physics {
 			}
 		}
 	
-	public void falling(int y, int x, double t)
+	public int falling(int y, int x, double t)
 	{
-		while(t > 0)
-		{
 		y = getY(y, t);
-		y--;
+		return y++;
 		}
 	}
-}
