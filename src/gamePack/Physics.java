@@ -14,14 +14,12 @@ public class Physics {
 		return y;
 	}
 
-	public void Jump(int y, int x, double t)
+	public int Jump(int y, int x, double t)
 	{
-			while (t > 0)
-			{
-				x = getX(x, t);
-				y = getY(y,t);
-			}
-		}
+		x = getX(x, t);
+		y = getY(y,t);
+		return y--;
+	}
 	
 	public int falling(int y, int x, double t)
 	{

@@ -14,6 +14,7 @@ public class Player
 	public int y;
 	private int t;
 	double count = 1;
+	int tickCount = 1;
 	private ImageManager im;
 	public boolean up = false, down = false, lt = false, rt = false, jump = false;
 	private final int SPEED = 3;
@@ -44,7 +45,16 @@ public class Player
 		} 
 		if (lt)
 		{
+			if(tickCount == 0)
+			{
 			im.player = ss.crop(0, 0, 32, 32);
+			tickCount = 1;
+			}
+			else if(tickCount == 1)
+			{
+				im.player = ss.crop(2, 0, 32, 32);
+				tickCount = 0;
+			}
 			if(x <= 0)
 			{
 				this.x = 0;
@@ -70,8 +80,9 @@ public class Player
 		{
 			if(y <= 640)
 			{
-			y += p.falling(y, x, t);
-			//y += SPEED * 3;
+				
+				y += p.falling(y, x, t);
+				//y += SPEED * 3;
 			}
 		}
 	}
