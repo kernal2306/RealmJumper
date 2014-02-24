@@ -63,7 +63,16 @@ public class Player
 		}
 		if(rt)
 		{
-			im.player = ss.crop(2, 1, 32, 32);
+			if (tickCount == 0)
+			{
+				im.player = ss.crop(0, 1, 32, 32);
+				tickCount = 1;
+			}
+			else if(tickCount == 1)
+			{
+				im.player = ss.crop(2, 1, 32, 32);
+				tickCount = 0;
+			}
 			if(x > 1000)
 			{
 				this.x = -40;
@@ -72,9 +81,17 @@ public class Player
 		}
 		if (jump)
 		{
-			//if(y )
-			y -= SPEED *3;
-		    p.Jump(x, y, t);
+			y -= p.Jump(y, x, count);
+			
+			if(y < 640)
+			{
+				
+			}
+			if(y <= 620)
+			{
+				
+			}
+		    
 		}
 		else
 		{

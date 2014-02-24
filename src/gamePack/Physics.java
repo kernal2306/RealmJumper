@@ -16,8 +16,8 @@ public class Physics {
 
 	public int Jump(int y, int x, double t)
 	{
-		x = getX(x, t);
-		y = getY(y,t);
+		x = getX(x, t) / 2;
+		y = getY(y,t) / 2;
 		return y--;
 	}
 	
