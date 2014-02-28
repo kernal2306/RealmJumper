@@ -2,6 +2,7 @@ package gamePack;
 
 import gamePack.Edit.Editor;
 import gamePack.entities.Player;
+import gamePack.gfx.Background;
 import gamePack.gfx.ImageLoader;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
@@ -23,7 +24,10 @@ public class Game extends Canvas implements Runnable
 	public static boolean dialogShow = true;
 	
 	private BufferedImage spriteSheet;
+	private static BufferedImage background;
+	
 	private ImageManager im;
+	private static Background bg;
 	
 	private static Player player;
 	private static Editor editor;
@@ -124,9 +128,12 @@ public class Game extends Canvas implements Runnable
 		frame = new JFrame("Realm Jumper");
 		frame.setBounds(400, 100, WIDTH * SCALE, HEIGHT * SCALE);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		frame.setResizable(false);
 		frame.add(game);
 		frame.setVisible(true);
+		//background = bg.getBackground();
+		//frame.setContentPane(new JFrame());
 		
 		dialogBox= new JLabel("testing");
 		dialogBox.setBounds(200, 200, 200, 200);
