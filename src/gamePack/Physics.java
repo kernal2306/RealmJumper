@@ -1,6 +1,7 @@
 package gamePack;
 
-public class Physics {
+public class Physics 
+{
 	
 	public int getX(int x, double t)
 	{
@@ -25,5 +26,5 @@ public class Physics {
 	{
 		y = getY(y, t);
 		return y++;
-		}
 	}
+}

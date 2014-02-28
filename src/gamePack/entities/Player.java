@@ -1,6 +1,7 @@
 package gamePack.entities;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
 import gamePack.Game;
@@ -45,15 +46,13 @@ public class Player
 		} 
 		if (lt)
 		{
-			if(tickCount == 0)
+			if(tickCount == 1)
 			{
-			im.player = ss.crop(0, 0, 32, 32);
-			tickCount = 1;
+				im.player = ss.crop(0, 0, 32, 32);
 			}
-			else if(tickCount == 1)
+			else if(tickCount == 0)
 			{
 				im.player = ss.crop(2, 0, 32, 32);
-				tickCount = 0;
 			}
 			if(x <= 0)
 			{
@@ -107,6 +106,7 @@ public class Player
 	public void render(Graphics g)
 	{
 		g.drawImage(im.player, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
+		
 	}
 
 }
