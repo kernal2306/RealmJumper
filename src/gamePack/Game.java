@@ -98,6 +98,7 @@ public class Game extends Canvas implements Runnable
 	{
 		BufferStrategy bs = this.getBufferStrategy();
 		
+		dialogBox.setVisible(dialogShow);
 		if(bs == null)
 		{
 			createBufferStrategy(3);
@@ -135,10 +136,10 @@ public class Game extends Canvas implements Runnable
 		//background = bg.getBackground();
 		//frame.setContentPane(new JFrame());
 		
-		dialogBox= new JLabel("testing");
+		dialogBox= new JLabel("testing to see");
 		dialogBox.setBounds(200, 200, 200, 200);
 		dialogBox.setForeground(Color.green);
-		dialogBox.setVisible(dialogShow);
+		
 		frame.add(dialogBox, BorderLayout.NORTH);
 		
 		

@@ -60,6 +60,10 @@ public class KeyManager implements KeyListener
 			{
 				Game.dialogShow = true;
 			}
+			else
+			{
+				Game.dialogShow = false;
+			}
 		}
 	}
 	
