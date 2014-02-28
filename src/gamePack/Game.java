@@ -19,6 +19,8 @@ public class Game extends Canvas implements Runnable
 	public static boolean running = false;
 	public Thread gameThread;
 	public static JFrame frame;
+	public static JLabel dialogBox;
+	public static boolean dialogShow = true;
 	
 	private BufferedImage spriteSheet;
 	private ImageManager im;
@@ -35,8 +37,9 @@ public class Game extends Canvas implements Runnable
 		
 		im = new ImageManager(ss);
 		
-		editor = new Editor();
+		
 		player = new Player(50,600,im, ss);
+		editor = new Editor();
 		
 		this.addKeyListener(new KeyManager());
 	}
@@ -123,9 +126,15 @@ public class Game extends Canvas implements Runnable
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		frame.add(game);
-		
-		
 		frame.setVisible(true);
+		
+		dialogBox= new JLabel("testing");
+		dialogBox.setBounds(200, 200, 200, 200);
+		dialogBox.setForeground(Color.green);
+		dialogBox.setVisible(dialogShow);
+		frame.add(dialogBox, BorderLayout.NORTH);
+		
+		
 		
 		game.start();
 	}

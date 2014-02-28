@@ -54,7 +54,13 @@ public class KeyManager implements KeyListener
 				System.out.println("You are no longer in edit mode");
 			}
 		}
-		
+		if(e.getKeyCode() == KeyEvent.VK_E)
+		{
+			if (Game.dialogShow == false)
+			{
+				Game.dialogShow = true;
+			}
+		}
 	}
 	
 	public void keyReleased(KeyEvent e) 

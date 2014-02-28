@@ -54,6 +54,7 @@ public class Editor {
 		Container cp = Game.frame.getContentPane();
 		MyCanvas tl = new MyCanvas();
 		cp.add(tl);
+		cp.setVisible(true);
 	}
 
 }
