@@ -3,6 +3,7 @@ package gamePack;
 import gamePack.Edit.Editor;
 
 import java.awt.BorderLayout;
+import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -51,6 +52,7 @@ public class KeyManager implements KeyListener
 				Editor edit = new Editor();
 				edit.coord();
 				edit.dialog();
+				edit.editBool = true;
 			}
 			if(!editMode)
 			{
