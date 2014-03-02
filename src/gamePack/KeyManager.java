@@ -2,15 +2,19 @@ package gamePack;
 
 import gamePack.Edit.Editor;
 
+import java.awt.BorderLayout;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyManager implements KeyListener
 {
 	public boolean editMode = false;
+	
+	
+	
 	public void keyPressed(KeyEvent e) 
 	{
-
+		
 
 		if(e.getKeyCode() == KeyEvent.VK_W)
 		{

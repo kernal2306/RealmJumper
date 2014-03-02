@@ -10,7 +10,10 @@ import gamePack.gfx.SpriteSheet;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class Game extends Canvas implements Runnable
@@ -27,23 +30,27 @@ public class Game extends Canvas implements Runnable
 	private static BufferedImage background;
 	
 	private ImageManager im;
-	private static Background bg;
+	private static Image bg;
 	
 	private static Player player;
 	private static Editor editor;
+	private static Background back;
 	
 	public void init()
 	{
 		ImageLoader loader = new ImageLoader();
 		spriteSheet = loader.load("/SpriteSheet.png");
+		background = loader.load("/background.png");
 		
 		SpriteSheet ss = new SpriteSheet(spriteSheet);
+		Background bg = new Background(background);
 		
 		im = new ImageManager(ss);
 		
 		
 		player = new Player(50,600,im, ss);
 		editor = new Editor();
+		back = new Background(background);
 		
 		this.addKeyListener(new KeyManager());
 	}
@@ -92,6 +99,7 @@ public class Game extends Canvas implements Runnable
 	{
 		player.tick();
 		editor.tick();
+		dialogBox.setVisible(dialogShow);
 	}
 	
 	public void render()
@@ -107,8 +115,10 @@ public class Game extends Canvas implements Runnable
 		Graphics g = bs.getDrawGraphics();
 		//RENDER HERE
 		g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE);
-		editor.render(g);
+		back.render(g);
+		//editor.render(g);
 		player.render(g);
+		
 		//END RENDER
 		bs.show();
 		
@@ -128,8 +138,16 @@ public class Game extends Canvas implements Runnable
 		
 		frame = new JFrame("Realm Jumper");
 		frame.setBounds(400, 100, WIDTH * SCALE, HEIGHT * SCALE);
+		//myJFrame.setContentPane(new ImagePanel(myImage));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+		//frame.setContentPane(new ImagePanel());
+		//setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("test.jpg")))));
+		/*try {
+			frame.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("res/background.png")))));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
 		frame.setResizable(false);
 		frame.add(game);
 		frame.setVisible(true);
@@ -137,10 +155,16 @@ public class Game extends Canvas implements Runnable
 		//frame.setContentPane(new JFrame());
 		
 		dialogBox= new JLabel("testing to see");
-		dialogBox.setBounds(200, 200, 200, 200);
+		//dialogBox.setBorder(BorderFactory.createLineBorder(Color.BLACK));  
+	    //Dimension d = dialogBox.getPreferredSize();  
+	    //dialogBox.setPreferredSize(new Dimension(d.width+60,d.height));
+		//dialogBox.setBounds(200, 200, 200, 200);
+		dialogBox.setBackground(Color.black);
 		dialogBox.setForeground(Color.green);
 		
-		frame.add(dialogBox, BorderLayout.NORTH);
+		
+		
+		
 		
 		
 		

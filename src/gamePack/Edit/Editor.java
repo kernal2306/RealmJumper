@@ -2,8 +2,6 @@ package gamePack.Edit;
 
 import gamePack.Dialog;
 import gamePack.Game;
-import gamePack.MyCanvas;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -51,10 +49,10 @@ public class Editor {
 		//g.setFont(g.getFont().deriveFont(30f));
 		//g.drawString("X: " + player.x, 100, 300);
 		//g.drawString("Y: " + player.y, 100, 320);
-		Container cp = Game.frame.getContentPane();
-		MyCanvas tl = new MyCanvas();
-		cp.add(tl);
-		cp.setVisible(true);
+		//Container cp = Game.frame.getContentPane();
+		//MyCanvas tl = new MyCanvas();
+		//cp.add(tl);
+		//cp.setVisible(true);
 	}
 
 }

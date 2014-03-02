@@ -1,6 +1,6 @@
 package gamePack.gfx;
 
-import java.awt.GraphicsConfiguration;
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 public class Background {
@@ -16,6 +16,12 @@ public class Background {
 		public  BufferedImage getBackground()
 		{
 			return background;
+		}
+		
+		public void render(Graphics g)
+		{
+			g.drawImage(background, 0, 0, null);
+			
 		}
 
 
