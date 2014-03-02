@@ -68,6 +68,9 @@ public class Dialog {
 	{
 		if(Game.dialogShow == true)
 		{
+			g.setColor(Color.WHITE);
+			
+			g.draw3DRect(299, 299, 401, 201, true);
 			g.setColor(Color.BLACK);
 			g.fill3DRect(300, 300, 400, 200, true);
 			g.setFont(g.getFont().deriveFont(30f));
