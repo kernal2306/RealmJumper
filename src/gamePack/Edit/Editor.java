@@ -2,14 +2,10 @@ package gamePack.Edit;
 
 import gamePack.Dialog;
 import gamePack.Game;
-import java.awt.BorderLayout;
+
 import java.awt.Color;
-import java.awt.Container;
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.TextField;
-
-import javax.swing.JTextArea;
 
 public class Editor {
 	Game game = new Game();
@@ -20,8 +16,8 @@ public class Editor {
 	
 	public Editor()
 	{
-		//this.x = Game.getPlayer().x;
-		//this.y = Game.getPlayer().y;
+		this.x = Game.getPlayer().x;
+		this.y = Game.getPlayer().y;
 	}
 	
 	public void coord()
@@ -38,7 +34,9 @@ public class Editor {
 	
 	public void render(Graphics g)
 	{
-		g.drawString("x: "+x +" y "+y, 800,20);
+		g.setFont(g.getFont().deriveFont(30f));
+		g.setColor(Color.GREEN);
+		g.drawString("x: "+ Game.getPlayer().x +" y "+ Game.getPlayer().y, 800,40);
 	}
 	
 	public void tick()

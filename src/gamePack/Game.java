@@ -116,7 +116,7 @@ public class Game extends Canvas implements Runnable
 		//RENDER HERE
 		g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE);
 		back.render(g);
-		//editor.render(g);
+		editor.render(g);
 		player.render(g);
 		
 		//END RENDER
