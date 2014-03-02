@@ -1,5 +1,7 @@
 package gamePack;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -7,11 +9,12 @@ import java.io.IOException;
 public class Dialog {
 	
 	DialogList dialog= new DialogList();
+	//Dialog newLine = new Dialog();
 	Node node = new Node();
 	
-	public void load(){
+	public String load(){
 	
-	String line, dialog;
+	String line, dialog = null;
 	int x, y;
 	try
 	{
@@ -36,5 +39,13 @@ public class Dialog {
 	{
 		e.printStackTrace();
 	}
+	return dialog;
+	}
+	
+	public void render(Graphics g)
+	{
+		g.setFont(g.getFont().deriveFont(30f));
+		g.setColor(Color.GREEN);
+		g.drawString("Hello Pete", 400,400);
 	}
 }

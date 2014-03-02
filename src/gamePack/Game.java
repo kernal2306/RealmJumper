@@ -35,6 +35,7 @@ public class Game extends Canvas implements Runnable
 	private static Player player;
 	private static Editor editor;
 	private static Background back;
+	private static Dialog dialog;
 	
 	public void init()
 	{
@@ -51,6 +52,7 @@ public class Game extends Canvas implements Runnable
 		player = new Player(50,600,im, ss);
 		editor = new Editor();
 		back = new Background(background);
+		dialog = new Dialog();
 		
 		this.addKeyListener(new KeyManager());
 	}
@@ -117,6 +119,7 @@ public class Game extends Canvas implements Runnable
 		g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE);
 		back.render(g);
 		editor.render(g);
+		dialog.render(g);
 		player.render(g);
 		
 		//END RENDER
@@ -133,7 +136,7 @@ public class Game extends Canvas implements Runnable
 		game.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		game.setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		game.setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
-		 
+		
 		
 		
 		frame = new JFrame("Realm Jumper");
