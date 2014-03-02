@@ -20,7 +20,7 @@ public class Background {
 		
 		public void render(Graphics g)
 		{
-			g.drawImage(background, 0, 0, null);
+			g.drawImage(background, 0, -30, null);
 			
 		}
 

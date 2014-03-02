@@ -44,7 +44,7 @@ public class Game extends Canvas implements Runnable
 		background = loader.load("/background.png");
 		
 		SpriteSheet ss = new SpriteSheet(spriteSheet);
-		Background bg = new Background(background);
+		//Background bg = new Background(background);
 		
 		im = new ImageManager(ss);
 		
