@@ -24,7 +24,7 @@ public class Game extends Canvas implements Runnable
 	public Thread gameThread;
 	public static JFrame frame;
 	public static JLabel dialogBox;
-	public static boolean dialogShow = true;
+	public static boolean dialogShow = false;
 	
 	private BufferedImage spriteSheet;
 	private static BufferedImage background;

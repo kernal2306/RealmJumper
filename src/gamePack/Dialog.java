@@ -44,8 +44,13 @@ public class Dialog {
 	
 	public void render(Graphics g)
 	{
-		g.setFont(g.getFont().deriveFont(30f));
-		g.setColor(Color.GREEN);
-		g.drawString("Hello Pete", 400,400);
+		if(Game.dialogShow == true)
+		{
+			g.setColor(Color.BLACK);
+			g.fill3DRect(300, 300, 350, 200, true);
+			g.setFont(g.getFont().deriveFont(30f));
+			g.setColor(Color.GREEN);
+			g.drawString("Hello Pete!", 400,400);
+		}
 	}
 }
