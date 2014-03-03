@@ -1,12 +1,12 @@
 package gamePack;
 
 import gamePack.Edit.Editor;
+import gamePack.entities.Lady;
 import gamePack.entities.Player;
 import gamePack.gfx.Background;
 import gamePack.gfx.ImageLoader;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
-
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
@@ -33,6 +33,8 @@ public class Game extends Canvas implements Runnable
 	private static Image bg;
 	
 	private static Player player;
+	private Rectangle pBox, lBox;
+	private static Lady lady;
 	private static Editor editor;
 	private static Background back;
 	private static Dialog dialog;
@@ -42,14 +44,15 @@ public class Game extends Canvas implements Runnable
 		ImageLoader loader = new ImageLoader();
 		spriteSheet = loader.load("/SpriteSheet.png");
 		background = loader.load("/background.png");
-		
 		SpriteSheet ss = new SpriteSheet(spriteSheet);
 		//Background bg = new Background(background);
-		
 		im = new ImageManager(ss);
 		
 		
-		player = new Player(50,600,im, ss);
+		player = new Player(50,664,im, ss);
+		lady = new Lady(569, 664, im, ss);
+		pBox = player.bounds();
+		lBox = lady.bounds();
 		editor = new Editor();
 		back = new Background(background);
 		dialog = new Dialog();
@@ -107,11 +110,10 @@ public class Game extends Canvas implements Runnable
 	public void render()
 	{
 		BufferStrategy bs = this.getBufferStrategy();
-		
 		dialogBox.setVisible(dialogShow);
 		if(bs == null)
 		{
-			createBufferStrategy(3);
+			createBufferStrategy(5);
 			return;
 		}
 		Graphics g = bs.getDrawGraphics();
@@ -121,10 +123,9 @@ public class Game extends Canvas implements Runnable
 		editor.render(g);
 		dialog.render(g);
 		player.render(g);
-		
+		lady.render(g);
 		//END RENDER
 		bs.show();
-		
 		g.dispose();
 		
 	}

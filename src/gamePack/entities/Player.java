@@ -3,11 +3,11 @@ package gamePack.entities;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
-
 import gamePack.Game;
 import gamePack.Physics;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
+import java.awt.Rectangle;
 
 public class Player 
 {
@@ -29,6 +29,12 @@ public class Player
 		this.im = im;
 		this.ss = ss;
 	}
+	
+	public Rectangle bounds()
+	{
+		return(new Rectangle(x, y, 32, 32));
+	}
+
 	
 	public void tick()
 	{
@@ -108,5 +114,6 @@ public class Player
 		g.drawImage(im.player, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
 		
 	}
+	
 
 }
