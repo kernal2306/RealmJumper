@@ -14,7 +14,6 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -39,6 +38,7 @@ public class Game extends Canvas implements Runnable
 	private static Editor editor;
 	private static Background back;
 	private static Dialog dialog;
+	private KeyManager key;
 	
 	
 	public void init()
@@ -102,24 +102,15 @@ public class Game extends Canvas implements Runnable
 	
 	public void tick()
 	{
-		int tickCount = 0;
-		if(tickCount == 0)
-		{
 		player.tick();
 		editor.tick();
-		tickCount = 1;
-		}
-		dialogBox.setVisible(dialogShow);
 		if (player.bounds().intersects(lady.bounds()))
 		{
 			Game.dialogShow = true;
-			Game.getPlayer().up = false;
-			Game.getPlayer().rt = false;
-			Game.getPlayer().lt = false;
-			Game.getPlayer().down = false;
-			tickCount = 1;
-		}
+			player.lt = false;
+			player.rt = false;;
 			
+		}	
 	}
 	
 	public void render()

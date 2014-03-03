@@ -23,7 +23,6 @@ public class Player
 	private final int SPEED = 3;
 	Physics p = new Physics();
 	private SpriteSheet ss;
-	Lady lady = new Lady(x, y, im, ss);
 	
 	public Player(int x, int y, ImageManager im, SpriteSheet ss)
 	{
