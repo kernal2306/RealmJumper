@@ -102,15 +102,24 @@ public class Game extends Canvas implements Runnable
 	
 	public void tick()
 	{
+		int tickCount = 0;
+		if(tickCount == 0)
+		{
 		player.tick();
 		editor.tick();
-		int tickCount;
+		tickCount = 1;
+		}
 		dialogBox.setVisible(dialogShow);
 		if (player.bounds().intersects(lady.bounds()))
 		{
 			Game.dialogShow = true;
-			
+			Game.getPlayer().up = false;
+			Game.getPlayer().rt = false;
+			Game.getPlayer().lt = false;
+			Game.getPlayer().down = false;
+			tickCount = 1;
 		}
+			
 	}
 	
 	public void render()
