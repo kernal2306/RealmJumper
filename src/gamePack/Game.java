@@ -119,7 +119,7 @@ public class Game extends Canvas implements Runnable
 		dialogBox.setVisible(dialogShow);
 		if(bs == null)
 		{
-			createBufferStrategy(5);
+			createBufferStrategy(3);
 			return;
 		}
 		Graphics g = bs.getDrawGraphics();
