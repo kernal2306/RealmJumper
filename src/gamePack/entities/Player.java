@@ -3,10 +3,12 @@ package gamePack.entities;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+
 import gamePack.Game;
 import gamePack.Physics;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
+
 import java.awt.Rectangle;
 
 public class Player 
@@ -21,6 +23,7 @@ public class Player
 	private final int SPEED = 3;
 	Physics p = new Physics();
 	private SpriteSheet ss;
+	Lady lady = new Lady(x, y, im, ss);
 	
 	public Player(int x, int y, ImageManager im, SpriteSheet ss)
 	{
@@ -38,6 +41,7 @@ public class Player
 	
 	public void tick()
 	{
+		
 		if (up)
 		{
 			//y -= SPEED;
@@ -112,6 +116,11 @@ public class Player
 	public void render(Graphics g)
 	{
 		g.drawImage(im.player, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
+		
+	}
+	
+	public void stop()
+	{
 		
 	}
 	

@@ -7,7 +7,9 @@ import gamePack.gfx.Background;
 import gamePack.gfx.ImageLoader;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
+
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -33,11 +35,11 @@ public class Game extends Canvas implements Runnable
 	private static Image bg;
 	
 	private static Player player;
-	private Rectangle pBox, lBox;
 	private static Lady lady;
 	private static Editor editor;
 	private static Background back;
 	private static Dialog dialog;
+	
 	
 	public void init()
 	{
@@ -51,8 +53,6 @@ public class Game extends Canvas implements Runnable
 		
 		player = new Player(50,664,im, ss);
 		lady = new Lady(569, 664, im, ss);
-		pBox = player.bounds();
-		lBox = lady.bounds();
 		editor = new Editor();
 		back = new Background(background);
 		dialog = new Dialog();
@@ -104,7 +104,13 @@ public class Game extends Canvas implements Runnable
 	{
 		player.tick();
 		editor.tick();
+		int tickCount;
 		dialogBox.setVisible(dialogShow);
+		if (player.bounds().intersects(lady.bounds()))
+		{
+			Game.dialogShow = true;
+			
+		}
 	}
 	
 	public void render()
@@ -119,6 +125,8 @@ public class Game extends Canvas implements Runnable
 		Graphics g = bs.getDrawGraphics();
 		//RENDER HERE
 		g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE);
+
+
 		back.render(g);
 		editor.render(g);
 		dialog.render(g);
