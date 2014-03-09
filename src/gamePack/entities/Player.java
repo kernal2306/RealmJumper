@@ -81,9 +81,9 @@ public class Player
 				im.player = ss.crop(2, 1, 32, 32);
 				tickCount = 0;
 			}
-			if(x > 1000)
+			if((x > 958))
 			{
-				this.x = -40;
+				this.x = 958;
 			}
 			x += SPEED;
 		}

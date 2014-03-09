@@ -19,6 +19,7 @@ public class Physics
 	{
 		x = getX(x, t) / 2;
 		y = getY(y,t) / 2;
+		
 		return y--;
 	}
 	
