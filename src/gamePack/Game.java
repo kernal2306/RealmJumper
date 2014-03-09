@@ -150,27 +150,12 @@ public class Game extends Canvas implements Runnable
 		
 		frame = new JFrame("Realm Jumper");
 		frame.setBounds(400, 100, WIDTH * SCALE, HEIGHT * SCALE);
-		//myJFrame.setContentPane(new ImagePanel(myImage));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//frame.setContentPane(new ImagePanel());
-		//setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("test.jpg")))));
-		/*try {
-			frame.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("res/background.png")))));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+		
 		frame.setResizable(false);
 		frame.add(game);
 		frame.setVisible(true);
-		//background = bg.getBackground();
-		//frame.setContentPane(new JFrame());
-		
 		dialogBox= new JLabel("testing to see");
-		//dialogBox.setBorder(BorderFactory.createLineBorder(Color.BLACK));  
-	    //Dimension d = dialogBox.getPreferredSize();  
-	    //dialogBox.setPreferredSize(new Dimension(d.width+60,d.height));
-		//dialogBox.setBounds(200, 200, 200, 200);
 		dialogBox.setBackground(Color.black);
 		dialogBox.setForeground(Color.green);
 		

@@ -28,8 +28,6 @@ public class Dialog {
 		BufferedReader br = new BufferedReader(new FileReader("res/dialog.txt"));
 		
 		
-		//line = br.readLine();
-		//dialog = line;
 		for(int i=0; i<4; i++)
 		{
 			line = br.readLine();
@@ -39,20 +37,6 @@ public class Dialog {
 			}
 		}
 		
-		//line = br.readLine();
-		//dialog = line;
-		
-		/*while(line != null)
-		{
-			x = Integer.parseInt(line);
-			line = br.readLine();
-			y = Integer.parseInt(line);
-			line = br.readLine();
-			dialog = line;
-			node.newNode(x, y, dialog);
-			line = br.readLine();
-			System.out.println(x + " "+ y + " " + dialog);
-		}*/
 	}
 	catch (IOException e)
 	{
