@@ -13,11 +13,14 @@ public class Dialog {
 	//Dialog newLine = new Dialog();
 	//Dialog dialog = new Dialog();
 	Node node = new Node();
+	int count = 1;
+	String tempArray;
 	
 	
 	public String load(){
 	String line = null, dialog = "";
 	int x, y;
+	
 	
 	try
 	{
@@ -35,6 +38,7 @@ public class Dialog {
 				dialog = dialog + line  +"\n";
 			}
 		}
+		
 		//line = br.readLine();
 		//dialog = line;
 		
