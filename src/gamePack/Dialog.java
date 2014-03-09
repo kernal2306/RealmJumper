@@ -23,7 +23,6 @@ public class Dialog {
 	{
 		@SuppressWarnings("resource")
 		BufferedReader br = new BufferedReader(new FileReader("res/dialog.txt"));
-		//StringBuilder sb = new StringBuilder();
 		
 		
 		//line = br.readLine();
