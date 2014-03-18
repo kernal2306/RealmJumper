@@ -45,16 +45,7 @@ public class Editor {
 	
 	public void tick()
 	{
-		//JTextArea coord = new JTextArea(30, 80);
-		//game.frame.add(coord, BorderLayout.CENTER);
 		
-		//g.setFont(g.getFont().deriveFont(30f));
-		//g.drawString("X: " + player.x, 100, 300);
-		//g.drawString("Y: " + player.y, 100, 320);
-		//Container cp = Game.frame.getContentPane();
-		//MyCanvas tl = new MyCanvas();
-		//cp.add(tl);
-		//cp.setVisible(true);
 	}
 
 }

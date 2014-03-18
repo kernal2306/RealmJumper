@@ -68,12 +68,8 @@ public class KeyManager implements KeyListener
 			dialog.dialogDisplay(Game.dialogCount);
 			if (Game.dialogShow == false)
 			{
-				//Game.getPlayer().x = Game.getPlayer().x-3;
-			}/*
-			else
-			{
-				Game.dialogShow = false;
-			}*/
+				
+			}
 		}
 	}
 	

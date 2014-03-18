@@ -48,7 +48,6 @@ public class Game extends Canvas implements Runnable
 		spriteSheet = loader.load("/SpriteSheet.png");
 		background = loader.load("/background.png");
 		SpriteSheet ss = new SpriteSheet(spriteSheet);
-		//Background bg = new Background(background);
 		im = new ImageManager(ss);
 		
 		
@@ -106,9 +105,7 @@ public class Game extends Canvas implements Runnable
 	{
 		if (player.bounds().intersects(lady.bounds()))
 		{
-			//Game.dialogShow = true;
 			dialog.dialogDisplay(dialogCount);
-			//dialog.load();
 			player.lt = false;
 			player.rt = false;;
 			
