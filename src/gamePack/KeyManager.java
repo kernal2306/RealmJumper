@@ -66,10 +66,10 @@ public class KeyManager implements KeyListener
 		{
 			Game.dialogCount += 4;
 			dialog.dialogDisplay(Game.dialogCount);
-			/*if (Game.dialogShow == false)
+			if (Game.dialogShow == false)
 			{
-				Game.dialogShow = true;
-			}
+				//Game.getPlayer().x = Game.getPlayer().x-3;
+			}/*
 			else
 			{
 				Game.dialogShow = false;

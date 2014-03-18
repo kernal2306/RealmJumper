@@ -15,7 +15,7 @@ public class Dialog {
 	//Dialog dialog = new Dialog();
 	Node node = new Node();
 	//int count = 1;
-	String dialogArray[] = new String[100];
+	String dialogArray[] = new String[150];
 	int arrayCount = 0;
 	private String displayDialog;
 	
@@ -35,7 +35,7 @@ public class Dialog {
 			//line = br.readLine();
 			dialogArray[count] = line;
 			//dialog = dialog + line + "\n";
-			System.out.println(dialogArray[count]);
+			//System.out.println(dialogArray[count]);
 			count++;
 		}
 		/*for(int i=0; i<4; i++)
@@ -90,7 +90,7 @@ public class Dialog {
 		if(dialogArray[count+1] == null)
 		{
 			Game.dialogShow = false;
-			Game.getPlayer().x = Game.getPlayer().x-1;
+			//Game.getPlayer().x = Game.getPlayer().x-1;
 		}
 		for(int i=0; i<4; i++)
 		{
