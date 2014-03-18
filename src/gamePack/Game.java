@@ -39,6 +39,7 @@ public class Game extends Canvas implements Runnable
 	private static Background back;
 	private static Dialog dialog;
 	private KeyManager key;
+	static int dialogCount = 0;
 	
 	
 	public void init()
@@ -56,6 +57,7 @@ public class Game extends Canvas implements Runnable
 		editor = new Editor();
 		back = new Background(background);
 		dialog = new Dialog();
+		dialog.load();
 		
 		this.addKeyListener(new KeyManager());
 	}
@@ -102,15 +104,19 @@ public class Game extends Canvas implements Runnable
 	
 	public void tick()
 	{
-		player.tick();
-		editor.tick();
 		if (player.bounds().intersects(lady.bounds()))
 		{
-			Game.dialogShow = true;
+			//Game.dialogShow = true;
+			dialog.dialogDisplay(dialogCount);
+			//dialog.load();
 			player.lt = false;
 			player.rt = false;;
 			
-		}	
+		}
+		
+		player.tick();
+		editor.tick();
+			
 	}
 	
 	public void render()
@@ -128,7 +134,7 @@ public class Game extends Canvas implements Runnable
 
 
 		back.render(g);
-		editor.render(g);
+		//editor.render(g);
 		dialog.render(g);
 		player.render(g);
 		lady.render(g);
