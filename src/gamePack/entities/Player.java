@@ -43,7 +43,7 @@ public class Player
 		
 		if (up)
 		{
-			//y -= SPEED;
+			
 		}
 		if (down)
 		{
@@ -101,9 +101,9 @@ public class Player
 		{
 			y -= p.Jump(y, x, count);
 			
-			if(y < 640)
+			if(count > 1)
 			{
-				
+				y += p.falling(y, x, t);
 			}
 			if(y <= 620)
 			{
@@ -130,6 +130,11 @@ public class Player
 	
 	public void stop()
 	{
+		up = false;
+		down = false;
+		lt = false;
+		rt = false;
+		jump = false;
 		
 	}
 	
