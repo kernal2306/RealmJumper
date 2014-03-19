@@ -10,46 +10,28 @@ import java.awt.*;
 public class Dialog {
 	
 	DialogList dialogList= new DialogList();
-	//Dialog newLine = new Dialog();
-	//Dialog dialog = new Dialog();
 	Node node = new Node();
+	//int count = 1;
+	String dialogArray[] = new String[150];
+	int arrayCount = 0;
+	private String displayDialog;
 	
 	
 	public String load(){
 	String line = null, dialog = "";
-	int x, y;
-	
+	int count=0;
 	try
 	{
 		@SuppressWarnings("resource")
 		BufferedReader br = new BufferedReader(new FileReader("res/dialog.txt"));
-		//StringBuilder sb = new StringBuilder();
 		
 		
-		//line = br.readLine();
-		//dialog = line;
-		for(int i=0; i<4; i++)
+		while((line = br.readLine())!= null)
 		{
-			line = br.readLine();
-			if (line != null)
-			{
-				dialog = dialog + line  +"\n";
-			}
+			dialogArray[count] = line;
+			count++;
 		}
-		//line = br.readLine();
-		//dialog = line;
 		
-		/*while(line != null)
-		{
-			x = Integer.parseInt(line);
-			line = br.readLine();
-			y = Integer.parseInt(line);
-			line = br.readLine();
-			dialog = line;
-			node.newNode(x, y, dialog);
-			line = br.readLine();
-			System.out.println(x + " "+ y + " " + dialog);
-		}*/
 	}
 	catch (IOException e)
 	{
@@ -69,16 +51,43 @@ public class Dialog {
 		if(Game.dialogShow == true)
 		{
 			g.setColor(Color.WHITE);
-			
 			g.draw3DRect(299, 299, 401, 201, true);
 			g.setColor(Color.BLACK);
 			g.fill3DRect(300, 300, 400, 200, true);
 			g.setFont(g.getFont().deriveFont(30f));
 			g.setColor(Color.WHITE);
-			drawStringEdit(g, load(), 320, 300);
+			drawStringEdit(g, getDialog(), 320, 300);
 			g.setColor(Color.GREEN);
 			g.setFont(g.getFont().deriveFont(15f));
 			g.drawString("please press the 'E' key to continue", 385, 485);
 		}
 	}
+	
+	public void dialogDisplay(int dialogCount)
+	{
+		
+		String arrayLine, dialog = "";
+		Game.dialogShow = true;
+		int count = dialogCount;
+		if(dialogArray[count+1] == null)
+		{
+			Game.dialogShow = false;
+		}
+		for(int i=0; i<4; i++)
+		{
+			arrayLine = dialogArray[count];
+			count++;
+			dialog = dialog + arrayLine  +"\n";
+			
+		}
+		
+		displayDialog = dialog;
+		
+	}
+	
+	public String getDialog()
+	{
+		return displayDialog;
+	}
+	
 }

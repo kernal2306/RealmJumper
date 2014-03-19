@@ -10,6 +10,8 @@ import java.awt.event.KeyListener;
 public class KeyManager implements KeyListener
 {
 	public boolean editMode = false;
+	Dialog dialog = new Dialog();
+	int kmCount =0;
 	
 	
 	
@@ -62,13 +64,11 @@ public class KeyManager implements KeyListener
 		}
 		if(e.getKeyCode() == KeyEvent.VK_E)
 		{
+			Game.dialogCount += 4;
+			dialog.dialogDisplay(Game.dialogCount);
 			if (Game.dialogShow == false)
 			{
-				Game.dialogShow = true;
-			}
-			else
-			{
-				Game.dialogShow = false;
+				
 			}
 		}
 	}

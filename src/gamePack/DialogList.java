@@ -29,6 +29,10 @@ public class DialogList
 			{
 				return position;
 			}
+			
+			
+			
+			
 			position = position.next;
 		}
 		return null;

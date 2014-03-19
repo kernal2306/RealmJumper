@@ -42,6 +42,7 @@ public class Game extends Canvas implements Runnable
 	private static Background back;
 	private static Dialog dialog;
 	private KeyManager key;
+	static int dialogCount = 0;
 	
 	
 	public void init()
@@ -50,7 +51,6 @@ public class Game extends Canvas implements Runnable
 		spriteSheet = loader.load("/SpriteSheet.png");
 		background = loader.load("/background.png");
 		SpriteSheet ss = new SpriteSheet(spriteSheet);
-		//Background bg = new Background(background);
 		im = new ImageManager(ss);
 		
 		intro = new IntroLevel(500, 700, im, ss);
@@ -60,6 +60,7 @@ public class Game extends Canvas implements Runnable
 		back = new Background(background);
 		dialog = new Dialog();
 		key = new KeyManager();
+		dialog.load();
 		
 		this.addKeyListener(new KeyManager());
 	}
@@ -111,19 +112,19 @@ public class Game extends Canvas implements Runnable
 			player.lt = false;
 			player.rt = false;
 			Game.dialogShow = true;
-		}	
-		
+		}
 		editor.tick();
 		player.tick();
-	}
-	
+		dialog.dialogDisplay(dialogCount);
+		}
+		
 	public void render()
 	{
 		BufferStrategy bs = this.getBufferStrategy();
 		dialogBox.setVisible(dialogShow);
 		if(bs == null)
 		{
-			createBufferStrategy(5);
+			createBufferStrategy(3);
 			return;
 		}
 		Graphics g = bs.getDrawGraphics();
@@ -132,7 +133,7 @@ public class Game extends Canvas implements Runnable
 
 
 		back.render(g);
-		editor.render(g);
+		//editor.render(g);
 		dialog.render(g);
 		player.render(g);
 		lady.render(g);
@@ -154,27 +155,12 @@ public class Game extends Canvas implements Runnable
 		
 		frame = new JFrame("Realm Jumper");
 		frame.setBounds(400, 100, WIDTH * SCALE, HEIGHT * SCALE);
-		//myJFrame.setContentPane(new ImagePanel(myImage));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//frame.setContentPane(new ImagePanel());
-		//setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("test.jpg")))));
-		/*try {
-			frame.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("res/background.png")))));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+		
 		frame.setResizable(false);
 		frame.add(game);
 		frame.setVisible(true);
-		//background = bg.getBackground();
-		//frame.setContentPane(new JFrame());
-		
 		dialogBox= new JLabel("testing to see");
-		//dialogBox.setBorder(BorderFactory.createLineBorder(Color.BLACK));  
-	    //Dimension d = dialogBox.getPreferredSize();  
-	    //dialogBox.setPreferredSize(new Dimension(d.width+60,d.height));
-		//dialogBox.setBounds(200, 200, 200, 200);
 		dialogBox.setBackground(Color.black);
 		dialogBox.setForeground(Color.green);
 		
