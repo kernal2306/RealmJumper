@@ -55,13 +55,23 @@ public class Player
 		} 
 		if (lt)
 		{
-			if(tickCount == 1)
+			if(tickCount == 61)
 			{
 				im.player = ss.crop(0, 0, 32, 32);
+				tickCount += 10;
 			}
-			else if(tickCount == 0)
+			else if(tickCount == 50)
 			{
 				im.player = ss.crop(2, 0, 32, 32);
+				tickCount += 10;
+			}
+			else if(tickCount == 61)
+			{
+				tickCount = 0;
+			}
+			else if(tickCount == 50)
+			{
+				tickCount = 1;
 			}
 			if(x <= 0)
 			{

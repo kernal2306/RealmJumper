@@ -1,6 +1,7 @@
 package gamePack;
 
 import gamePack.Edit.Editor;
+import gamePack.entities.IntroLevel;
 import gamePack.entities.Lady;
 import gamePack.entities.Player;
 import gamePack.gfx.Background;
@@ -14,6 +15,7 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -35,6 +37,7 @@ public class Game extends Canvas implements Runnable
 	
 	private static Player player;
 	private static Lady lady;
+	private static IntroLevel intro;
 	private static Editor editor;
 	private static Background back;
 	private static Dialog dialog;
@@ -50,12 +53,13 @@ public class Game extends Canvas implements Runnable
 		//Background bg = new Background(background);
 		im = new ImageManager(ss);
 		
-		
+		intro = new IntroLevel(500, 700, im, ss);
 		player = new Player(50,664,im, ss);
 		lady = new Lady(569, 664, im, ss);
 		editor = new Editor();
 		back = new Background(background);
 		dialog = new Dialog();
+		key = new KeyManager();
 		
 		this.addKeyListener(new KeyManager());
 	}
@@ -102,15 +106,15 @@ public class Game extends Canvas implements Runnable
 	
 	public void tick()
 	{
-		player.tick();
-		editor.tick();
 		if (player.bounds().intersects(lady.bounds()))
 		{
-			Game.dialogShow = true;
 			player.lt = false;
-			player.rt = false;;
-			
+			player.rt = false;
+			Game.dialogShow = true;
 		}	
+		
+		editor.tick();
+		player.tick();
 	}
 	
 	public void render()

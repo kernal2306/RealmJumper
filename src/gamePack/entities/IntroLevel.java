@@ -7,7 +7,6 @@ import gamePack.Game;
 import gamePack.Physics;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
-import java.awt.Rectangle;
 
 public class IntroLevel
 {
@@ -28,8 +27,25 @@ public class IntroLevel
 		this.ss = ss;
 	}
 	
-	public Rectangle bounds()
+	public void tick()
 	{
-		return(new Rectangle(x, y, 32, 32));
+		
+	}
+	
+	public void floor()
+	{
+		
+
+	}
+	
+	public Rectangle floorBounds()
+	{
+		return(new Rectangle(0, 664, 200, 32));
+	}
+	
+	public void render(Graphics g)
+	{
+		g.drawImage(im.intro, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
+	
 	}
 }
