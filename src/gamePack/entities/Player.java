@@ -43,7 +43,7 @@ public class Player
 		
 		if (up)
 		{
-			//y -= SPEED;
+			
 		}
 		if (down)
 		{
@@ -55,13 +55,23 @@ public class Player
 		} 
 		if (lt)
 		{
-			if(tickCount == 1)
+			if(tickCount == 61)
 			{
 				im.player = ss.crop(0, 0, 32, 32);
+				tickCount += 10;
 			}
-			else if(tickCount == 0)
+			else if(tickCount == 50)
 			{
 				im.player = ss.crop(2, 0, 32, 32);
+				tickCount += 10;
+			}
+			else if(tickCount == 61)
+			{
+				tickCount = 0;
+			}
+			else if(tickCount == 50)
+			{
+				tickCount = 1;
 			}
 			if(x <= 0)
 			{
@@ -91,9 +101,9 @@ public class Player
 		{
 			y -= p.Jump(y, x, count);
 			
-			if(y < 640)
+			if(count > 1)
 			{
-				
+				y += p.falling(y, x, t);
 			}
 			if(y <= 620)
 			{
@@ -120,6 +130,11 @@ public class Player
 	
 	public void stop()
 	{
+		up = false;
+		down = false;
+		lt = false;
+		rt = false;
+		jump = false;
 		
 	}
 	

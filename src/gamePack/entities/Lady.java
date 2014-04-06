@@ -7,7 +7,6 @@ import gamePack.Game;
 import gamePack.Physics;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
-import java.awt.Rectangle;
 
 public class Lady 
 {
