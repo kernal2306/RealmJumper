@@ -19,7 +19,7 @@ public class Player
 	double count = 1;
 	int tickCount = 1;
 	private ImageManager im;
-	public boolean up = false, down = false, lt = false, rt = false, jump = false;
+	public boolean up = false, down = false, lt = false, rt = false, jump = false, free = false;
 	private final int SPEED = 3;
 	Physics p = new Physics();
 	private SpriteSheet ss;

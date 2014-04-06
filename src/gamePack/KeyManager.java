@@ -70,6 +70,7 @@ public class KeyManager implements KeyListener
 			{
 				
 			}
+			Game.getPlayer().free = true;
 		}
 	}
 	
