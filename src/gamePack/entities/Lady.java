@@ -34,12 +34,10 @@ public class Lady
 		return(new Rectangle(x, y, 32, 32));
 	}
 	
+	
 	public void tick()
 	{
-		if(x == 200)
-		{
-			
-		}
+		y += (p.falling(y, x, t)) / 2;
 	}
 	
 

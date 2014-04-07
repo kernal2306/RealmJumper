@@ -11,6 +11,7 @@ import gamePack.gfx.SpriteSheet;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.awt.geom.Line2D;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -28,6 +29,8 @@ public class Game extends Canvas implements Runnable
 	public static JFrame frame;
 	public static JLabel dialogBox;
 	public static boolean dialogShow = false;
+	public static Line2D downObjects[];
+	public static int count;
 	
 	private BufferedImage spriteSheet;
 	private static BufferedImage background;
@@ -55,13 +58,13 @@ public class Game extends Canvas implements Runnable
 		//make floor
 		intro = new IntroLevel(500, 700, im, ss);
 		player = new Player(50,200,im, ss);
-		lady = new Lady(569, 664, im, ss);
+		lady = new Lady(800, 200, im, ss);
 		editor = new Editor();
 		back = new Background(background);
 		dialog = new Dialog();
 		key = new KeyManager();
 		dialog.load();
-		
+//		downObjects[1] = intro.downLine;
 		this.addKeyListener(new KeyManager());
 	}
 	
@@ -110,12 +113,18 @@ public class Game extends Canvas implements Runnable
 		if (player.DownCollision(intro.floorLine))
 		{
 			player.y = intro.floor;
-			Game.dialogShow = true;
+			//Game.dialogShow = true;
 			//System.out.println("DownCollision");
 		}
+		if(lady.bounds().intersectsLine(intro.floorLine))
+		{
+			lady.y = intro.floor;
+		}
+		else
 
 		editor.tick();
 		player.tick();
+		lady.tick();
 		intro.tick();
 		dialog.dialogDisplay(dialogCount);
 		}

@@ -21,6 +21,7 @@ public class IntroLevel
 	private ImageManager im;
 	Physics p = new Physics();
 	private SpriteSheet ss;
+	Line2D introObjects[];
 	public Line2D floorLine = new Line2D.Float();
 	public Line2D rtLine = new Line2D.Float();
 	public Line2D upLine = new Line2D.Float();
