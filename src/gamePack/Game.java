@@ -31,10 +31,8 @@ public class Game extends Canvas implements Runnable
 	
 	private BufferedImage spriteSheet;
 	private static BufferedImage background;
-	
 	private ImageManager im;
 	private static Image bg;
-	
 	private static Player player;
 	private static Lady lady;
 	private static IntroLevel intro;
@@ -53,8 +51,10 @@ public class Game extends Canvas implements Runnable
 		SpriteSheet ss = new SpriteSheet(spriteSheet);
 		im = new ImageManager(ss);
 		
+		//set location of sprites on the sreen
+		//make floor
 		intro = new IntroLevel(500, 700, im, ss);
-		player = new Player(50,664,im, ss);
+		player = new Player(50,200,im, ss);
 		lady = new Lady(569, 664, im, ss);
 		editor = new Editor();
 		back = new Background(background);
@@ -107,14 +107,16 @@ public class Game extends Canvas implements Runnable
 	
 	public void tick()
 	{
-		if (player.bounds().intersects(lady.bounds()))
+		if (player.DownCollision(intro.floorLine))
 		{
-			player.lt = false;
-			player.rt = false;
+			player.y = intro.floor;
 			Game.dialogShow = true;
+			//System.out.println("DownCollision");
 		}
+
 		editor.tick();
 		player.tick();
+		intro.tick();
 		dialog.dialogDisplay(dialogCount);
 		}
 		
@@ -130,9 +132,8 @@ public class Game extends Canvas implements Runnable
 		Graphics g = bs.getDrawGraphics();
 		//RENDER HERE
 		g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE);
-
-
 		back.render(g);
+		intro.render(g);
 		//editor.render(g);
 		dialog.render(g);
 		player.render(g);

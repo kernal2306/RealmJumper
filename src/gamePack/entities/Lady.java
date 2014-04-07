@@ -36,7 +36,10 @@ public class Lady
 	
 	public void tick()
 	{
-		
+		if(x == 200)
+		{
+			
+		}
 	}
 	
 
