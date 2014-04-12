@@ -14,6 +14,8 @@ public class Dialog {
 	//int count = 1;
 	String dialogArray[] = new String[150];
 	int arrayCount = 0;
+	static int startDialog =0;
+	static int endDialog = 103;
 	private String displayDialog;
 	
 	
@@ -63,20 +65,23 @@ public class Dialog {
 		}
 	}
 	
-	public void dialogDisplay(int dialogCount)
+	public void dialogDisplay(int begin, int end)
 	{
 		
+		
+		startDialog = begin;
+		endDialog = end;
 		String arrayLine, dialog = "";
 		Game.dialogShow = true;
-		int count = dialogCount;
-		if(dialogArray[count+1] == null)
+		//int count = dialogCount;
+		if(startDialog >= endDialog)
 		{
 			Game.dialogShow = false;
 		}
-		for(int i=0; i<4; i++)
+		for(int i=startDialog; i<startDialog+4; i++)
 		{
-			arrayLine = dialogArray[count];
-			count++;
+			arrayLine = dialogArray[i];
+			//i++;
 			dialog = dialog + arrayLine  +"\n";
 			
 		}

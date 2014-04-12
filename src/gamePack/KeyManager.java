@@ -12,6 +12,7 @@ public class KeyManager implements KeyListener
 	public boolean editMode = false;
 	Dialog dialog = new Dialog();
 	int kmCount =0;
+	int begin, end;
 	
 	
 	
@@ -64,8 +65,10 @@ public class KeyManager implements KeyListener
 		}
 		if(e.getKeyCode() == KeyEvent.VK_E)
 		{
-			Game.dialogCount += 4;
-			dialog.dialogDisplay(Game.dialogCount);
+			begin = Dialog.startDialog;
+			end = Dialog.endDialog;
+			begin += 4;
+			dialog.dialogDisplay(begin, end);
 			if (Game.dialogShow == false)
 			{
 				

@@ -126,7 +126,7 @@ public class Game extends Canvas implements Runnable
 		player.tick();
 		lady.tick();
 		intro.tick();
-		dialog.dialogDisplay(dialogCount);
+		dialog.dialogDisplay(Dialog.startDialog, Dialog.endDialog);
 		}
 		
 	public void render()
