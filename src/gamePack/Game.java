@@ -11,6 +11,7 @@ import gamePack.gfx.SpriteSheet;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.awt.geom.Line2D;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -28,13 +29,13 @@ public class Game extends Canvas implements Runnable
 	public static JFrame frame;
 	public static JLabel dialogBox;
 	public static boolean dialogShow = false;
+	public static Line2D downObjects[];
+	public static int count;
 	
 	private BufferedImage spriteSheet;
 	private static BufferedImage background;
-	
 	private ImageManager im;
 	private static Image bg;
-	
 	private static Player player;
 	private static Lady lady;
 	private static IntroLevel intro;
@@ -53,15 +54,17 @@ public class Game extends Canvas implements Runnable
 		SpriteSheet ss = new SpriteSheet(spriteSheet);
 		im = new ImageManager(ss);
 		
+		//set location of sprites on the sreen
+		//make floor
 		intro = new IntroLevel(500, 700, im, ss);
-		player = new Player(50,664,im, ss);
-		lady = new Lady(569, 664, im, ss);
+		player = new Player(50,200,im, ss);
+		lady = new Lady(800, 200, im, ss);
 		editor = new Editor();
 		back = new Background(background);
 		dialog = new Dialog();
 		key = new KeyManager();
 		dialog.load();
-		
+//		downObjects[1] = intro.downLine;
 		this.addKeyListener(new KeyManager());
 	}
 	
@@ -107,14 +110,22 @@ public class Game extends Canvas implements Runnable
 	
 	public void tick()
 	{
-		if (player.bounds().intersects(lady.bounds()))
+		if (player.DownCollision(intro.floorLine))
 		{
-			player.lt = false;
-			player.rt = false;
-			Game.dialogShow = true;
+			player.y = intro.floor;
+			//Game.dialogShow = true;
+			//System.out.println("DownCollision");
 		}
+		if(lady.bounds().intersectsLine(intro.floorLine))
+		{
+			lady.y = intro.floor;
+		}
+		else
+
 		editor.tick();
 		player.tick();
+		lady.tick();
+		intro.tick();
 		dialog.dialogDisplay(dialogCount);
 		}
 		
@@ -130,9 +141,8 @@ public class Game extends Canvas implements Runnable
 		Graphics g = bs.getDrawGraphics();
 		//RENDER HERE
 		g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE);
-
-
 		back.render(g);
+		intro.render(g);
 		//editor.render(g);
 		dialog.render(g);
 		player.render(g);
