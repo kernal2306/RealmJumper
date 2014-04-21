@@ -26,6 +26,7 @@ public class IntroLevel
 	public Line2D rtLine = new Line2D.Float();
 	public Line2D upLine = new Line2D.Float();
 	public Line2D downLine = new Line2D.Float();
+<<<<<<< HEAD
 	public Line2D platform1Top = new Line2D.Float();
 	public Line2D platform1Bottom = new Line2D.Float();
 	public Line2D platform1Right = new Line2D.Float();
@@ -37,6 +38,11 @@ public class IntroLevel
 	public int p1down = 560;
 	public int p1Left = 100;
 	public int p1Right = 300;
+=======
+	
+	//bounds for platforms
+	public int floor = 640;
+>>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
 	
 	public IntroLevel(int x, int y, ImageManager im, SpriteSheet ss)
 	{
@@ -45,9 +51,15 @@ public class IntroLevel
 		this.im = im;
 		this.ss = ss;
 		floorLine.setLine(-100, floor, 1024, floor);
+<<<<<<< HEAD
 		//platform1Top.setLine(p1Left, p1up, p1Right, p1up);
 		//platform1Bottom.setLine(p1Left, p1down, p1Right, p1down);
 		
+=======
+//		rtLine.setLine();
+//		upLine.setLine();
+//		downLine.setLine();
+>>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
 	}
 	
 	public void tick()
@@ -68,11 +80,16 @@ public class IntroLevel
 	public void floor()
 	{
 		im.intro = ss.crop(0, 0, 32, 32);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
 	}
 	
 	//create lines for collision detection on intro level
 	public Line2D floorBounds()
 	{
+<<<<<<< HEAD
 		floorLine.setLine(-100, floor, 1024, floor);
 		return floorLine;
 	}
@@ -95,14 +112,23 @@ public class IntroLevel
 		return platform1Left;
 	}
 	
+=======
+		return floorLine;
+		
+	}
+>>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
 	
 	public void render(Graphics g)
 	{
 		g.drawImage(im.intro, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
+<<<<<<< HEAD
 		g.drawLine(-100, floor, 1024, floor);
 		g.drawLine(100, 500, 300,500);
 		g.drawLine(100, 560, 300, 560);
 		g.drawLine(100, 500, 100, 560);
 		g.drawLine(300, 500, 300, 560);
+=======
+	
+>>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
 	}
 }

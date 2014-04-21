@@ -101,4 +101,12 @@ she is incapable of lying.
 Without knowing why or
 even realizing he is doing
 it, he takes her hand and
+<<<<<<< HEAD
 follows her through the door.
+=======
+follows her through the door.
+             Enemy:
+      You have no idea what
+      you are getting into
+      my advice, walk away.
+>>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
