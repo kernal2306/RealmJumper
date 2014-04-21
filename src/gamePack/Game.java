@@ -1,15 +1,20 @@
 package gamePack;
 
+<<<<<<< HEAD
 import gamePack.Edit.Editor;
 import gamePack.entities.IntroLevel;
 import gamePack.entities.Lady;
 import gamePack.entities.Player;
 import gamePack.gfx.Background;
+=======
+import gamePack.entities.Player;
+>>>>>>> tBranch1
 import gamePack.gfx.ImageLoader;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
 
 import java.awt.*;
+<<<<<<< HEAD
 import java.awt.event.KeyEvent;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferStrategy;
@@ -18,6 +23,11 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+=======
+import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+
+>>>>>>> tBranch1
 import javax.swing.*;
 
 public class Game extends Canvas implements Runnable
@@ -26,6 +36,7 @@ public class Game extends Canvas implements Runnable
 	public static final int WIDTH = 512, HEIGHT = 384, SCALE = 2;
 	public static boolean running = false;
 	public Thread gameThread;
+<<<<<<< HEAD
 	public static JFrame frame;
 	public static JLabel dialogBox;
 	public static boolean dialogShow = false;
@@ -48,11 +59,19 @@ public class Game extends Canvas implements Runnable
 	static int dialogCount = 0;
 	int t = 0;
 	
+=======
+	
+	private BufferedImage spriteSheet;
+	private ImageManager im;
+	
+	private static Player player;
+>>>>>>> tBranch1
 	
 	public void init()
 	{
 		ImageLoader loader = new ImageLoader();
 		spriteSheet = loader.load("/SpriteSheet.png");
+<<<<<<< HEAD
 		background = loader.load("/background.png");
 		SpriteSheet ss = new SpriteSheet(spriteSheet);
 		im = new ImageManager(ss);
@@ -68,6 +87,15 @@ public class Game extends Canvas implements Runnable
 		key = new KeyManager();
 		dialog.load();
 //		downObjects[1] = intro.downLine;
+=======
+		
+		SpriteSheet ss = new SpriteSheet(spriteSheet);
+		
+		im = new ImageManager(ss);
+		
+		player = new Player(50,600,im);
+		
+>>>>>>> tBranch1
 		this.addKeyListener(new KeyManager());
 	}
 	
@@ -113,6 +141,7 @@ public class Game extends Canvas implements Runnable
 	
 	public void tick()
 	{
+<<<<<<< HEAD
 
 		//test if player is colliding with the floor
 		if (player.DownCollision(intro.floorLine))
@@ -160,6 +189,14 @@ public class Game extends Canvas implements Runnable
 	{
 		BufferStrategy bs = this.getBufferStrategy();
 		dialogBox.setVisible(dialogShow);
+=======
+		player.tick();
+	}
+	
+	public void render()
+	{
+		BufferStrategy bs = this.getBufferStrategy();
+>>>>>>> tBranch1
 		if(bs == null)
 		{
 			createBufferStrategy(3);
@@ -168,6 +205,7 @@ public class Game extends Canvas implements Runnable
 		Graphics g = bs.getDrawGraphics();
 		//RENDER HERE
 		g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE);
+<<<<<<< HEAD
 		back.render(g);
 		intro.render(g);
 		//editor.render(g);
@@ -178,6 +216,12 @@ public class Game extends Canvas implements Runnable
 		bs.show();
 		g.dispose();
 		
+=======
+		player.render(g);
+		//END RENDER
+		g.dispose();
+		bs.show();
+>>>>>>> tBranch1
 	}
 	
 	
@@ -187,6 +231,7 @@ public class Game extends Canvas implements Runnable
 		game.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		game.setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		game.setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
+<<<<<<< HEAD
 		
 		
 		
@@ -206,6 +251,17 @@ public class Game extends Canvas implements Runnable
 		
 		
 		
+=======
+		 
+		
+		
+		JFrame frame = new JFrame("Realm Jumper");
+		frame.setSize(WIDTH * SCALE, HEIGHT * SCALE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
+		frame.add(game);
+		frame.setVisible(true);
+>>>>>>> tBranch1
 		
 		game.start();
 	}

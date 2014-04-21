@@ -1,14 +1,18 @@
 package gamePack;
 
+<<<<<<< HEAD
 import gamePack.Edit.Editor;
 
 import java.awt.BorderLayout;
 import java.awt.Graphics;
+=======
+>>>>>>> tBranch1
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyManager implements KeyListener
 {
+<<<<<<< HEAD
 	public boolean editMode = false;
 	Dialog dialog = new Dialog();
 	int kmCount =0;
@@ -18,6 +22,12 @@ public class KeyManager implements KeyListener
 	public void keyPressed(KeyEvent e) 
 	{
 		
+=======
+	@Override
+	public void keyPressed(KeyEvent e) 
+	{
+
+>>>>>>> tBranch1
 
 		if(e.getKeyCode() == KeyEvent.VK_W)
 		{
@@ -39,6 +49,7 @@ public class KeyManager implements KeyListener
 		{
 			Game.getPlayer().jump = true;
 		}
+<<<<<<< HEAD
 		if(e.getKeyCode() == KeyEvent.VK_BACK_SLASH)
 		{
 			if(!editMode) 
@@ -73,6 +84,12 @@ public class KeyManager implements KeyListener
 		}
 	}
 	
+=======
+		
+	}
+
+	@Override
+>>>>>>> tBranch1
 	public void keyReleased(KeyEvent e) 
 	{
 		if(e.getKeyCode() == KeyEvent.VK_W)

@@ -11,7 +11,11 @@ public class SpriteSheet {
 		this.sheet = sheet;
 	}
 	
+<<<<<<< HEAD
 	public  BufferedImage crop(int col, int row, int w, int h)
+=======
+	public BufferedImage crop(int col, int row, int w, int h)
+>>>>>>> tBranch1
 	{
 		return sheet.getSubimage(col * 32, row * 32, w, h);
 	}

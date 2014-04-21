@@ -1,6 +1,7 @@
 package gamePack.entities;
 
 import java.awt.Graphics;
+<<<<<<< HEAD
 import java.awt.Rectangle;
 import java.awt.geom.Line2D;
 import java.awt.geom.Line2D.Float;
@@ -32,10 +33,24 @@ public class Player
 	public Line2D rtLine = new Line2D.Float();
 	
 	public Player(int x, int y, ImageManager im, SpriteSheet ss)
+=======
+import gamePack.Game;
+import gamePack.gfx.ImageManager;
+
+public class Player 
+{
+	private int x, y, t;
+	private ImageManager im;
+	public boolean up = false, down = false, lt = false, rt = false, jump = false;
+	private final int SPEED = 3;
+	
+	public Player(int x, int y, ImageManager im)
+>>>>>>> tBranch1
 	{
 		this.x = x;
 		this.y = y;
 		this.im = im;
+<<<<<<< HEAD
 		this.ss = ss;
 		//downLine.setLine(x+1, y+63, x+60, y+63);
 		
@@ -144,10 +159,20 @@ public class Player
 		if (up)
 		{
 			
+=======
+	}
+	
+	public void tick()
+	{
+		if (up)
+		{
+			y -= SPEED;
+>>>>>>> tBranch1
 		}
 		if (down)
 		{
 			y += SPEED;
+<<<<<<< HEAD
 		}
 		if (lt)
 		{
@@ -198,10 +223,27 @@ public class Player
 			y += (p.falling(y, x, t)) / 2;
 				//y += SPEED * 3;
 			}
+=======
+		} 
+		if (lt)
+		{
+			x -= SPEED;
+		}
+		if(rt)
+		{
+			x += SPEED;
+		}
+		if (jump)
+		{
+			y -= SPEED * 3;
+		}
+	}
+>>>>>>> tBranch1
 	
 	public void render(Graphics g)
 	{
 		g.drawImage(im.player, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
+<<<<<<< HEAD
 		//top line
 		//g.drawLine(x+1, y-1, x+60, y-1);
 		
@@ -225,5 +267,8 @@ public class Player
 		
 	}
 	
+=======
+	}
+>>>>>>> tBranch1
 
 }

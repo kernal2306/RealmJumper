@@ -1,7 +1,11 @@
 package gamePack;
 
+<<<<<<< HEAD
 public class Physics 
 {
+=======
+public class Physics {
+>>>>>>> tBranch1
 	
 	public int getX(int x, double t)
 	{
@@ -15,6 +19,7 @@ public class Physics
 		return y;
 	}
 
+<<<<<<< HEAD
 	public int Jump(int y, int x, double t)
 	{
 		x = getX(x, t) / 2;
@@ -28,4 +33,12 @@ public class Physics
 		y = getY(y, t);
 		return y++;
 	}
+=======
+	public void Jump(int y, int x, double t)
+	{
+		x = getX(x, t);
+		y = getY(y,t);
+	}
+	
+>>>>>>> tBranch1
 }
