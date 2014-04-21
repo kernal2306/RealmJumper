@@ -2,13 +2,8 @@ package gamePack.entities;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
-<<<<<<< HEAD
 import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
-
-=======
-import java.awt.image.BufferedImage;
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
 import gamePack.Game;
 import gamePack.Physics;
 import gamePack.gfx.ImageManager;
@@ -27,22 +22,19 @@ public class Lady
 	Physics p = new Physics();
 	private SpriteSheet ss;
 	
-<<<<<<< HEAD
 	public Line2D rtLine = new Line2D.Float();
 	public Line2D upLine = new Line2D.Float();
 	public Line2D lfLine = new Line2D.Float();
 	public Line2D downLine = new Line2D.Float();
 	public int right, left, top, bottom;
 	
-=======
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
+
 	public Lady(int x, int y, ImageManager im, SpriteSheet ss)
 	{
 		this.x = x;
 		this.y = y;
 		this.im = im;
 		this.ss = ss;
-<<<<<<< HEAD
 		downLine.setLine(x-16, y+16, x+16, y+16);
 	}
 	
@@ -141,15 +133,13 @@ public class Lady
 		}
 		else return false;
 	}
-=======
-	}
 	
 	public Rectangle bounds()
 	{
 		return(new Rectangle(x, y, 32, 32));
 	}
 	
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
+
 	
 	public void tick()
 	{

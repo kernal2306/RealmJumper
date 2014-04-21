@@ -14,11 +14,8 @@ public class Dialog {
 	//int count = 1;
 	String dialogArray[] = new String[150];
 	int arrayCount = 0;
-<<<<<<< HEAD
-=======
 	static int startDialog =0;
 	static int endDialog = 103;
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
 	private String displayDialog;
 	
 	
@@ -46,10 +43,10 @@ public class Dialog {
 	}
 	
 	
-	private void drawStringEdit(Graphics g, String text, int x, int y) {
-        for (String editLine : text.split("\n"))
-            g.drawString(editLine, x, y += g.getFontMetrics().getHeight());
-    }
+	//private void drawStringEdit(Graphics g, String text, int x, int y) {
+     //   for (String editLine : text.split("\n"))
+        //    g.drawString(editLine, x, y += g.getFontMetrics().getHeight());
+   // }
 	
 	public void render(Graphics g)
 	{
@@ -61,14 +58,14 @@ public class Dialog {
 			g.fill3DRect(300, 300, 400, 200, true);
 			g.setFont(g.getFont().deriveFont(30f));
 			g.setColor(Color.WHITE);
-			drawStringEdit(g, getDialog(), 320, 300);
+			//drawStringEdit(g, getDialog(), 320, 300);
 			g.setColor(Color.GREEN);
 			g.setFont(g.getFont().deriveFont(15f));
 			g.drawString("please press the 'E' key to continue", 385, 485);
 		}
 	}
 	
-<<<<<<< HEAD
+
 	public void dialogDisplay(int dialogCount)
 	{
 		
@@ -83,7 +80,9 @@ public class Dialog {
 		{
 			arrayLine = dialogArray[count];
 			count++;
-=======
+		}
+	}
+
 	public void dialogDisplay(int begin, int end)
 	{
 		
@@ -101,7 +100,7 @@ public class Dialog {
 		{
 			arrayLine = dialogArray[i];
 			//i++;
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
+
 			dialog = dialog + arrayLine  +"\n";
 			
 		}

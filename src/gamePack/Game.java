@@ -1,50 +1,17 @@
 package gamePack;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
 import gamePack.Edit.Editor;
 import gamePack.entities.IntroLevel;
 import gamePack.entities.Lady;
 import gamePack.entities.Player;
 import gamePack.gfx.Background;
-<<<<<<< HEAD
-=======
-import gamePack.entities.Player;
->>>>>>> tBranch1
-=======
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
 import gamePack.gfx.ImageLoader;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
-
 import java.awt.*;
-<<<<<<< HEAD
-<<<<<<< HEAD
-import java.awt.event.KeyEvent;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-=======
-=======
-import java.awt.event.KeyEvent;
-import java.awt.geom.Line2D;
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
-import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-<<<<<<< HEAD
->>>>>>> tBranch1
-=======
-import javax.imageio.ImageIO;
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
 import javax.swing.*;
 
 public class Game extends Canvas implements Runnable
@@ -53,19 +20,14 @@ public class Game extends Canvas implements Runnable
 	public static final int WIDTH = 512, HEIGHT = 384, SCALE = 2;
 	public static boolean running = false;
 	public Thread gameThread;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
+
 	public static JFrame frame;
 	public static JLabel dialogBox;
 	public static boolean dialogShow = false;
 	public static Line2D downObjects[];
-	public static int count;
-<<<<<<< HEAD
-	
-	private BufferedImage spriteSheet;
-	private static BufferedImage background;
+	public static int count;	
+	private BufferedImage spriteSheet1;
+	private static BufferedImage background1;
 	private ImageManager im;
 	private static Image bg;
 	private static Player player;
@@ -79,37 +41,15 @@ public class Game extends Canvas implements Runnable
 	private KeyManager key;
 	static int dialogCount = 0;
 	int t = 0;
+
 	
-=======
-=======
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
-	
-	private BufferedImage spriteSheet;
-	private static BufferedImage background;
-	private ImageManager im;
-	private static Image bg;
-	private static Player player;
-<<<<<<< HEAD
->>>>>>> tBranch1
-=======
-	private static Lady lady;
-	private static IntroLevel intro;
-	private static Editor editor;
-	private static Background back;
-	private static Dialog dialog;
-	private KeyManager key;
-	static int dialogCount = 0;
-	
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
 	
 	public void init()
 	{
 		ImageLoader loader = new ImageLoader();
-		spriteSheet = loader.load("/SpriteSheet.png");
-<<<<<<< HEAD
-<<<<<<< HEAD
-		background = loader.load("/background.png");
-		SpriteSheet ss = new SpriteSheet(spriteSheet);
+		spriteSheet1 = loader.load("/SpriteSheet.png");
+		background1 = loader.load("/background.png");
+		SpriteSheet ss = new SpriteSheet(spriteSheet1);
 		im = new ImageManager(ss);
 		
 		//set location of sprites on the sreen
@@ -118,36 +58,21 @@ public class Game extends Canvas implements Runnable
 		player = new Player(50,200,im, ss);
 		lady = new Lady(800, 200, im, ss);
 		editor = new Editor();
-		back = new Background(background);
+		back = new Background(background1);
 		dialog = new Dialog();
 		key = new KeyManager();
 		dialog.load();
-//		downObjects[1] = intro.downLine;
-=======
-		
-=======
-		background = loader.load("/background.png");
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
-		SpriteSheet ss = new SpriteSheet(spriteSheet);
-		im = new ImageManager(ss);
-		
-<<<<<<< HEAD
-		player = new Player(50,600,im);
-		
->>>>>>> tBranch1
-=======
 		//set location of sprites on the sreen
 		//make floor
 		intro = new IntroLevel(500, 700, im, ss);
 		player = new Player(50,200,im, ss);
 		lady = new Lady(800, 200, im, ss);
 		editor = new Editor();
-		back = new Background(background);
+		back = new Background(background1);
 		dialog = new Dialog();
 		key = new KeyManager();
 		dialog.load();
 //		downObjects[1] = intro.downLine;
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
 		this.addKeyListener(new KeyManager());
 	}
 	
@@ -193,8 +118,6 @@ public class Game extends Canvas implements Runnable
 	
 	public void tick()
 	{
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 		//test if player is colliding with the floor
 		if (player.DownCollision(intro.floorLine))
@@ -242,36 +165,6 @@ public class Game extends Canvas implements Runnable
 	{
 		BufferStrategy bs = this.getBufferStrategy();
 		dialogBox.setVisible(dialogShow);
-=======
-=======
-		if (player.DownCollision(intro.floorLine))
-		{
-			player.y = intro.floor;
-			//Game.dialogShow = true;
-			//System.out.println("DownCollision");
-		}
-		if(lady.bounds().intersectsLine(intro.floorLine))
-		{
-			lady.y = intro.floor;
-		}
-		else
-
-		editor.tick();
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
-		player.tick();
-		lady.tick();
-		intro.tick();
-		dialog.dialogDisplay(Dialog.startDialog, Dialog.endDialog);
-		}
-		
-	public void render()
-	{
-		BufferStrategy bs = this.getBufferStrategy();
-<<<<<<< HEAD
->>>>>>> tBranch1
-=======
-		dialogBox.setVisible(dialogShow);
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
 		if(bs == null)
 		{
 			createBufferStrategy(3);
@@ -279,35 +172,18 @@ public class Game extends Canvas implements Runnable
 		}
 		Graphics g = bs.getDrawGraphics();
 		//RENDER HERE
+		
 		g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
 		back.render(g);
 		intro.render(g);
 		//editor.render(g);
 		dialog.render(g);
-<<<<<<< HEAD
 		player.render(g);
 		lady.render(g);
+		
 		//END RENDER
 		bs.show();
 		g.dispose();
-		
-=======
-=======
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
-		player.render(g);
-		lady.render(g);
-		//END RENDER
-		bs.show();
-<<<<<<< HEAD
->>>>>>> tBranch1
-=======
-		g.dispose();
-		
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
 	}
 	
 	
@@ -317,11 +193,6 @@ public class Game extends Canvas implements Runnable
 		game.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		game.setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		game.setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
-<<<<<<< HEAD
-<<<<<<< HEAD
-		
-		
-		
 		frame = new JFrame("Realm Jumper");
 		frame.setBounds(400, 100, WIDTH * SCALE, HEIGHT * SCALE);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -332,40 +203,6 @@ public class Game extends Canvas implements Runnable
 		dialogBox= new JLabel("testing to see");
 		dialogBox.setBackground(Color.black);
 		dialogBox.setForeground(Color.green);
-		
-		
-		
-		
-		
-		
-=======
-		 
-=======
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
-		
-		
-		
-		frame = new JFrame("Realm Jumper");
-		frame.setBounds(400, 100, WIDTH * SCALE, HEIGHT * SCALE);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		frame.setResizable(false);
-		frame.add(game);
-		frame.setVisible(true);
-<<<<<<< HEAD
->>>>>>> tBranch1
-=======
-		dialogBox= new JLabel("testing to see");
-		dialogBox.setBackground(Color.black);
-		dialogBox.setForeground(Color.green);
-		
-		
-		
-		
-		
-		
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
-		
 		game.start();
 	}
 	
