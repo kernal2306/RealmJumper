@@ -43,12 +43,25 @@ public class IntroLevel
 	public int p1down = 560;
 	public int p1Left = 100;
 	public int p1Right = 300;	
-	//bounds for door platform
+	
+	//bounds for platform 5 platform
 	public int p5up =97;
-	public int p5down = 0;
-	public int p5Left = 673;
+	public int p5down = 129;
+	public int p5Left = 672;
 	public int p5Right = 765;
-
+	
+	//bounds for platform 4
+	public int p4up =223;
+	public int p4down = 0;
+	public int p4Left = 768;
+	public int p4Right = 864;
+	
+	//bounds for platform 3
+	public int p3up;
+	public int p3down;
+	public int p3Left;
+	public int p3Right;
+	
 	
 	public IntroLevel(int x, int y, ImageManager im, SpriteSheet ss)
 	{
@@ -103,12 +116,12 @@ public class IntroLevel
 	}
 	public Line2D platform4TopBounds()
 	{
-		platform4Top.setLine(p1Left, p1up, p1Right, p1up);
-		return platform1Top;
+		platform4Top.setLine(p4Left, p4up, p4Right, p4up);
+		return platform4Top;
 	}
 	public Line2D platform5TopBounds()
 	{
-		platform5Top.setLine(673, p5up, 765, p5up);
+		platform5Top.setLine(672, p5up, 768, p5up);
 		return platform5Top;
 	}
 	public Line2D platform1BottomBounds()

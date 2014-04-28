@@ -127,6 +127,12 @@ public class Game extends Canvas implements Runnable
 			Game.dialogShow = true;
 			System.out.println("DownCollision");
 		}
+		if(player.DownCollision(intro.platform4TopBounds()))
+		{
+			player.y = intro.p4up - 73;
+			Game.dialogShow = true;
+			System.out.println("DownCollision");
+		}
 		
 		//test if player is coliding with platforms bottom
 		if(player.UpCollision(intro.platform1BottomBounds()))
