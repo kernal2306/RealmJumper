@@ -27,17 +27,27 @@ public class IntroLevel
 	public Line2D upLine = new Line2D.Float();
 	public Line2D downLine = new Line2D.Float();
 	public Line2D platform1Top = new Line2D.Float();
+	public Line2D platform2Top = new Line2D.Float();
+	public Line2D platform3Top = new Line2D.Float();
+	public Line2D platform4Top = new Line2D.Float();
+	public Line2D platform5Top = new Line2D.Float();
 	public Line2D platform1Bottom = new Line2D.Float();
 	public Line2D platform1Right = new Line2D.Float();
 	public Line2D platform1Left = new Line2D.Float();
 	
-	//bounds for platforms
+	//bounds for floor
 	public int floor = 640;
+	
+	//bounds for first test platform
 	public int p1up = 500;
 	public int p1down = 560;
 	public int p1Left = 100;
 	public int p1Right = 300;	
-	//bounds for platforms
+	//bounds for door platform
+	public int p5up =97;
+	public int p5down = 0;
+	public int p5Left = 673;
+	public int p5Right = 765;
 
 	
 	public IntroLevel(int x, int y, ImageManager im, SpriteSheet ss)
@@ -73,14 +83,33 @@ public class IntroLevel
 	//create lines for collision detection on intro level
 	public Line2D floorBounds()
 	{
-
 		floorLine.setLine(-100, floor, 1024, floor);
 		return floorLine;
 	}
 	public Line2D platform1TopBounds()
 	{
-		platform1Top.setLine(p1Left, p1up, p1Right, p1up);
+		platform1Top.setLine(100, 500, 300, 500);
 		return platform1Top;
+	}
+	public Line2D platform2TopBounds()
+	{
+		platform2Top.setLine(100, 500, 300, 500);
+		return platform1Top;
+	}
+	public Line2D platform3TopBounds()
+	{
+		platform3Top.setLine(p1Left, p1up, p1Right, p1up);
+		return platform1Top;
+	}
+	public Line2D platform4TopBounds()
+	{
+		platform4Top.setLine(p1Left, p1up, p1Right, p1up);
+		return platform1Top;
+	}
+	public Line2D platform5TopBounds()
+	{
+		platform5Top.setLine(673, p5up, 765, p5up);
+		return platform5Top;
 	}
 	public Line2D platform1BottomBounds()
 	{
@@ -100,10 +129,17 @@ public class IntroLevel
 	public void render(Graphics g)
 	{
 		g.drawImage(im.intro, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
+		//floor line 
 		g.drawLine(-100, floor, 1024, floor);
+		
+		//test box lines
 		g.drawLine(100, 500, 300,500);
 		g.drawLine(100, 560, 300, 560);
 		g.drawLine(100, 500, 100, 560);
 		g.drawLine(300, 500, 300, 560);
+		
+		//platform lines at top of area one
+		g.drawLine(673, 97, 765, 97);
+		
 	}
 }
