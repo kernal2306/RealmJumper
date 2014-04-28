@@ -79,7 +79,6 @@ public class KeyManager implements KeyListener
 		}
 	}
 
-	
 	public void keyReleased(KeyEvent e) 
 	{
 		if(e.getKeyCode() == KeyEvent.VK_W)

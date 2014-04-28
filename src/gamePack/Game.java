@@ -41,8 +41,6 @@ public class Game extends Canvas implements Runnable
 	private KeyManager key;
 	static int dialogCount = 0;
 	int t = 0;
-
-	
 	
 	public void init()
 	{
@@ -62,17 +60,6 @@ public class Game extends Canvas implements Runnable
 		dialog = new Dialog();
 		key = new KeyManager();
 		dialog.load();
-		//set location of sprites on the sreen
-		//make floor
-		intro = new IntroLevel(500, 700, im, ss);
-		player = new Player(50,200,im, ss);
-		lady = new Lady(800, 200, im, ss);
-		editor = new Editor();
-		back = new Background(background1);
-		dialog = new Dialog();
-		key = new KeyManager();
-		dialog.load();
-//		downObjects[1] = intro.downLine;
 		this.addKeyListener(new KeyManager());
 	}
 	
