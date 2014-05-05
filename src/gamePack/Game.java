@@ -8,10 +8,13 @@ import gamePack.gfx.Background;
 import gamePack.gfx.ImageLoader;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
+
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
+
 import javax.swing.*;
 
 public class Game extends Canvas implements Runnable
@@ -27,7 +30,7 @@ public class Game extends Canvas implements Runnable
 	public static Line2D downObjects[];
 	public static int count;	
 	private BufferedImage spriteSheet1;
-	private static BufferedImage background1;
+	private static BufferedImage background1, background2;
 	private ImageManager im;
 	private static Image bg;
 	private static Player player;
@@ -36,17 +39,18 @@ public class Game extends Canvas implements Runnable
 	private static IntroLevel intro;
 	private static Collision col;
 	private static Editor editor;
-	private static Background back;
+	private static Background back, back2;
 	private static Dialog dialog;
 	private KeyManager key;
 	static int dialogCount = 0;
-	int t = 0;
+	int t = 0, setBack = 1;
 	
 	public void init()
 	{
 		ImageLoader loader = new ImageLoader();
 		spriteSheet1 = loader.load("/SpriteSheet.png");
 		background1 = loader.load("/background.png");
+		background2 = loader.load("/background2.png");
 		SpriteSheet ss = new SpriteSheet(spriteSheet1);
 		im = new ImageManager(ss);
 		
@@ -57,6 +61,7 @@ public class Game extends Canvas implements Runnable
 		lady = new Lady(800, 200, im, ss);
 		editor = new Editor();
 		back = new Background(background1);
+		back2 = new Background(background2);
 		dialog = new Dialog();
 		key = new KeyManager();
 		dialog.load();
@@ -128,9 +133,9 @@ public class Game extends Canvas implements Runnable
 			System.out.println("DownCollision");
 		}
 		
-		if(player.DownCollision(intro.door()))
+		if(player.DownCollision(intro.door()) && getPlayer().up == true)
 		{
-			
+			setBack = 2;
 			System.out.println("door Collision");
 		}
 		
@@ -178,9 +183,15 @@ public class Game extends Canvas implements Runnable
 		}
 		Graphics g = bs.getDrawGraphics();
 		//RENDER HERE
-		
 		g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE);
-		back.render(g);
+		if(setBack == 1)
+		{
+			back.render(g);
+		}
+		if(setBack == 2)
+		{
+			back2.render(g);
+		}
 		intro.render(g);
 		//editor.render(g);
 		//dialog.render(g);

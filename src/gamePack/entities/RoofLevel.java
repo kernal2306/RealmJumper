@@ -37,7 +37,6 @@ public class RoofLevel
 	
 	public void render(Graphics g)
 	{
-		g.drawImage(im.intro, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
 		g.drawImage(im.roof, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
 	}
 }
