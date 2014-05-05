@@ -34,6 +34,7 @@ public class IntroLevel
 	public Line2D platform1Bottom = new Line2D.Float();
 	public Line2D platform1Right = new Line2D.Float();
 	public Line2D platform1Left = new Line2D.Float();
+	public Line2D door1Line = new Line2D.Float();
 	
 	//bounds for floor
 	public int floor = 640;
@@ -98,6 +99,12 @@ public class IntroLevel
 	{
 		floorLine.setLine(-100, floor, 1024, floor);
 		return floorLine;
+	}
+	
+	public Line2D door()
+	{
+		door1Line.setLine(672, p5up-16, 768, p5up-16);
+		return door1Line;
 	}
 	public Line2D platform1TopBounds()
 	{

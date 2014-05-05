@@ -31,6 +31,17 @@ public class ImageManager
 			intro = ss.crop(y, x, width, hieght);
 			floor[i] = intro;
 		}
+	}
+	
+	public void roof(SpriteSheet ss)
+	{
+		for (int i = 0; i <= floorLength; i++)
+		{
+			x += 32;
+			y += 32;
+			intro = ss.crop(y, x, width, hieght);
+			floor[i] = intro;
+		}
 
 	}
 }
