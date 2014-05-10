@@ -1,0 +1,67 @@
+All done the same format>  Included the edge of screen just to follow the
+pattern but you might not have to add those in.
+Top, left, right, bottom
+
+Top of screen:
+
+(0, 0, 1024, 0)
+(0, 0, 0, 96)
+(1024, 0, 1024, 96)
+(0, 96, 1024, 96)
+
+Left wall:
+
+(0, 96, 32, 96)
+(0, 96, 0, 736)
+(32, 96, 32, 736)
+(0, 736, 32, 736)
+
+Bottom:
+
+(32, 736, 1024, 736)
+(32, 736, 32, 768)
+(1024, 736, 1024, 768)
+(32, 768, 1024, 768)
+
+Left platform:
+
+(32, 416, 160, 416)
+(32, 416, 32, 480)
+(160, 416, 160, 480)
+(32, 480, 160, 480)
+
+Top-right platform
+
+(288, 320, 416, 320)
+(288, 320, 288, 384)
+(416, 320, 416, 384)
+(288, 384, 416, 384)
+
+Bottom-right platform
+
+(288, 576, 416, 576)
+(288, 576, 288, 640)
+(416, 576, 416, 640)
+(288, 640, 288, 640)
+
+Main platform upper-left area
+
+(512, 544, 768, 544)
+(512, 544, 512, 736)
+(768, 544, 768, 736)
+(512, 736, 768, 736)
+
+Main platform lower-right area
+
+(640, 640, 1024, 640)
+(640, 640, 640, 800)
+(1024, 640, 1024, 800)
+(640, 800, 1024, 800)
+
+Top transport collision
+
+(1024, 96, 1024, 640)
+
+Bottom transport collision
+
+(1024, 800, 1024, 736)
