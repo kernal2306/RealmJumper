@@ -32,6 +32,7 @@ public class IntroLevel
 	public Line2D platform1Left = new Line2D.Float();
 	
 	//bounds for platforms
+	
 	public int floor = 640;
 	public int p1up = 500;
 	public int p1down = 560;
@@ -96,6 +97,25 @@ public class IntroLevel
 		return platform1Left;
 	}
 
+	
+	public Line2D platform2TopBounds()
+	{
+		platform1Top.setLine(p1Left, p1up, p1Right, p1up);
+		return platform1Top;
+	}
+	public Line2D platform2BottomBounds()
+	{
+		platform1Bottom.setLine(p1Left, p1down, p1Right, p1down);
+		return platform1Bottom;
+	}
+	public Line2D platform2LeftBounds()
+	{
+		return platform1Right;
+	}
+	public Line2D platform2RightBounds()
+	{
+		return platform1Left;
+	}
 	
 	public void render(Graphics g)
 	{

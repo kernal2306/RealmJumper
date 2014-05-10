@@ -26,28 +26,24 @@ public class Game extends Canvas implements Runnable
 	public static boolean dialogShow = false;
 	public static Line2D downObjects[];
 	public static int count;	
-	private BufferedImage spriteSheet1;
-	private static BufferedImage background1;
+	private BufferedImage spriteSheet;
+	private static BufferedImage background;
 	private ImageManager im;
-	private static Image bg;
 	private static Player player;
-	private static Physics p;
 	private static Lady lady;
 	private static IntroLevel intro;
-	private static Collision col;
 	private static Editor editor;
 	private static Background back;
 	private static Dialog dialog;
-	private KeyManager key;
 	static int dialogCount = 0;
 	int t = 0;
 	
 	public void init()
 	{
 		ImageLoader loader = new ImageLoader();
-		spriteSheet1 = loader.load("/SpriteSheet.png");
-		background1 = loader.load("/background.png");
-		SpriteSheet ss = new SpriteSheet(spriteSheet1);
+		spriteSheet = loader.load("/SpriteSheet.png");
+		background = loader.load("/background.png");
+		SpriteSheet ss = new SpriteSheet(spriteSheet);
 		im = new ImageManager(ss);
 		
 		//set location of sprites on the sreen
@@ -56,9 +52,8 @@ public class Game extends Canvas implements Runnable
 		player = new Player(50,200,im, ss);
 		lady = new Lady(800, 200, im, ss);
 		editor = new Editor();
-		back = new Background(background1);
+		back = new Background(background);
 		dialog = new Dialog();
-		key = new KeyManager();
 		dialog.load();
 		this.addKeyListener(new KeyManager());
 	}

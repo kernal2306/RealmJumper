@@ -233,13 +233,13 @@ public class Player
 	{
 		g.drawImage(im.player, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
 		//top line
-		//g.drawLine(x+1, y-1, x+60, y-1);
+		g.drawLine(x+1, y-1, x+60, y-1);
 		
 		//bottom Line
 		g.drawLine(x+1, y+63, x+60, y+63);
 		
 		//right Line
-		//g.drawLine(x+60, y-1, x+60, y+63);
+		g.drawLine(x+60, y-1, x+60, y+63);
 		
 		//Left Line
 		g.drawLine(x, y-1, x, y+63);
