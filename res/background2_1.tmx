@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="24" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="btiles2032" tilewidth="32" tileheight="32" spacing="2">
+  <image source="btiles2032.png" trans="aaaaff" width="544" height="544"/>
+ </tileset>
+ <tileset firstgid="257" name="Wall 2 NW" tilewidth="32" tileheight="32">
+  <image source="Genetica Texture Pack 10 - Mystery Forest/Rendered Textures/Walls/Wall 2 NW.png" trans="aaaaff" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="273" name="Wall 2 NE" tilewidth="32" tileheight="32">
+  <image source="Genetica Texture Pack 10 - Mystery Forest/Rendered Textures/Walls/Wall 2 NE.png" trans="aaaaff" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="289" name="Wall 4 NW" tilewidth="32" tileheight="32">
+  <image source="Genetica Texture Pack 10 - Mystery Forest/Rendered Textures/Walls/Wall 4 NW.png" trans="aaaaff" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="305" name="Wall 2 SE" tilewidth="32" tileheight="32">
+  <image source="Genetica Texture Pack 10 - Mystery Forest/Rendered Textures/Walls/Wall 2 SE.png" trans="aaaaff" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="321" name="Wall 2 SW" tilewidth="32" tileheight="32">
+  <image source="Genetica Texture Pack 10 - Mystery Forest/Rendered Textures/Walls/Wall 2 SW.png" trans="aaaaff" width="128" height="128"/>
+ </tileset>
+ <layer name="Background" width="32" height="24" opacity="0.9">
+  <data encoding="base64" compression="zlib">
+   eJztwwENAAAMw6DanvsLOSSsmqqq+uIBYctrEA==
+  </data>
+ </layer>
+ <layer name="platforms" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzt1clOgjEUhmG6QEEZ3IADM8gsoCDKPCjIJOD9Xw0vSU1INz/pn6YbTvKsmvZLOp2s8HiaaOEdU3zhGzO8GR4v4AOf6GCOHyywRNvweAU99DHACmts8Iuu4fE6Rhhjgi122OMPQ8PjedissuX8muX8Z8v5Jcv5L5r5GeZlkRPu9vBVc25e/l1F4W4Pc5b3v3iSX5b/YVXon4taEdaJ4h4P8OIK1/DJrP+qyf+wIfTPRa1H1nlCDHH4cYNbBGSWyUqwfhIppBFECGHcyTtsspz6X8FwvlP/q5yZr/venPpf/cy1TLyNY2Usv/9L/7ebr/Yx9Z6r9079I93OPwC7OzTX
+  </data>
+ </layer>
+</map>
