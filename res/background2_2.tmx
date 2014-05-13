@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="24" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="btiles2032" tilewidth="32" tileheight="32" spacing="2">
+  <image source="btiles2032.png" trans="aaaaff" width="544" height="544"/>
+ </tileset>
+ <tileset firstgid="257" name="Wall 2 NW" tilewidth="32" tileheight="32">
+  <image source="Genetica Texture Pack 10 - Mystery Forest/Rendered Textures/Walls/Wall 2 NW.png" trans="aaaaff" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="273" name="Wall 2 NE" tilewidth="32" tileheight="32">
+  <image source="Genetica Texture Pack 10 - Mystery Forest/Rendered Textures/Walls/Wall 2 NE.png" trans="aaaaff" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="289" name="Wall 4 NW" tilewidth="32" tileheight="32">
+  <image source="Genetica Texture Pack 10 - Mystery Forest/Rendered Textures/Walls/Wall 4 NW.png" trans="aaaaff" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="305" name="Wall 2 SE" tilewidth="32" tileheight="32">
+  <image source="Genetica Texture Pack 10 - Mystery Forest/Rendered Textures/Walls/Wall 2 SE.png" trans="aaaaff" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="321" name="Wall 2 SW" tilewidth="32" tileheight="32">
+  <image source="Genetica Texture Pack 10 - Mystery Forest/Rendered Textures/Walls/Wall 2 SW.png" trans="aaaaff" width="128" height="128"/>
+ </tileset>
+ <layer name="Background" width="32" height="24" opacity="0.9">
+  <data encoding="base64" compression="zlib">
+   eJztwwENAAAMw6DanvsLOSSsmqqq+uIBYctrEA==
+  </data>
+ </layer>
+ <layer name="platforms" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzF1slOAkEUhWFqAcjgsEEQkMkGW2iVZlZBnEBBRN//afxJXHUnXQuLujf5Vmdxkk513fJVLNZDHwM84wWveIP/zzxqHPIhRhhjggWWeMeHgTxqXPI73OMBU6ywxic2BvKo8chneMQcT/jCFt/4MZBHTVeT73suhPsvLfcHz2rHcn/wrN4Kf/+GcH9LuL8t3H9Dfw6nyKOAOBJI4sBCfoYiSigjhTQyyFrIg/vL5O7T5ScqfCeY3H26vK7Cd4LJ3afLmyq8v0zuPl1+pWT/v2vhfke43xXu94T7d++vQxzh+O8+OEcFVdQs5L+iU0Si
+  </data>
+ </layer>
+</map>

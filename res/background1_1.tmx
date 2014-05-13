@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="24" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="btiles2032" tilewidth="32" tileheight="32" spacing="2">
+  <image source="btiles2032.png" trans="aaaaff" width="544" height="544"/>
+ </tileset>
+ <tileset firstgid="257" name="Wall 2 NW" tilewidth="32" tileheight="32">
+  <image source="Genetica Texture Pack 10 - Mystery Forest/Rendered Textures/Walls/Wall 2 NW.png" trans="aaaaff" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="273" name="Wall 2 NE" tilewidth="32" tileheight="32">
+  <image source="Genetica Texture Pack 10 - Mystery Forest/Rendered Textures/Walls/Wall 2 NE.png" trans="aaaaff" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="289" name="Wall 4 NW" tilewidth="32" tileheight="32">
+  <image source="Genetica Texture Pack 10 - Mystery Forest/Rendered Textures/Walls/Wall 4 NW.png" trans="aaaaff" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="305" name="Wall 2 SE" tilewidth="32" tileheight="32">
+  <image source="Genetica Texture Pack 10 - Mystery Forest/Rendered Textures/Walls/Wall 2 SE.png" trans="aaaaff" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="321" name="Wall 2 SW" tilewidth="32" tileheight="32">
+  <image source="Genetica Texture Pack 10 - Mystery Forest/Rendered Textures/Walls/Wall 2 SW.png" trans="aaaaff" width="128" height="128"/>
+ </tileset>
+ <layer name="Background" width="32" height="24" opacity="0.9">
+  <data encoding="base64" compression="zlib">
+   eJztwwENAAAMw6DanvsLOSSsmqqq+uIBYctrEA==
+  </data>
+ </layer>
+ <layer name="platforms" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzt1UlTwjAUwHFyABVQuSgobpRNQHDfZVMQERC//6fx37GnlJkkk3Zy4c38Dp0077UvbeKJROIGt7jDEO/4wAjXMY/X8IBHPGGMT0zwhfuYx5t4wSveMMU3ZpjjOebxDnroY4AFfrDEL7oxj1fhMhqO67cd1684rn/uuP6FZf095u8jjwKSSGEDmxq5rzTuqQb7VF2E+3XA9SGKOMIW0sggq5G7rHFPI9inWiLcr2OuT3CKM2xjB7vIaeSuW/a/xHxP/L9HRYR7pVof/53kHCYh15N7pVqfyxXPbBJyvXawp/t5/W9LtT5exP+f6XlYi7i+6XnYjLi+6XnYsfz/bKOkkU/+pqKM9fnvtr5q/1TtL7bz/wA2zj1Z
+  </data>
+ </layer>
+</map>

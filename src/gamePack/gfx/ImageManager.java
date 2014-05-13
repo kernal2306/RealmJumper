@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 
 public class ImageManager 
 {
-	public BufferedImage player, lady, intro;
+	public BufferedImage player, lady, intro, roof;
 	public int floorLength;
 	SpriteSheet character[];
 	SpriteSheet objects[];
@@ -23,6 +23,17 @@ public class ImageManager
 	}
 	
 	public void intro(SpriteSheet ss)
+	{
+		for (int i = 0; i <= floorLength; i++)
+		{
+			x += 32;
+			y += 32;
+			intro = ss.crop(y, x, width, hieght);
+			floor[i] = intro;
+		}
+	}
+	
+	public void roof(SpriteSheet ss)
 	{
 		for (int i = 0; i <= floorLength; i++)
 		{
