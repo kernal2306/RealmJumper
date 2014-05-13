@@ -1,0 +1,59 @@
+All done the same format>  Included the edge of screen just to follow the
+pattern but you might not have to add those in.
+Top, left, right, bottom
+
+Top of screen:
+
+(0, 0, 768, 0)
+(0, 0, 0, 96)
+(768, 0, 768, 96)
+(0, 96, 768, 96)
+
+
+Bottom of screen:
+
+(0, 736, 1024, 736)
+(0, 736, 0, 768)
+(1024, 736, 1024, 768)
+(0, 768, 1024, 768)
+
+Middle platform
+
+(0, 384, 1024, 384)
+(0, 384, 0, 544)
+(1024, 384, 1024, 544)
+(0, 544, 1024, 544)
+
+Right upper platform
+
+(864, 192, 992, 192)
+(864, 192, 864, 256)
+(992, 192, 992, 256)
+(864, 256, 992, 256)
+
+Upper right wall
+
+(992, 0, 1024, 0)
+(992, 0, 992, 384)
+(1024, 0, 1024, 384)
+(992, 384, 1024, 384)
+
+Lower right wall
+
+(992, 554, 1024, 554)
+(992, 554, 992, 736)
+(1024, 554, 1024, 736)
+(992, 736, 1024, 736)
+
+Left top transport
+
+(0, 96, 0, 384)
+
+left bottom transport
+
+(0, 544, 0, 736)
+
+Top transport area
+
+(768, 0, 768, 992)
+

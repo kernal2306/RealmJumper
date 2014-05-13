@@ -30,7 +30,7 @@ public class Dialog {
 		
 		while((line = br.readLine())!= null)
 		{
-			dialogArray[count] = line;
+			//dialogArray[count] = line;
 			count++;
 		}
 		

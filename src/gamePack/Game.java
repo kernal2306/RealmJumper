@@ -37,7 +37,6 @@ public class Game extends Canvas implements Runnable
 	private static Physics p;
 	private static Lady lady;
 	private static IntroLevel intro;
-	private static Collision col;
 	private static Editor editor;
 	private static Background back, back2;
 	private static Dialog dialog;
@@ -126,6 +125,7 @@ public class Game extends Canvas implements Runnable
 			Game.dialogShow = true;
 			System.out.println("DownCollision");
 		}
+
 		if(player.DownCollision(intro.platform1LTopBounds()))
 		{
 			player.y = intro.p1Lup - 73;
@@ -168,6 +168,7 @@ public class Game extends Canvas implements Runnable
 			System.out.println("DownCollision");
 		}
 		
+
 		if(player.DownCollision(intro.platform5TopBounds()))
 		{
 			player.y = intro.p5up - 73;
@@ -181,14 +182,14 @@ public class Game extends Canvas implements Runnable
 			System.out.println("door Collision");
 		}
 		
-		if(player.DownCollision(intro.platform4TopBounds()))
+
+		if(player.UpCollision(intro.platform1BottomBounds()))
 		{
-			player.y = intro.p4up - 73;
-			Game.dialogShow = true;
-			System.out.println("DownCollision");
+			player.jump = false;
+			player.down = true;
+			System.out.println("upCollision");
 		}
-		
-		//test if player is coliding with platforms bottom
+
 		
 		//player collision with lady
 		if(lady.DownCollision(intro.floorLine))
@@ -203,7 +204,11 @@ public class Game extends Canvas implements Runnable
 		else
 		editor.tick();
 		player.tick();
+
 		lady.tick();
+
+		//lady.tick();
+
 		intro.tick();
 		dialog.dialogDisplay(dialogCount);
 		}
@@ -228,7 +233,7 @@ public class Game extends Canvas implements Runnable
 		{
 			back2.render(g);
 		}
-		intro.render(g);
+		//intro.render(g);
 		//editor.render(g);
 		//dialog.render(g);
 		player.render(g);

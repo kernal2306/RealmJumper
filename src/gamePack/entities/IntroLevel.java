@@ -27,14 +27,19 @@ public class IntroLevel
 	public Line2D upLine = new Line2D.Float();
 	public Line2D downLine = new Line2D.Float();
 	public Line2D platform1Top = new Line2D.Float();
+
 	public Line2D platform0RTop = new Line2D.Float();
 	public Line2D platform0LTop = new Line2D.Float();
 	public Line2D platform1RTop = new Line2D.Float();
 	public Line2D platform1LTop = new Line2D.Float();
 	public Line2D platform2RTop = new Line2D.Float();
 	public Line2D platform2LTop = new Line2D.Float();
-	public Line2D platform3Top = new Line2D.Float();
+
 	public Line2D platform3LTop = new Line2D.Float();
+
+	public Line2D platform2Top = new Line2D.Float();
+	public Line2D platform3Top = new Line2D.Float();
+
 	public Line2D platform4Top = new Line2D.Float();
 	public Line2D platform5Top = new Line2D.Float();
 	public Line2D platform1Bottom = new Line2D.Float();
@@ -69,6 +74,7 @@ public class IntroLevel
 	public int p3Left;
 	public int p3Right;
 	
+
 	public int p1Lup = 482;
 	public int p1Ldown;
 	public int p1Lleft;
@@ -127,6 +133,7 @@ public class IntroLevel
 		door1Line.setLine(672, p5up-16, 768, p5up-16);
 		return door1Line;
 	}
+
 	
 //-----------------------------------------------------------	
 	
@@ -166,7 +173,19 @@ public class IntroLevel
 //----------------------------------------------------
 	
 	
+
 	public Line2D platform1TopBounds()
+	{
+		platform1Top.setLine(100, 500, 300, 500);
+		return platform1Top;
+	}
+	public Line2D platform2TopBounds()
+	{
+		platform2Top.setLine(100, 500, 300, 500);
+		return platform1Top;
+	}
+	public Line2D platform3TopBounds()
+
 	{
 		platform3Top.setLine(p1Left, p1up, p1Right, p1up);
 		return platform1Top;
@@ -181,11 +200,13 @@ public class IntroLevel
 		platform5Top.setLine(672, p5up, 768, p5up);
 		return platform5Top;
 	}
-	//public Line2D platform1BottomBounds()
-	//{
-		//platform1Bottom.setLine(p1Left, p1down, p1Right, p1down);
-		//return platform1Bottom;
-	//}
+
+	public Line2D platform1BottomBounds()
+	{
+		platform1Bottom.setLine(p1Left, p1down, p1Right, p1down);
+		return platform1Bottom;
+	}
+
 	public Line2D platform1LeftBounds()
 	{
 		return platform1Right;
@@ -198,18 +219,26 @@ public class IntroLevel
 	
 	public void render(Graphics g)
 	{
-		
+
 		int testLinex = 767;
 		int testLine2x = testLinex + 95;
+
 		g.drawImage(im.intro, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
 		//floor line 
 		g.drawLine(-100, floor, 1024, floor);
 		
 		//test box lines
+
 		g.drawLine(575, 353, 670, 353);
 		//g.drawLine(100, 560, 300, 560);
 		//g.drawLine(100, 500, 100, 560);
 		//g.drawLine(300, 500, 300, 560);
+
+		g.drawLine(100, 500, 300,500);
+		g.drawLine(100, 560, 300, 560);
+		g.drawLine(100, 500, 100, 560);
+		g.drawLine(300, 500, 300, 560);
+
 		
 		//platform lines at top of area one
 		g.drawLine(673, 97, 765, 97);
