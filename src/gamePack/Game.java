@@ -43,7 +43,8 @@ public class Game extends Canvas implements Runnable
 	private static Dialog dialog;
 	private KeyManager key;
 	static int dialogCount = 0;
-	int t = 0, setBack = 1;
+	int t = 0;
+	public int setBack = 1;
 	
 	public void init()
 	{
@@ -110,107 +111,11 @@ public class Game extends Canvas implements Runnable
 	
 	public void tick()
 	{
-
-		//test if player is colliding with the floor
-		if (player.DownCollision(intro.floorLine))
-		{
-			player.y = intro.floor - 73;
-			Game.dialogShow = true;
-			System.out.println("DownCollision");
-		}
-		
-		//test if player is coliding with platforms top
-		if(player.DownCollision(intro.platform1TopBounds()))
-		{
-			player.y = intro.p1up - 73;
-			Game.dialogShow = true;
-			System.out.println("DownCollision");
-		}
-
-		if(player.DownCollision(intro.platform1LTopBounds()))
-		{
-			player.y = intro.p1Lup - 73;
-			Game.dialogShow = true;
-			System.out.println("DownCollision");
-		}
-		
-		if(player.DownCollision(intro.platform2LTopBounds()))
-		{
-			player.y = intro.p2Lup - 73;
-			Game.dialogShow = true;
-			System.out.println("DownCollision");
-		}
-		
-		if(player.DownCollision(intro.platform0LTopBounds()))
-		{
-			player.y = intro.p0Lup - 73;
-			Game.dialogShow = true;
-			System.out.println("DownCollision");
-		}
-		
-		if(player.DownCollision(intro.platform2RTopBounds()))
-		{
-			player.y = intro.p2Lup - 73;
-			Game.dialogShow = true;
-			System.out.println("DownCollision");
-		}
-		
-		if(player.DownCollision(intro.platform0RTopBounds()))
-		{
-			player.y = intro.p0Lup - 73;
-			Game.dialogShow = true;
-			System.out.println("DownCollision");
-		}
-		
-		if(player.DownCollision(intro.platform1RTopBounds()))
-		{
-			player.y = intro.p1Lup - 73;
-			Game.dialogShow = true;
-			System.out.println("DownCollision");
-		}
-		
-
-		if(player.DownCollision(intro.platform5TopBounds()))
-		{
-			player.y = intro.p5up - 73;
-			Game.dialogShow = true;
-			System.out.println("DownCollision");
-		}
-		
-		if(player.DownCollision(intro.door()) && getPlayer().up == true)
-		{
-			setBack = 2;
-			System.out.println("door Collision");
-		}
-		
-
-		if(player.UpCollision(intro.platform1BottomBounds()))
-		{
-			player.jump = false;
-			player.down = true;
-			System.out.println("upCollision");
-		}
-
-		
-		//player collision with lady
-		if(lady.DownCollision(intro.floorLine))
-		{
-			lady.y = intro.floor - 72;
-		}
-		if(player.rightCollision(lady.leftBoundsBottom()))
-		{
-			player.x = lady.x;
-			System.out.println("collide");
-		}
-		else
+		intro.tick();
 		editor.tick();
 		player.tick();
-
 		lady.tick();
-
 		//lady.tick();
-
-		intro.tick();
 		dialog.dialogDisplay(dialogCount);
 		}
 		
