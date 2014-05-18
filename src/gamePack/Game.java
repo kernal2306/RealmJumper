@@ -37,7 +37,7 @@ public class Game extends Canvas implements Runnable
 	private static Player player;
 	private static Physics p;
 	private static Lady lady;
-	private static IntroLevel intro;
+	private IntroLevel intro;
 	private static Editor editor;
 	private static Background back, back2;
 	private static Dialog dialog;
@@ -111,9 +111,9 @@ public class Game extends Canvas implements Runnable
 	
 	public void tick()
 	{
+		
 		intro.tick();
 		editor.tick();
-		player.tick();
 		lady.tick();
 		//lady.tick();
 		dialog.dialogDisplay(dialogCount);

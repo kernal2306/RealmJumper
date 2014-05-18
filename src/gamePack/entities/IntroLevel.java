@@ -191,6 +191,7 @@ public class IntroLevel
 					System.out.println("collide");
 				}
 		drawLevel();
+		player.tick();
 	}
 	
 	public void drawLevel()
