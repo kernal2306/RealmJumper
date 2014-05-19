@@ -32,10 +32,9 @@ public class Game extends Canvas implements Runnable
 	public  Line2D downObjects[];
 	public  int count;	
 	private BufferedImage spriteSheet1;
-	private  BufferedImage background1, background2;
+	private BufferedImage background1, background2;
 	private ImageManager im;
-	private  Image bg;
-	private CurrLevel curr;
+	private Image bg;
 	private static  Player player;
 	private  Physics p;
 	private  Lady lady;
@@ -62,12 +61,12 @@ public class Game extends Canvas implements Runnable
 		intro = new IntroLevel(500, 700, im, ss);
 		player = new Player(50,200,im, ss);
 		lady = new Lady(800, 200, im, ss);
-		curr = new CurrLevel(0,0,im,ss);
 		editor = new Editor();
 		back = new Background(background1);
 		back2 = new Background(background2);
 		dialog = new Dialog();
 		key = new KeyManager();
+		//curr = intro;
 		dialog.load();
 		this.addKeyListener(new KeyManager());
 	}
@@ -133,14 +132,6 @@ public class Game extends Canvas implements Runnable
 		Graphics g = bs.getDrawGraphics();
 		//RENDER HERE
 		g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE);
-		if(setBack == 1)
-		{
-			back.render(g);
-		}
-		if(setBack == 2)
-		{
-			back2.render(g);
-		}
 		//intro.render(g);
 		//editor.render(g);
 		//dialog.render(g);
