@@ -1,5 +1,4 @@
 package gamePack.entities;
-
 import java.awt.Graphics;
 import java.awt.geom.Line2D;
 
@@ -43,6 +42,7 @@ public class IntroLevel
 	public Line2D platform1Right = new Line2D.Float();
 	public Line2D platform1Left = new Line2D.Float();
 	public Line2D door1Line = new Line2D.Float();
+	
 	
 	//bounds for floor
 	public int floor = 640;
@@ -90,22 +90,22 @@ public class IntroLevel
 	
 	public IntroLevel(int x, int y, ImageManager im, SpriteSheet ss)
 	{
-		this.x = x;
-		this.y = y;
 		this.im = im;
 		this.ss = ss;
-
+		player = new Player(50,200,im, ss);
+				
 	}
 	
 	public void tick()
 	{
+		
 		//test if player is colliding with the floor
-				if (player.DownCollision(floorBounds()))
-				{
-					player.y = floor - 73;
-					Game.dialogShow = true;
-					System.out.println("DownCollision");
-				}
+		if (player.DownCollision(floorBounds()))
+		{
+			player.y = floor - 73;
+			Game.dialogShow = true;
+			System.out.println("DownCollision");
+		}
 				
 				//test if player is colliding with platforms top
 				if(player.DownCollision(platform1TopBounds()))
@@ -119,42 +119,42 @@ public class IntroLevel
 				{
 					player.y = p1Lup - 73;
 					Game.dialogShow = true;
-					System.out.println("DownCollision");
+					//System.out.println("DownCollision");
 				}
 				
 				if(player.DownCollision(platform2LTopBounds()))
 				{
 					player.y = p2Lup - 73;
 					Game.dialogShow = true;
-					System.out.println("DownCollision");
+					//System.out.println("DownCollision");
 				}
 				
 				if(player.DownCollision(platform0LTopBounds()))
 				{
 					player.y = p0Lup - 73;
 					Game.dialogShow = true;
-					System.out.println("DownCollision");
+					//System.out.println("DownCollision");
 				}
 				
 				if(player.DownCollision(platform2RTopBounds()))
 				{
 					player.y =p2Lup - 73;
 					Game.dialogShow = true;
-					System.out.println("DownCollision");
+					//System.out.println("DownCollision");
 				}
 				
 				if(player.DownCollision(platform0RTopBounds()))
 				{
 					player.y = p0Lup - 73;
 					Game.dialogShow = true;
-					System.out.println("DownCollision");
+					//System.out.println("DownCollision");
 				}
 				
 				if(player.DownCollision(platform1RTopBounds()))
 				{
 					player.y = p1Lup - 73;
 					Game.dialogShow = true;
-					System.out.println("DownCollision");
+					//System.out.println("DownCollision");
 				}
 				
 
@@ -162,13 +162,13 @@ public class IntroLevel
 				{
 					player.y = p5up - 73;
 					Game.dialogShow = true;
-					System.out.println("DownCollision");
+					//System.out.println("DownCollision");
 				}
 				
 				if(player.DownCollision(door()) && Game.getPlayer().up == true)
 				{
 					game.setBack = 2;
-					System.out.println("door Collision");
+					//System.out.println("door Collision");
 				}
 				
 
@@ -178,20 +178,25 @@ public class IntroLevel
 					player.down = true;
 					System.out.println("upCollision");
 				}
+				else
+				{
+					player.tick();
+					drawLevel();
+					
+					
+				}
 
 				
 				//player collision with lady
-				if(lady.DownCollision(floorLine))
-				{
-					lady.y = floor - 72;
-				}
-				if(player.rightCollision(lady.leftBoundsBottom()))
-				{
-					player.x = lady.x;
-					System.out.println("collide");
-				}
-		drawLevel();
-		player.tick();
+			//	if(lady.DownCollision(floorLine))
+				//{
+				//	lady.y = floor - 72;
+				//}
+				//if(player.rightCollision(lady.leftBoundsBottom()))
+				//{
+				//	player.x = lady.x;
+				//	System.out.println("collide");
+				//}
 	}
 	
 	public void drawLevel()

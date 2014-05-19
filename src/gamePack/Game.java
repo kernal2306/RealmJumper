@@ -2,6 +2,7 @@
 package gamePack;
 
 import gamePack.Edit.Editor;
+import gamePack.entities.CurrLevel;
 import gamePack.entities.IntroLevel;
 import gamePack.entities.Lady;
 import gamePack.entities.Player;
@@ -25,22 +26,23 @@ public class Game extends Canvas implements Runnable
 	public static boolean running = false;
 	public Thread gameThread;
 
-	public static JFrame frame;
-	public static JLabel dialogBox;
-	public static boolean dialogShow = false;
-	public static Line2D downObjects[];
-	public static int count;	
+	public static  JFrame frame;
+	public static  JLabel dialogBox;
+	public static  boolean dialogShow = false;
+	public  Line2D downObjects[];
+	public  int count;	
 	private BufferedImage spriteSheet1;
-	private static BufferedImage background1, background2;
+	private  BufferedImage background1, background2;
 	private ImageManager im;
-	private static Image bg;
-	private static Player player;
-	private static Physics p;
-	private static Lady lady;
+	private  Image bg;
+	private CurrLevel curr;
+	private static  Player player;
+	private  Physics p;
+	private  Lady lady;
 	private IntroLevel intro;
-	private static Editor editor;
-	private static Background back, back2;
-	private static Dialog dialog;
+	private  Editor editor;
+	private  Background back, back2;
+	private  Dialog dialog;
 	private KeyManager key;
 	static int dialogCount = 0;
 	int t = 0;
@@ -60,6 +62,7 @@ public class Game extends Canvas implements Runnable
 		intro = new IntroLevel(500, 700, im, ss);
 		player = new Player(50,200,im, ss);
 		lady = new Lady(800, 200, im, ss);
+		curr = new CurrLevel(0,0,im,ss);
 		editor = new Editor();
 		back = new Background(background1);
 		back2 = new Background(background2);
@@ -111,13 +114,12 @@ public class Game extends Canvas implements Runnable
 	
 	public void tick()
 	{
-		
 		intro.tick();
-		editor.tick();
-		lady.tick();
+		//player.tick();
+		//editor.tick();
 		//lady.tick();
-		dialog.dialogDisplay(dialogCount);
-		}
+		//dialog.dialogDisplay(dialogCount);
+	}
 		
 	public void render()
 	{

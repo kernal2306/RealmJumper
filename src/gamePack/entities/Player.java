@@ -1,15 +1,11 @@
 package gamePack.entities;
 
 import java.awt.Graphics;
-import java.awt.Rectangle;
 import java.awt.geom.Line2D;
-import java.awt.geom.Line2D.Float;
-import java.awt.image.BufferedImage;
 import gamePack.Game;
 import gamePack.Physics;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
-import java.awt.Rectangle;
 
 
 public class Player 
@@ -162,7 +158,6 @@ public class Player
 	//player tick method
 	public void tick()
 	{
-		
 		
 		if (up)
 		{
