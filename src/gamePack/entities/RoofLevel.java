@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
+
 import gamePack.Game;
 import gamePack.Physics;
 import gamePack.gfx.ImageManager;
@@ -20,6 +21,7 @@ public class RoofLevel
 	private ImageManager im;
 	Physics p = new Physics();
 	private SpriteSheet ss;
+	private Player player;
 	Line2D introObjects[];
 	public Line2D floorLine = new Line2D.Float();
 	public Line2D rtLine = new Line2D.Float();
@@ -34,6 +36,31 @@ public class RoofLevel
 	public Line2D platform1Right = new Line2D.Float();
 	public Line2D platform1Left = new Line2D.Float();
 	public Line2D door1Line = new Line2D.Float();
+	
+	
+	public RoofLevel(int x, int y, ImageManager im, SpriteSheet ss)
+	{
+		this.im = im;
+		this.ss = ss;
+		player = new Player(50,200,im, ss);
+				
+	}
+	
+	
+	public void tick()
+	{
+		player.tick();
+	}
+	
+	public void drawLevel()
+	{
+		//floor
+		this.x += 32;
+		if(count <= 1024)
+		{
+		im.intro = ss.crop(1,2,32,32);
+		}
+	}
 	
 	public void render(Graphics g)
 	{
