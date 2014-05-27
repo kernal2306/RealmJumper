@@ -2,7 +2,6 @@
 package gamePack;
 
 import gamePack.Edit.Editor;
-import gamePack.entities.CurrLevel;
 import gamePack.entities.IntroLevel;
 import gamePack.entities.Lady;
 import gamePack.entities.Player;
@@ -10,9 +9,7 @@ import gamePack.gfx.Background;
 import gamePack.gfx.ImageLoader;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
-
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;

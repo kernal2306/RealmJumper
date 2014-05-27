@@ -179,8 +179,7 @@ public class IntroLevel
 		else
 		{
 			player.tick();
-			drawLevel();
-					
+			drawLevel();		
 		}
 	
 				//player collision with lady
