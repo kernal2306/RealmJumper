@@ -25,6 +25,7 @@ public class Player
 	Line2D rtLine = new Line2D.Float();
 	Line2D upLine = new Line2D.Float();
 	Line2D downLine = new Line2D.Float();
+	public Object player;
 
 	
 	public Player(int x, int y, ImageManager im, SpriteSheet ss)
