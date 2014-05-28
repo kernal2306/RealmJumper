@@ -158,19 +158,14 @@ public class Player
 	//player tick method
 	public void tick()
 	{
-		
 		if (up)
 		{
-
 			y -= SPEED;
-
 			
-
 		}
 		if (down)
 		{
 			y += SPEED;
-
 		}
 		if (lt)
 		{
@@ -188,7 +183,7 @@ public class Player
 			{
 				this.x = 0;
 			}
-			x -= SPEED * 1.5;
+			this.x -= SPEED * 1.5;
 		}
 		if(rt)
 		{
@@ -219,7 +214,7 @@ public class Player
 		}
 		else
 		{
-			y += (p.falling(y, x, t)) / 2;
+			this.y += (p.falling(y, x, t)) / 2;
 				//y += SPEED * 3;
 		}
 	}

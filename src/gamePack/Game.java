@@ -5,10 +5,12 @@ import gamePack.Edit.Editor;
 import gamePack.entities.IntroLevel;
 import gamePack.entities.Lady;
 import gamePack.entities.Player;
+import gamePack.entities.RoofLevel;
 import gamePack.gfx.Background;
 import gamePack.gfx.ImageLoader;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
+
 import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferStrategy;
@@ -36,6 +38,7 @@ public class Game extends Canvas implements Runnable
 	private  Physics p;
 	private  Lady lady;
 	private IntroLevel intro;
+	private RoofLevel  roof;
 	private  Editor editor;
 	private CurrentLevel curr;
 	private  Background back, back2;
@@ -57,6 +60,7 @@ public class Game extends Canvas implements Runnable
 		//set location of sprites on the sreen
 		//make floor
 		intro = new IntroLevel(500, 700, im, ss);
+		roof = new RoofLevel(500, 700, im, ss);
 		player = new Player(50,200,im, ss);
 		lady = new Lady(800, 200, im, ss);
 		editor = new Editor();
@@ -65,7 +69,6 @@ public class Game extends Canvas implements Runnable
 		curr = intro;
 		dialog = new Dialog();
 		key = new KeyManager();
-		
 		dialog.load();
 		this.addKeyListener(new KeyManager());
 	}
@@ -113,11 +116,6 @@ public class Game extends Canvas implements Runnable
 	public void tick()
 	{
 		curr.tick();
-		//intro.tick();
-		//player.tick();
-		//editor.tick();
-		//lady.tick();
-		//dialog.dialogDisplay(dialogCount);
 	}
 		
 	public void render()
@@ -132,9 +130,14 @@ public class Game extends Canvas implements Runnable
 		Graphics g = bs.getDrawGraphics();
 		//RENDER HERE
 		g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE);
-		//intro.render(g);
-		//editor.render(g);
-		//dialog.render(g);
+		if (curr == intro)
+		{
+			back.render(g);
+		}
+		if (curr == roof)
+		{
+			back2.render(g);
+		}
 		player.render(g);
 		lady.render(g);
 		

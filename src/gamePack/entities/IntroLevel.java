@@ -100,7 +100,7 @@ public class IntroLevel implements CurrentLevel
 	{
 		
 		//test if player is colliding with the floor
-		if (player.DownCollision(floorBounds()))
+		if (player.DownCollision(this.floorBounds()))
 		{
 			player.y = floor - 73;
 			Game.dialogShow = true;
@@ -108,70 +108,70 @@ public class IntroLevel implements CurrentLevel
 			
 		}
 		//test if player is colliding with platforms top
-		if(player.DownCollision(platform1TopBounds()))
+		if(player.DownCollision(this.platform1TopBounds()))
 		{
 			player.y = p1up - 73;
 			Game.dialogShow = true;
 			System.out.println("DownCollision");
 		}
 
-		if(player.DownCollision(platform1LTopBounds()))
+		if(player.DownCollision(this.platform1LTopBounds()))
 		{
 			player.y = p1Lup - 73;
 			Game.dialogShow = true;
 			//System.out.println("DownCollision");
 		}
 		
-		if(player.DownCollision(platform2LTopBounds()))
+		if(player.DownCollision(this.platform2LTopBounds()))
 		{
 			player.y = p2Lup - 73;
 			Game.dialogShow = true;
 			//System.out.println("DownCollision");
 		}
 		
-		if(player.DownCollision(platform0LTopBounds()))
+		if(player.DownCollision(this.platform0LTopBounds()))
 		{
 			player.y = p0Lup - 73;
 			Game.dialogShow = true;
 			//System.out.println("DownCollision");
 		}
 				
-		if(player.DownCollision(platform2RTopBounds()))
+		if(player.DownCollision(this.platform2RTopBounds()))
 		{
 			player.y =p2Lup - 73;
 			Game.dialogShow = true;
 			//System.out.println("DownCollision");
 		}
 		
-		if(player.DownCollision(platform0RTopBounds()))
+		if(player.DownCollision(this.platform0RTopBounds()))
 		{
 			player.y = p0Lup - 73;
 			Game.dialogShow = true;
 			//System.out.println("DownCollision");
 		}
 				
-		if(player.DownCollision(platform1RTopBounds()))
+		if(player.DownCollision(this.platform1RTopBounds()))
 		{
 			player.y = p1Lup - 73;
 			Game.dialogShow = true;
 			//System.out.println("DownCollision");
 		}
 				
-			if(player.DownCollision(platform5TopBounds()))
+			if(player.DownCollision(this.platform5TopBounds()))
 		{
 			player.y = p5up - 73;
 			Game.dialogShow = true;
 			//System.out.println("DownCollision");
 		}
 		
-		if(player.DownCollision(door()) && Game.getPlayer().up == true)
+		if(player.DownCollision(this.door()) && Game.getPlayer().up == true)
 		{
 			game.setBack = 2;
 			//System.out.println("door Collision");
 		}
 		
 
-		if(player.UpCollision(platform1BottomBounds()))
+		if(player.UpCollision(this.platform1BottomBounds()))
 		{
 			player.jump = false;
 			player.down = true;
@@ -179,8 +179,7 @@ public class IntroLevel implements CurrentLevel
 		}
 		else
 		{
-			player.tick();
-			drawLevel();		
+			player.tick();		
 		}
 	
 				//player collision with lady
@@ -195,15 +194,6 @@ public class IntroLevel implements CurrentLevel
 				//}
 	}
 	
-	public void drawLevel()
-	{
-		//floor
-		this.x += 32;
-		if(count <= 1024)
-		{
-		im.intro = ss.crop(1,2,32,32);
-		}
-	}
 	
 	public void floor()
 	{

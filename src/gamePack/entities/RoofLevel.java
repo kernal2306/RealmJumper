@@ -50,17 +50,7 @@ public class RoofLevel implements CurrentLevel
 	
 	public void tick()
 	{
-		player.tick();
-	}
-	
-	public void drawLevel()
-	{
-		//floor
-		this.x += 32;
-		if(count <= 1024)
-		{
-		im.intro = ss.crop(1,2,32,32);
-		}
+		
 	}
 	
 	public void render(Graphics g)
