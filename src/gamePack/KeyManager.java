@@ -1,20 +1,31 @@
 package gamePack;
 import gamePack.Edit.Editor;
+import gamePack.entities.IntroLevel;
+import gamePack.entities.Lady;
+import gamePack.entities.Player;
+import gamePack.entities.RoofLevel;
+import gamePack.gfx.Background;
+import gamePack.gfx.ImageManager;
 
 import java.awt.BorderLayout;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
+
 
 public class KeyManager implements KeyListener
 {
-
 	public boolean editMode = false;
 	Dialog dialog = new Dialog();
 	int kmCount =0;
 	int begin, end;
 	
-	
+	public KeyManager()
+	{
+		
+	}
 	
 	public void keyPressed(KeyEvent e) 
 	{

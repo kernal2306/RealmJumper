@@ -133,19 +133,20 @@ public class Game extends Canvas implements Runnable
 		if (curr == intro)
 		{
 			back.render(g);
+			player.render(g);
+			lady.render(g);
 		}
 		if (curr == roof)
 		{
 			back2.render(g);
+			player.render(g);
+			lady.render(g);
 		}
-		player.render(g);
-		lady.render(g);
 		
 		//END RENDER
 		bs.show();
 		g.dispose();
 	}
-	
 	
 	public static void main(String[] args)
 	{
@@ -156,7 +157,6 @@ public class Game extends Canvas implements Runnable
 		frame = new JFrame("Realm Jumper");
 		frame.setBounds(400, 100, WIDTH * SCALE, HEIGHT * SCALE);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 		frame.setResizable(false);
 		frame.add(game);
 		frame.setVisible(true);
