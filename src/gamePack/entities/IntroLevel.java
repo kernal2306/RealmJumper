@@ -2,12 +2,13 @@ package gamePack.entities;
 import java.awt.Graphics;
 import java.awt.geom.Line2D;
 
+import gamePack.CurrentLevel;
 import gamePack.Game;
 import gamePack.Physics;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
 
-public class IntroLevel 
+public class IntroLevel implements CurrentLevel
 {
 	public int x;
 	public int y;

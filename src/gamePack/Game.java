@@ -37,6 +37,7 @@ public class Game extends Canvas implements Runnable
 	private  Lady lady;
 	private IntroLevel intro;
 	private  Editor editor;
+	private CurrentLevel curr;
 	private  Background back, back2;
 	private  Dialog dialog;
 	private KeyManager key;
@@ -61,9 +62,10 @@ public class Game extends Canvas implements Runnable
 		editor = new Editor();
 		back = new Background(background1);
 		back2 = new Background(background2);
+		curr = intro;
 		dialog = new Dialog();
 		key = new KeyManager();
-		//curr = intro;
+		
 		dialog.load();
 		this.addKeyListener(new KeyManager());
 	}
@@ -110,7 +112,8 @@ public class Game extends Canvas implements Runnable
 	
 	public void tick()
 	{
-		intro.tick();
+		curr.tick();
+		//intro.tick();
 		//player.tick();
 		//editor.tick();
 		//lady.tick();

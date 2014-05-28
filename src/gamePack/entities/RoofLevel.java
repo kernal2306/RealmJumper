@@ -5,12 +5,13 @@ import java.awt.Rectangle;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
 
+import gamePack.CurrentLevel;
 import gamePack.Game;
 import gamePack.Physics;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
 
-public class RoofLevel
+public class RoofLevel implements CurrentLevel
 {
 	public int x;
 	public int y;
@@ -66,4 +67,5 @@ public class RoofLevel
 	{
 		g.drawImage(im.roof, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
 	}
+
 }
