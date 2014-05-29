@@ -170,18 +170,13 @@ public class IntroLevel implements CurrentLevel
 			//System.out.println("door Collision");
 		}
 		
-
 		if(player.UpCollision(this.platform1BottomBounds()))
 		{
 			player.jump = false;
 			player.down = true;
 			System.out.println("upCollision");
 		}
-		else
-		{
-			player.tick();		
-		}
-	
+		player.tick();
 				//player collision with lady
 			//	if(lady.DownCollision(floorLine))
 				//{
