@@ -216,7 +216,7 @@ public class Player
 		else
 		{
 			this.y += (p.falling(y, x, t)) / 2;
-				//y += SPEED * 3;
+				y += SPEED * 3;
 		}
 	}
 	
