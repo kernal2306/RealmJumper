@@ -57,7 +57,7 @@ public class RoofLevel implements CurrentLevel
 	
 	public void tick()
 	{
-		
+		player.tick();
 	}
 	
 	//-----------------------------------------------------------	

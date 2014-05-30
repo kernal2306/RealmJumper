@@ -100,9 +100,9 @@ public class IntroLevel implements CurrentLevel
 	{
 		
 		//test if player is colliding with the floor
-		if (player.y >= this.floorBounds().getY1())
+		if (player.y >= this.floorBounds().getY1() - 73)
 		{
-			player.y = floor;
+			player.y = floor -73;
 			Game.dialogShow = true;
 			System.out.println("DownCollision");
 			
