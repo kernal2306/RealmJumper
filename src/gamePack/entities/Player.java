@@ -1,5 +1,4 @@
 package gamePack.entities;
-
 import java.awt.Graphics;
 import java.awt.geom.Line2D;
 import gamePack.Game;
@@ -166,7 +165,7 @@ public class Player
 		}
 		if (down)
 		{
-			y += SPEED;
+			//y += SPEED;
 		}
 		if (lt)
 		{

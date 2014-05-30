@@ -39,11 +39,11 @@ public class RoofLevel implements CurrentLevel
 	public Line2D door1Line = new Line2D.Float();
 	
 	
-	public RoofLevel(int x, int y, ImageManager im, SpriteSheet ss)
+	public RoofLevel(int x, int y, ImageManager im, SpriteSheet ss, Player plyr)
 	{
 		this.im = im;
 		this.ss = ss;
-		player = new Player(50,200,im, ss);
+		player = plyr;
 				
 	}
 	

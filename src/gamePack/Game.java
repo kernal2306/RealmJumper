@@ -10,7 +10,6 @@ import gamePack.gfx.Background;
 import gamePack.gfx.ImageLoader;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
-
 import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferStrategy;
@@ -34,7 +33,7 @@ public class Game extends Canvas implements Runnable
 	private BufferedImage background1, background2;
 	private ImageManager im;
 	private Image bg;
-	private static  Player player;
+	public static Player player;
 	private  Physics p;
 	private  Lady lady;
 	private IntroLevel intro;
@@ -59,9 +58,11 @@ public class Game extends Canvas implements Runnable
 		
 		//set location of sprites on the sreen
 		//make floor
-		intro = new IntroLevel(500, 700, im, ss);
-		roof = new RoofLevel(500, 700, im, ss);
+		
+		
 		player = new Player(50,200,im, ss);
+		intro = new IntroLevel(500, 700, im, ss, player);
+		roof = new RoofLevel(500, 700, im, ss, player);
 		lady = new Lady(800, 200, im, ss);
 		editor = new Editor();
 		back = new Background(background1);
@@ -70,7 +71,7 @@ public class Game extends Canvas implements Runnable
 		dialog = new Dialog();
 		key = new KeyManager();
 		dialog.load();
-		this.addKeyListener(new KeyManager());
+		this.addKeyListener(key);
 	}
 	
 	public synchronized void start()
@@ -142,6 +143,7 @@ public class Game extends Canvas implements Runnable
 			player.render(g);
 			lady.render(g);
 		}
+		
 		
 		//END RENDER
 		bs.show();

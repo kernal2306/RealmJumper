@@ -21,6 +21,7 @@ public class KeyManager implements KeyListener
 	Dialog dialog = new Dialog();
 	int kmCount =0;
 	int begin, end;
+	boolean key_Down = false;
 	
 	public KeyManager()
 	{
@@ -48,7 +49,13 @@ public class KeyManager implements KeyListener
 		}
 		if(e.getKeyCode() == KeyEvent.VK_SPACE)
 		{
+			if(key_Down == false){
 			Game.getPlayer().jump = true;
+			key_Down = true;
+			}else{
+				Game.getPlayer().jump = false;	
+			}
+			
 		}
 		if(e.getKeyCode() == KeyEvent.VK_BACK_SLASH)
 		{
@@ -89,6 +96,7 @@ public class KeyManager implements KeyListener
 			}
 		}
 	}
+	
 
 	public void keyReleased(KeyEvent e) 
 	{
@@ -111,6 +119,7 @@ public class KeyManager implements KeyListener
 		if(e.getKeyCode() == KeyEvent.VK_SPACE)
 		{
 			Game.getPlayer().jump = false;
+			key_Down = false;
 		}
 	}
 

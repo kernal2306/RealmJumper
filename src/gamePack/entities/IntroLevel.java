@@ -89,20 +89,20 @@ public class IntroLevel implements CurrentLevel
 	public int p0Lright;	
 	
 	
-	public IntroLevel(int x, int y, ImageManager im, SpriteSheet ss)
+	public IntroLevel(int x, int y, ImageManager im, SpriteSheet ss, Player plyr)
 	{
 		this.im = im;
 		this.ss = ss;
-		player = new Player(50,200,im, ss);			
+		player = plyr;			
 	}
 	
 	public void tick()
 	{
 		
 		//test if player is colliding with the floor
-		if (player.DownCollision(this.floorBounds()))
+		if (player.y >= this.floorBounds().getY1())
 		{
-			player.y = floor - 73;
+			player.y = floor;
 			Game.dialogShow = true;
 			System.out.println("DownCollision");
 			
@@ -166,16 +166,9 @@ public class IntroLevel implements CurrentLevel
 		
 		if(player.DownCollision(this.door()) && Game.getPlayer().up == true)
 		{
-			game.setBack = 2;
-			//System.out.println("door Collision");
-		}
+			
+	}
 		
-		if(player.UpCollision(this.platform1BottomBounds()))
-		{
-			player.jump = false;
-			player.down = true;
-			System.out.println("upCollision");
-		}
 		player.tick();
 				//player collision with lady
 			//	if(lady.DownCollision(floorLine))
