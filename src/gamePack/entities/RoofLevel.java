@@ -29,6 +29,13 @@ public class RoofLevel implements CurrentLevel
 	public Line2D upLine = new Line2D.Float();
 	public Line2D downLine = new Line2D.Float();
 	public Line2D platform1Top = new Line2D.Float();
+	public Line2D platform0RTop = new Line2D.Float();
+	public Line2D platform0LTop = new Line2D.Float();
+	public Line2D platform1RTop = new Line2D.Float();
+	public Line2D platform1LTop = new Line2D.Float();
+	public Line2D platform2RTop = new Line2D.Float();
+	public Line2D platform2LTop = new Line2D.Float();
+	public Line2D platform3LTop = new Line2D.Float();
 	public Line2D platform2Top = new Line2D.Float();
 	public Line2D platform3Top = new Line2D.Float();
 	public Line2D platform4Top = new Line2D.Float();
@@ -52,6 +59,44 @@ public class RoofLevel implements CurrentLevel
 	{
 		
 	}
+	
+	//-----------------------------------------------------------	
+	
+		//left side intro level collision platforms
+		public Line2D platform1LTopBounds()
+		{
+			platform1LTop.setLine(258, 482, 350,482);
+			return platform1LTop;
+		}
+		public Line2D platform2LTopBounds()
+		{
+			platform2LTop.setLine(350, 353, 443,353);
+			return platform2LTop;
+		}
+		public Line2D platform0LTopBounds()
+		{
+			platform0LTop.setLine(500, 610, 255,610);
+			return platform1LTop;
+		}
+		
+		//Right side intro level collision platforms
+		public Line2D platform1RTopBounds()
+		{
+			platform1LTop.setLine(258, 482, 350,482);
+			return platform1LTop;
+		}
+		public Line2D platform2RTopBounds()
+		{
+			platform2RTop.setLine(575, 353, 670, 353);
+			return platform2RTop;
+		}
+		public Line2D platform0RTopBounds()
+		{
+			platform0RTop.setLine(767, 610, 865, 610);
+			return platform0RTop;
+		}
+	//----------------------------------------------------
+
 	
 	public void render(Graphics g)
 	{
