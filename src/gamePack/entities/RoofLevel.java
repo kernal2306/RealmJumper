@@ -62,39 +62,34 @@ public class RoofLevel implements CurrentLevel
 	
 	//-----------------------------------------------------------	
 	
-		//left side intro level collision platforms
+		//area2 rooftop platforms
 		public Line2D platform1LTopBounds()
 		{
-			platform1LTop.setLine(258, 482, 350,482);
+			platform1LTop.setLine(0, 96, 384, 384);
 			return platform1LTop;
 		}
 		public Line2D platform2LTopBounds()
 		{
-			platform2LTop.setLine(350, 353, 443,353);
+			platform2LTop.setLine(256, 736, 256, 256);
 			return platform2LTop;
 		}
 		public Line2D platform0LTopBounds()
 		{
-			platform0LTop.setLine(500, 610, 255,610);
+			platform0LTop.setLine(736, 832, 448, 448);
 			return platform1LTop;
 		}
 		
-		//Right side intro level collision platforms
 		public Line2D platform1RTopBounds()
 		{
-			platform1LTop.setLine(258, 482, 350,482);
+			platform1LTop.setLine(928, 1024, 288, 288);
 			return platform1LTop;
 		}
 		public Line2D platform2RTopBounds()
 		{
-			platform2RTop.setLine(575, 353, 670, 353);
+			platform2RTop.setLine(960, 1024, 608, 608);
 			return platform2RTop;
 		}
-		public Line2D platform0RTopBounds()
-		{
-			platform0RTop.setLine(767, 610, 865, 610);
-			return platform0RTop;
-		}
+		
 	//----------------------------------------------------
 
 	
