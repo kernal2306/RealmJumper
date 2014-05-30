@@ -19,6 +19,7 @@ public class IntroLevel implements CurrentLevel
 	private ImageManager im;
 	Physics p = new Physics();
 	private SpriteSheet ss;
+	private RoofLevel roof;
 	private Game game;
 	private Player player;
 	private Lady lady;
@@ -93,7 +94,8 @@ public class IntroLevel implements CurrentLevel
 	{
 		this.im = im;
 		this.ss = ss;
-		player = plyr;			
+		player = plyr;	
+		roof = new RoofLevel(500, 700, im, ss, player);
 	}
 	
 	public void tick()
@@ -166,8 +168,8 @@ public class IntroLevel implements CurrentLevel
 		
 		if(player.DownCollision(this.door()) && Game.getPlayer().up == true)
 		{
-			
-	}
+			game.curr = roof;
+		}
 		
 		player.tick();
 				//player collision with lady

@@ -37,9 +37,9 @@ public class Game extends Canvas implements Runnable
 	private  Physics p;
 	private  Lady lady;
 	private IntroLevel intro;
-	private RoofLevel  roof;
+	public RoofLevel  roof;
 	private  Editor editor;
-	private CurrentLevel curr;
+	public CurrentLevel curr;
 	private  Background back, back2;
 	private  Dialog dialog;
 	private KeyManager key;
