@@ -44,7 +44,12 @@ public class RoofLevel implements CurrentLevel
 	public Line2D platform1Right = new Line2D.Float();
 	public Line2D platform1Left = new Line2D.Float();
 	public Line2D door1Line = new Line2D.Float();
+	public Line2D enemyRight = new Line2D.Float();
+	public Line2D enemyLeft= new Line2D.Float();
 	
+
+	//bounds for floor
+	public int floor = 700;
 	
 	public RoofLevel(int x, int y, ImageManager im, SpriteSheet ss, Player plyr)
 	{
@@ -54,11 +59,51 @@ public class RoofLevel implements CurrentLevel
 				
 	}
 	
-	
 	public void tick()
 	{
+		
+		if (player.y >= this.floorBounds().getY1() - 73)
+		{
+			player.y = floor -73;
+			Game.dialogShow = true;
+			System.out.println("DownCollision");
+			
+		}
+		if(player.LeftCollision(this.enemyRightBounds()))
+		{
+			player.x = (int) (enemyRight.getX1() - 73);
+			Game.dialogShow = true;
+			System.out.println("Enemy Collision");
+		}
+
+		if(player.rightCollision(this.enemyLeftBounds()))
+		{
+			player.x =  (int)(enemyLeft.getX1() - 73);
+			Game.dialogShow = true;
+			System.out.println("Enemy Collision");
+		}
+		
+		if(player.DownCollision(this.platform2TopBounds()))
+		{
+			player.y = 256;
+			Game.dialogShow = true;
+			System.out.println("Down Collision");
+		}
 		player.tick();
 	}
+	
+	public void floor()
+	{
+		im.intro = ss.crop(0, 0, 32, 32);
+	}
+	
+	//create lines for collision detection on intro level
+	public Line2D floorBounds()
+	{
+		floorLine.setLine(-100, floor, 1024, floor);
+		return floorLine;
+	}
+	
 	
 	//-----------------------------------------------------------	
 	
@@ -68,10 +113,10 @@ public class RoofLevel implements CurrentLevel
 			platform1LTop.setLine(0, 96, 384, 384);
 			return platform1LTop;
 		}
-		public Line2D platform2LTopBounds()
+		public Line2D platform2TopBounds()
 		{
-			platform2LTop.setLine(256, 736, 256, 256);
-			return platform2LTop;
+			platform2LTop.setLine(256, 256,736, 256);
+			return platform2Top;
 		}
 		public Line2D platform0LTopBounds()
 		{
@@ -88,6 +133,16 @@ public class RoofLevel implements CurrentLevel
 		{
 			platform2RTop.setLine(960, 1024, 608, 608);
 			return platform2RTop;
+		}
+		public Line2D enemyRightBounds()
+		{
+			platform1LTop.setLine(512,512,320,736);
+			return enemyRight;
+		}
+		public Line2D enemyLeftBounds()
+		{
+			platform2RTop.setLine(960, 1024, 608, 608);
+			return enemyLeft;
 		}
 		
 	//----------------------------------------------------

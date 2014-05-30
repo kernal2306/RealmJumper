@@ -135,13 +135,13 @@ public class Game extends Canvas implements Runnable
 		{
 			back.render(g);
 			player.render(g);
-			lady.render(g);
+			//lady.render(g);
 		}
 		if (curr == roof)
 		{
 			back2.render(g);
 			player.render(g);
-			lady.render(g);
+			//lady.render(g);
 		}
 		
 		
