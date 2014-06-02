@@ -206,33 +206,29 @@ public class Player
 		if (jump)
 		{
 			y -= (p.Jump(y, x, count));
+		}
 			
-			if(count > 1)
-			{
-				//y += (p.falling(y, x, t)) / 2;
-			}
+		if(jump && rt)
+		{
+			y -= (p.Jump(y, x, count)) / 5;
+			x += SPEED * 2;
+		}
+		if(jump && lt)
+		{
+			y -= (p.Jump(y, x, count)) / 5;
+			x -= SPEED * 2;
 		}
 		else
 		{
-			this.y += (p.falling(y, x, t)) / 2;
+			this.y += (p.falling(y, x, t)) / 3.5;
 				y += SPEED * 3;
 		}
+		
 	}
 	
 	public void render(Graphics g)
 	{
 		g.drawImage(im.player, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
-		//top line
-		g.drawLine(x+1, y-1, x+60, y-1);
-		
-		//bottom Line
-		g.drawLine(x+1, y+63, x+60, y+63);
-		
-		//right Line
-		g.drawLine(x+60, y-1, x+60, y+63);
-		
-		//Left Line
-		g.drawLine(x, y-1, x, y+63);
 	}
 	
 	public void stop()

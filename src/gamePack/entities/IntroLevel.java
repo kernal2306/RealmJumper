@@ -93,7 +93,6 @@ public class IntroLevel implements CurrentLevel
 		this.im = im;
 		this.ss = ss;
 		player = plyr;	
-		Game.roof = new RoofLevel(500, 700, im, ss, player);
 	}
 	
 	public void tick()
@@ -170,16 +169,6 @@ public class IntroLevel implements CurrentLevel
 		}
 		
 		player.tick();
-				//player collision with lady
-			//	if(lady.DownCollision(floorLine))
-				//{
-				//	lady.y = floor - 72;
-				//}
-				//if(player.rightCollision(lady.leftBoundsBottom()))
-				//{
-				//	player.x = lady.x;
-				//	System.out.println("collide");
-				//}
 	}
 	
 	
@@ -290,7 +279,8 @@ public class IntroLevel implements CurrentLevel
 		int testLinex = 767;
 		int testLine2x = testLinex + 95;
 
-		g.drawImage(im.intro, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
+		g.drawImage(im.intro, x, y, 32*Game.SCALE, 32*Game.SCALE, null);getClass();
+		
 		//floor line 
 		g.drawLine(-100, floor, 1024, floor);
 		
