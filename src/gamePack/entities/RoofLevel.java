@@ -69,14 +69,14 @@ public class RoofLevel implements CurrentLevel
 			System.out.println("DownCollision");
 			
 		}
-		if(player.LeftCollision(this.enemyRightBounds()))
+		if(player.LeftCollision(enemyRightBounds()))
 		{
 			player.x = (int) (enemyRight.getX1() - 73);
 			Game.dialogShow = true;
 			System.out.println("Enemy Collision");
 		}
 
-		if(player.rightCollision(this.enemyLeftBounds()))
+		if(player.rightCollision(enemyLeftBounds()))
 		{
 			player.x =  (int)(enemyLeft.getX1() - 73);
 			Game.dialogShow = true;
@@ -115,7 +115,7 @@ public class RoofLevel implements CurrentLevel
 		}
 		public Line2D platform2TopBounds()
 		{
-			platform2LTop.setLine(256, 256,736, 256);
+			platform2Top.setLine(256, 256,736, 256);
 			return platform2Top;
 		}
 		public Line2D platform0LTopBounds()

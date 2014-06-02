@@ -238,7 +238,7 @@ public class IntroLevel implements CurrentLevel
 	public Line2D platform2TopBounds()
 	{
 		platform2Top.setLine(100, 500, 300, 500);
-		return platform1Top;
+		return platform2Top;
 	}
 	public Line2D platform3TopBounds()
 
