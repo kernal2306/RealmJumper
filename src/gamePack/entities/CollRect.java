@@ -16,9 +16,9 @@ public class CollRect
 		this.y = startY;
 	}
 	
-	public Line2D top()
+	/*public Line2D top()
 	{
 		
-	}
+	}*/
 	
 }

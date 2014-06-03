@@ -66,7 +66,7 @@ public class RoofLevel implements CurrentLevel
 		{
 			player.y = floor -73;
 			Game.dialogShow = true;
-			System.out.println("DownCollision");
+			//System.out.println("DownCollision");
 			
 		}
 		if(player.LeftCollision(enemyRightBounds()))
@@ -87,7 +87,7 @@ public class RoofLevel implements CurrentLevel
 		{
 			player.y = 256;
 			Game.dialogShow = true;
-			System.out.println("Down Collision");
+			//System.out.println("Down Collision");
 		}
 		player.tick();
 	}
