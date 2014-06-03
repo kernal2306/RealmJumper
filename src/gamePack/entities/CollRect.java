@@ -1,5 +1,7 @@
 package gamePack.entities;
 
+import java.awt.geom.Line2D;
+
 public class CollRect 
 {
 	public int width = 0;
@@ -14,6 +16,9 @@ public class CollRect
 		this.y = startY;
 	}
 	
-	
+	public Line2D top()
+	{
+		
+	}
 	
 }
