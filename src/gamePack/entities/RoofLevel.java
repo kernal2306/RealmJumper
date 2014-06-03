@@ -21,31 +21,33 @@ public class RoofLevel implements CurrentLevel
 	int tickCount = 1;
 	private ImageManager im;
 	Physics p = new Physics();
+	CollRect cRect;
 	private SpriteSheet ss;
 	private Player player;
-	Line2D introObjects[];
+	Line2D roofObjects[];
+	
 	public Line2D floorLine = new Line2D.Float();
-	public Line2D rtLine = new Line2D.Float();
-	public Line2D upLine = new Line2D.Float();
-	public Line2D downLine = new Line2D.Float();
-	public Line2D platform1Top = new Line2D.Float();
-	public Line2D platform0RTop = new Line2D.Float();
-	public Line2D platform0LTop = new Line2D.Float();
-	public Line2D platform1RTop = new Line2D.Float();
-	public Line2D platform1LTop = new Line2D.Float();
-	public Line2D platform2RTop = new Line2D.Float();
-	public Line2D platform2LTop = new Line2D.Float();
-	public Line2D platform3LTop = new Line2D.Float();
-	public Line2D platform2Top = new Line2D.Float();
-	public Line2D platform3Top = new Line2D.Float();
-	public Line2D platform4Top = new Line2D.Float();
-	public Line2D platform5Top = new Line2D.Float();
-	public Line2D platform1Bottom = new Line2D.Float();
-	public Line2D platform1Right = new Line2D.Float();
-	public Line2D platform1Left = new Line2D.Float();
-	public Line2D door1Line = new Line2D.Float();
-	public Line2D enemyRight = new Line2D.Float();
-	public Line2D enemyLeft= new Line2D.Float();
+//	public Line2D rtLine = new Line2D.Float();
+//	public Line2D upLine = new Line2D.Float();
+//	public Line2D downLine = new Line2D.Float();
+//	public Line2D platform1Top = new Line2D.Float();
+//	public Line2D platform0RTop = new Line2D.Float();
+//	public Line2D platform0LTop = new Line2D.Float();
+//	public Line2D platform1RTop = new Line2D.Float();
+//	public Line2D platform1LTop = new Line2D.Float();
+//	public Line2D platform2RTop = new Line2D.Float();
+//	public Line2D platform2LTop = new Line2D.Float();
+//	public Line2D platform3LTop = new Line2D.Float();
+//	public Line2D platform2Top = new Line2D.Float();
+//	public Line2D platform3Top = new Line2D.Float();
+//	public Line2D platform4Top = new Line2D.Float();
+//	public Line2D platform5Top = new Line2D.Float();
+//	public Line2D platform1Bottom = new Line2D.Float();
+//	public Line2D platform1Right = new Line2D.Float();
+//	public Line2D platform1Left = new Line2D.Float();
+//	public Line2D door1Line = new Line2D.Float();
+//	public Line2D enemyRight = new Line2D.Float();
+//	public Line2D enemyLeft= new Line2D.Float();
 	
 
 	//bounds for floor
@@ -69,26 +71,27 @@ public class RoofLevel implements CurrentLevel
 			System.out.println("DownCollision");
 			
 		}
-		if(player.LeftCollision(enemyRightBounds()))
-		{
-			player.x = (int) (enemyRight.getX1() - 73);
-			Game.dialogShow = true;
-			System.out.println("Enemy Collision");
-		}
-
-		if(player.rightCollision(enemyLeftBounds()))
-		{
-			player.x =  (int)(enemyLeft.getX1() - 73);
-			Game.dialogShow = true;
-			System.out.println("Enemy Collision");
-		}
 		
-		if(player.DownCollision(this.platform2TopBounds()))
-		{
-			player.y = 256;
-			Game.dialogShow = true;
-			System.out.println("Down Collision");
-		}
+//		if(player.LeftCollision(enemyRightBounds()))
+//		{
+//			player.x = (int) (enemyRight.getX1() - 73);
+//			Game.dialogShow = true;
+//			System.out.println("Enemy Collision");
+//		}
+//
+//		if(player.rightCollision(enemyLeftBounds()))
+//		{
+//			player.x =  (int)(enemyLeft.getX1() - 73);
+//			Game.dialogShow = true;
+//			System.out.println("Enemy Collision");
+//		}
+//		
+//		if(player.DownCollision(this.platform2TopBounds()))
+//		{
+//			player.y = 256;
+//			Game.dialogShow = true;
+//			System.out.println("Down Collision");
+//		}
 		player.tick();
 	}
 	
@@ -107,43 +110,43 @@ public class RoofLevel implements CurrentLevel
 	
 	//-----------------------------------------------------------	
 	
-		//area2 rooftop platforms
-		public Line2D platform1LTopBounds()
-		{
-			platform1LTop.setLine(0, 96, 384, 384);
-			return platform1LTop;
-		}
-		public Line2D platform2TopBounds()
-		{
-			platform2Top.setLine(256, 256,736, 256);
-			return platform2Top;
-		}
-		public Line2D platform0LTopBounds()
-		{
-			platform0LTop.setLine(736, 832, 448, 448);
-			return platform1LTop;
-		}
-		
-		public Line2D platform1RTopBounds()
-		{
-			platform1LTop.setLine(928, 1024, 288, 288);
-			return platform1LTop;
-		}
-		public Line2D platform2RTopBounds()
-		{
-			platform2RTop.setLine(960, 1024, 608, 608);
-			return platform2RTop;
-		}
-		public Line2D enemyRightBounds()
-		{
-			platform1LTop.setLine(512,512,320,736);
-			return enemyRight;
-		}
-		public Line2D enemyLeftBounds()
-		{
-			platform2RTop.setLine(960, 1024, 608, 608);
-			return enemyLeft;
-		}
+//		//area2 rooftop platforms
+//		public Line2D platform1LTopBounds()
+//		{
+//			platform1LTop.setLine(0, 96, 384, 384);
+//			return platform1LTop;
+//		}
+//		public Line2D platform2TopBounds()
+//		{
+//			platform2Top.setLine(256, 256,736, 256);
+//			return platform2Top;
+//		}
+//		public Line2D platform0LTopBounds()
+//		{
+//			platform0LTop.setLine(736, 832, 448, 448);
+//			return platform1LTop;
+//		}
+//		
+//		public Line2D platform1RTopBounds()
+//		{
+//			platform1LTop.setLine(928, 1024, 288, 288);
+//			return platform1LTop;
+//		}
+//		public Line2D platform2RTopBounds()
+//		{
+//			platform2RTop.setLine(960, 1024, 608, 608);
+//			return platform2RTop;
+//		}
+//		public Line2D enemyRightBounds()
+//		{
+//			platform1LTop.setLine(512,512,320,736);
+//			return enemyRight;
+//		}
+//		public Line2D enemyLeftBounds()
+//		{
+//			platform2RTop.setLine(960, 1024, 608, 608);
+//			return enemyLeft;
+//		}
 		
 	//----------------------------------------------------
 
