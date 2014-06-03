@@ -22,25 +22,25 @@ public class CollRect
 	
 	public Line2D top()
 	{
-		top.setLine(0, 0, 0, 0);
+		top.setLine(x, y, x + width, y);
 		return top;
 	}
 	
 	public Line2D bottom()
 	{
-		bottom.setLine(0, 0, 0, 0);
+		bottom.setLine(x, y + height, x + width, y + height);
 		return bottom;
 	}
 	
 	public Line2D left()
 	{
-		top.setLine(0, 0, 0, 0);
+		left.setLine(x, y, x, y + height);
 		return left;
 	}
 	
 	public Line2D right()
 	{
-		top.setLine(0, 0, 0, 0);
+		right.setLine(x + width, y, x + width, y + height);
 		return right;
 	}
 	
