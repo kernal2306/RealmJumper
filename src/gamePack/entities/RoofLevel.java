@@ -65,7 +65,7 @@ public class RoofLevel implements CurrentLevel
 		if (player.y >= this.floorBounds().getY1() - 73)
 		{
 			player.y = floor -73;
-			Game.dialogShow = true;
+			//Game.dialogShow = true;
 			//System.out.println("DownCollision");
 			
 		}
@@ -86,7 +86,7 @@ public class RoofLevel implements CurrentLevel
 		if(player.DownCollision(this.platform2TopBounds()))
 		{
 			player.y = 256;
-			Game.dialogShow = true;
+			//Game.dialogShow = true;
 			//System.out.println("Down Collision");
 		}
 		player.tick();
