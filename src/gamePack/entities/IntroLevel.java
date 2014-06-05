@@ -1,6 +1,11 @@
 package gamePack.entities;
 import java.awt.Graphics;
 import java.awt.geom.Line2D;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
 
 import gamePack.CurrentLevel;
 import gamePack.Game;
@@ -41,7 +46,9 @@ public class IntroLevel implements CurrentLevel
 	public Line2D platform1Bottom = new Line2D.Float();
 	public Line2D platform1Right = new Line2D.Float();
 	public Line2D platform1Left = new Line2D.Float();
-	public Line2D door1Line = new Line2D.Float();
+	public Line2D door1Line = new Line2D.Float();  
+	
+	Scanner scanner = new Scanner(new File("tall.txt"));
 	
 	
 	//bounds for floor
