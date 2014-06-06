@@ -3,17 +3,19 @@ import java.awt.Graphics;
 import java.awt.geom.Line2D;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.FileReader;
+import java.io.Serializable;
 import java.util.Scanner;
-
 import gamePack.CurrentLevel;
 import gamePack.Game;
 import gamePack.Physics;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
 
-public class IntroLevel implements CurrentLevel
+
+@SuppressWarnings("serial")
+public class IntroLevel implements CurrentLevel, Serializable
 {
 	public int x;
 	public int y;
@@ -26,7 +28,9 @@ public class IntroLevel implements CurrentLevel
 	private SpriteSheet ss;
 	private Player player;
 	private Lady lady;
-	Line2D introObjects[];
+	public Line2D roofObjects[];
+	
+	
 	public Line2D floorLine = new Line2D.Float();
 	public Line2D rtLine = new Line2D.Float();
 	public Line2D upLine = new Line2D.Float();
@@ -48,7 +52,12 @@ public class IntroLevel implements CurrentLevel
 	public Line2D platform1Left = new Line2D.Float();
 	public Line2D door1Line = new Line2D.Float();  
 	
-	Scanner scanner = new Scanner(new File("tall.txt"));
+	File cFile = null;
+	Scanner scanner = null;
+	
+	cFile = new File("path");
+	scan = new Scanner(f);
+	
 	
 	
 	//bounds for floor
@@ -176,6 +185,11 @@ public class IntroLevel implements CurrentLevel
 		}
 		
 		player.tick();
+	}
+	
+	public void fillArray()
+	{
+
 	}
 	
 	
