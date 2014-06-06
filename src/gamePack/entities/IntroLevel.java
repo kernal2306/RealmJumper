@@ -14,7 +14,7 @@ import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
 
 
-@SuppressWarnings("serial")
+
 public class IntroLevel implements CurrentLevel, Serializable
 {
 	public int x;
@@ -52,11 +52,11 @@ public class IntroLevel implements CurrentLevel, Serializable
 	public Line2D platform1Left = new Line2D.Float();
 	public Line2D door1Line = new Line2D.Float();  
 	
-	File cFile = null;
+	File cFile = new File("path");
 	Scanner scanner = null;
 	
-	cFile = new File("path");
-	scan = new Scanner(f);
+	//cFile = new File("path");
+	//scan = new Scanner(f);
 	
 	
 	
@@ -101,7 +101,7 @@ public class IntroLevel implements CurrentLevel, Serializable
 	public int p0Lup = 610;
 	public int p0Ldown;
 	public int p0Lleft;
-	public int p0Lright;	
+	public int p0Lright;
 	
 	
 	public IntroLevel(int x, int y, ImageManager im, SpriteSheet ss, Player plyr)
