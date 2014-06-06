@@ -53,10 +53,10 @@ public class IntroLevel implements CurrentLevel, Serializable
 	public Line2D door1Line = new Line2D.Float();  
 	
 	File cFile = new File("path");
-	Scanner scanner = null;
+	
 	
 	//cFile = new File("path");
-	//scan = new Scanner(f);
+	//scan = ;
 	
 	
 	
