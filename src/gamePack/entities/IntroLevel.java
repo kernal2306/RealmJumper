@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.FileReader;
 import java.io.Serializable;
 import java.util.Scanner;
+import java.util.StringTokenizer;
+
 import gamePack.CurrentLevel;
 import gamePack.Game;
 import gamePack.Physics;
@@ -52,20 +54,7 @@ public class IntroLevel implements CurrentLevel, Serializable
 	public Line2D platform1Left = new Line2D.Float();
 	public Line2D door1Line = new Line2D.Float();  
 	
-	try
-	{
-	File cFile = new File("");
-	BufferedReader br = new BufferedReader(new FileReader(cFile));
-	}
-	catch(IOException e)
-	{
-		e.printStackTrace();
-	}
-	
-	
-	//cFile = new File("path");
-	//scan = ;
-	
+
 	
 	
 	//bounds for floor
@@ -197,7 +186,25 @@ public class IntroLevel implements CurrentLevel, Serializable
 	
 	public void fillArray()
 	{
-
+		try
+		{
+			BufferedReader br = new BufferedReader(new FileReader("res/rooftopNewCoord.txt"));
+			StringTokenizer st = new StringTokenizer(str, ",");
+			String input = br.readLine();
+			int num;
+			while(input != null)
+			{
+				if(input.equals(null))
+				{
+					
+				}
+			}
+			
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
 	}
 	
 	
