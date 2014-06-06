@@ -52,7 +52,15 @@ public class IntroLevel implements CurrentLevel, Serializable
 	public Line2D platform1Left = new Line2D.Float();
 	public Line2D door1Line = new Line2D.Float();  
 	
-	File cFile = new File("path");
+	try
+	{
+	File cFile = new File("");
+	BufferedReader br = new BufferedReader(new FileReader(cFile));
+	}
+	catch(IOException e)
+	{
+		e.printStackTrace();
+	}
 	
 	
 	//cFile = new File("path");
