@@ -115,6 +115,18 @@ public class RoofLevel implements CurrentLevel
 			
 ;		}
 		
+		if(Game.player.rightCollision(this.friendRight()))
+		{
+			System.out.print("Enemy being hit");
+			Game.dialogShow2 = true;
+			Game.player.x = 192;
+			//Game.dialogCount = 104;
+			Game.dialogStart = 0;
+			Game.dialogStop = 7;
+			//Game.dialog.dialogDisplay2(24, 27);
+			
+;		}
+		
 		/*if((Game.player.x < 512 && (Game.player.y < 736 || Game.player.y > 700)))
 		{
 			System.out.println("You are winning!");
@@ -195,7 +207,7 @@ public class RoofLevel implements CurrentLevel
 		
 		public Line2D friendRight()
 		{
-			friendRight.setLine(192, 672, 192, 736);
+			friendRight.setLine(180, 500, 180, 736);
 			return friendRight;
 		}
 		
