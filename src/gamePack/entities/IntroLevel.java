@@ -102,36 +102,36 @@ public class IntroLevel implements CurrentLevel
 		if (player.y >= this.floorBounds().getY1() - 73)
 		{
 			player.y = floor -73;
-			Game.dialogShow = true;
-			System.out.println("DownCollision");
+			//Game.dialogShow = true;
+			//System.out.println("DownCollision");
 			
 		}
 		//test if player is colliding with platforms top
 		if(player.DownCollision(this.platform1TopBounds()))
 		{
 			player.y = p1up - 73;
-			Game.dialogShow = true;
-			System.out.println("DownCollision");
+			//Game.dialogShow = true;
+			//System.out.println("DownCollision");
 		}
 
 		if(player.DownCollision(this.platform1LTopBounds()))
 		{
 			player.y = p1Lup - 73;
-			Game.dialogShow = true;
+			//Game.dialogShow = true;
 			//System.out.println("DownCollision");
 		}
 		
 		if(player.DownCollision(this.platform2LTopBounds()))
 		{
 			player.y = p2Lup - 73;
-			Game.dialogShow = true;
+			//Game.dialogShow = true;
 			//System.out.println("DownCollision");
 		}
 		
 		if(player.DownCollision(this.platform0LTopBounds()))
 		{
 			player.y = p0Lup - 73;
-			Game.dialogShow = true;
+			//Game.dialogShow = true;
 			//System.out.println("DownCollision");
 		}
 				
@@ -165,6 +165,7 @@ public class IntroLevel implements CurrentLevel
 		
 		if(player.DownCollision(this.door()) && player.up == true)
 		{
+			//System.out.println(Game.dialog.dialogArray[23]);
 			Game.curr = Game.roof;
 		}
 		

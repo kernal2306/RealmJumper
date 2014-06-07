@@ -45,6 +45,8 @@ public class Game extends Canvas implements Runnable
 	public static  Dialog dialog;
 	private KeyManager key;
 	public static int dialogCount = 0;
+	public static int dialogStart =0;
+	public static int dialogStop = 0;
 	int t = 0;
 	public int setBack = 1;
 	

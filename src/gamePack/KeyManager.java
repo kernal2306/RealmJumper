@@ -83,13 +83,21 @@ public class KeyManager implements KeyListener
 		if(e.getKeyCode() == KeyEvent.VK_E)
 		{
 
-			Game.dialogCount += 4;
-			dialog.dialogDisplay(Game.dialogCount);
+			//Game.dialogCount += 4;
+			//dialog.dialogDisplay(Game.dialogCount);
 
-			begin = Dialog.startDialog;
-			end = Dialog.endDialog;
-			begin += 4;
-			dialog.dialogDisplay2(begin, end);
+			//begin = Dialog.startDialog;
+			//end = Dialog.endDialog;
+			//begin += 4;
+			//dialog.dialogDisplay(begin, end);
+			if(Game.dialogStart +4 >= Game.dialogStop){
+				Game.dialogShow2 = false;
+			}
+			else 
+			{
+				Game.dialogStart +=4;
+			}
+			
 			if (Game.dialogShow2 == false)
 			{
 				

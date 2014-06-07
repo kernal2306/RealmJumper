@@ -74,14 +74,14 @@ public class RoofLevel implements CurrentLevel
 		{
 			player.x = (int) (enemyRight.getX1() - 73);
 			//Game.dialogShow = true;
-			System.out.println("Enemy Collision");
+			//System.out.println("Enemy Collision");
 		}
 
 		if(player.rightCollision(enemyLeftBounds()))
 		{
 			player.x =  (int)(enemyLeft.getX1() - 73);
 			//Game.dialogShow = true;
-			System.out.println("Enemy Collision");
+			//System.out.println("Enemy Collision");
 		}
 		
 		if(player.DownCollision(this.platform2TopBounds()))
@@ -96,9 +96,24 @@ public class RoofLevel implements CurrentLevel
 			System.out.print("Enemy being hit");
 			Game.dialogShow2 = true;
 			Game.player.x = 512;
-			Game.dialogCount = 4;
-			Game.dialog.dialogDisplay2(24, 27);
-		}
+			//Game.dialogCount = 104;
+			Game.dialogStart = 104;
+			Game.dialogStop = 111;
+			//Game.dialog.dialogDisplay2(24, 27);
+			
+;		}
+		
+		if(Game.player.LeftCollision(this.enemyLeft()))
+		{
+			System.out.print("Enemy being hit");
+			Game.dialogShow2 = true;
+			Game.player.x = 430;
+			//Game.dialogCount = 104;
+			Game.dialogStart = 104;
+			Game.dialogStop = 111;
+			//Game.dialog.dialogDisplay2(24, 27);
+			
+;		}
 		
 		/*if((Game.player.x < 512 && (Game.player.y < 736 || Game.player.y > 700)))
 		{

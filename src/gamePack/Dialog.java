@@ -5,15 +5,16 @@ import java.awt.Graphics;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Serializable;
 import java.awt.*;
 import java.awt.geom.Line2D;
 
-public class Dialog implements CurrentLevel{
+public class Dialog implements Serializable{
 	
 	DialogList dialogList= new DialogList();
 	Node node = new Node();
 	//int count = 1;
-	String dialogArray[] = new String[150];
+	public String dialogArray[] = new String[300];
 	int arrayCount = 0;
 	static int startDialog =0;
 	static int endDialog = 103;
@@ -21,6 +22,7 @@ public class Dialog implements CurrentLevel{
 	public Line2D enemyRight = new Line2D.Float();
 	public Line2D enemyLeft = new Line2D.Float();
 	public Line2D friendRight = new Line2D.Float();
+	private String line1, line2, line3, line4;
 	
 	
 	public String load(){
@@ -34,9 +36,12 @@ public class Dialog implements CurrentLevel{
 		
 		while((line = br.readLine())!= null)
 		{
-			dialogArray[arrayCount] = line;
+		
+			dialogArray[count] = line;
+			System.out.println(dialogArray[count]);
 			count++;
 		}
+		System.out.println(dialogArray[0]);
 		
 	}
 	catch (IOException e)
@@ -56,12 +61,17 @@ public class Dialog implements CurrentLevel{
 	{
 		if(Game.dialogShow2 == true)
 		{
+			getDialog();
 			g.setColor(Color.WHITE);
 			g.draw3DRect(299, 299, 401, 201, true);
 			g.setColor(Color.BLACK);
 			g.fill3DRect(300, 300, 400, 200, true);
 			g.setFont(g.getFont().deriveFont(30f));
 			g.setColor(Color.WHITE);
+			g.drawString(line1, 305, 305);
+			g.drawString(line2, 305, 345);
+			g.drawString(line3, 305, 385);
+			g.drawString(line4, 305, 420);
 			//drawStringEdit(g, getDialog(), 320, 300);
 			g.setColor(Color.GREEN);
 			g.setFont(g.getFont().deriveFont(15f));
@@ -87,7 +97,7 @@ public class Dialog implements CurrentLevel{
 		}
 	}
 
-	public void dialogDisplay2(int begin, int end)
+	/*public void dialogDisplay2(int begin, int end)
 	{
 		
 		
@@ -111,10 +121,16 @@ public class Dialog implements CurrentLevel{
 		
 		displayDialog = dialog;
 		
-	}
+	}*/
 	
 	public String getDialog()
 	{
+		
+		line1 = dialogArray[Game.dialogStart];
+		line2 = dialogArray[Game.dialogStart +1];
+		line3 = dialogArray[Game.dialogStart +2];
+		line4 = dialogArray[Game.dialogStart +3];
+		
 		return displayDialog;
 	}
 	
