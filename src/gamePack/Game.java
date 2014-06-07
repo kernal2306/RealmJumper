@@ -27,6 +27,7 @@ public class Game extends Canvas implements Runnable
 	public static  JFrame frame;
 	public static  JLabel dialogBox;
 	public static  boolean dialogShow = false;
+	public static boolean dialogShow2 = false;
 	public  Line2D downObjects[];
 	public  int count;	
 	private BufferedImage spriteSheet1;
@@ -36,14 +37,14 @@ public class Game extends Canvas implements Runnable
 	public static Player player;
 	private  Physics p;
 	private  Lady lady;
-	private IntroLevel intro;
+	public static IntroLevel intro;
 	public static RoofLevel  roof;
 	private  Editor editor;
 	public static CurrentLevel curr;
 	private  Background back, back2;
-	private  Dialog dialog;
+	public static  Dialog dialog;
 	private KeyManager key;
-	static int dialogCount = 0;
+	public static int dialogCount = 0;
 	int t = 0;
 	public int setBack = 1;
 	
@@ -117,6 +118,7 @@ public class Game extends Canvas implements Runnable
 	public void tick()
 	{
 		curr.tick();
+		//dialog.tick();
 	}
 		
 	public void render()
@@ -141,6 +143,7 @@ public class Game extends Canvas implements Runnable
 		{
 			back2.render(g);
 			player.render(g);
+			dialog.render(g);
 			//lady.render(g);
 		}
 		

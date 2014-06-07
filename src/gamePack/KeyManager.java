@@ -89,8 +89,8 @@ public class KeyManager implements KeyListener
 			begin = Dialog.startDialog;
 			end = Dialog.endDialog;
 			begin += 4;
-			dialog.dialogDisplay(begin, end);
-			if (Game.dialogShow == false)
+			dialog.dialogDisplay2(begin, end);
+			if (Game.dialogShow2 == false)
 			{
 				
 			}

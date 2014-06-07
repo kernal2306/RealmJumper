@@ -6,8 +6,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.awt.*;
+import java.awt.geom.Line2D;
 
-public class Dialog {
+public class Dialog implements CurrentLevel{
 	
 	DialogList dialogList= new DialogList();
 	Node node = new Node();
@@ -17,6 +18,9 @@ public class Dialog {
 	static int startDialog =0;
 	static int endDialog = 103;
 	private String displayDialog;
+	public Line2D enemyRight = new Line2D.Float();
+	public Line2D enemyLeft = new Line2D.Float();
+	public Line2D friendRight = new Line2D.Float();
 	
 	
 	public String load(){
@@ -50,7 +54,7 @@ public class Dialog {
 	
 	public void render(Graphics g)
 	{
-		if(Game.dialogShow == true)
+		if(Game.dialogShow2 == true)
 		{
 			g.setColor(Color.WHITE);
 			g.draw3DRect(299, 299, 401, 201, true);
@@ -70,11 +74,11 @@ public class Dialog {
 	{
 		
 		String arrayLine, dialog = "";
-		Game.dialogShow = true;
+		Game.dialogShow2 = true;
 		int count = dialogCount;
 		if(dialogArray[count+1] == null)
 		{
-			Game.dialogShow = false;
+			Game.dialogShow2 = false;
 		}
 		for(int i=0; i<4; i++)
 		{
@@ -83,18 +87,18 @@ public class Dialog {
 		}
 	}
 
-	public void dialogDisplay(int begin, int end)
+	public void dialogDisplay2(int begin, int end)
 	{
 		
 		
 		startDialog = begin;
 		endDialog = end;
 		String arrayLine, dialog = "";
-		Game.dialogShow = true;
+		Game.dialogShow2 = true;
 		//int count = dialogCount;
 		if(startDialog >= endDialog)
 		{
-			Game.dialogShow = false;
+			Game.dialogShow2 = false;
 		}
 		for(int i=startDialog; i<startDialog+4; i++)
 		{
@@ -113,5 +117,43 @@ public class Dialog {
 	{
 		return displayDialog;
 	}
+	
+	public void tick()
+	{
+		
+		if(Game.curr == Game.roof)
+		{
+		if(Game.player.rightCollision(this.enemyRight()))
+		{
+			System.out.print("Enemy being hit");
+		}
+		
+		if(Game.player.x < 512 && (Game.player.y < 736 || Game.player.y > 320))
+		{
+			System.out.print("You are winning!");
+		}
+		}
+		Game.player.tick();
+	}
+	
+	//collison lines for rooftop dialog
+	public Line2D enemyRight()
+	{
+		enemyRight.setLine(512, 320, 512, 736);
+		return enemyRight;
+	}
+	
+	public Line2D enemyLeft()
+	{
+		enemyLeft.setLine(448, 320, 448, 736);
+		return enemyLeft;
+	}
+	
+	public Line2D friendRight()
+	{
+		friendRight.setLine(192, 672, 192, 736);
+		return friendRight;
+	}
+	
 	
 }

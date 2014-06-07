@@ -29,6 +29,7 @@ public class CurrLevel
 	private Game game;
 	private Player player;
 	private IntroLevel intro;
+	private Dialog dialog;
 	private Lady lady;
 	
 	
@@ -48,6 +49,7 @@ public class CurrLevel
 	{
 		//player.tick();
 		intro.tick();
+		//dialog.tick();
 		
 	}
 }

@@ -138,28 +138,28 @@ public class IntroLevel implements CurrentLevel
 		if(player.DownCollision(this.platform2RTopBounds()))
 		{
 			player.y =p2Lup - 73;
-			Game.dialogShow = true;
+			//Game.dialogShow = true;
 			//System.out.println("DownCollision");
 		}
 		
 		if(player.DownCollision(this.platform0RTopBounds()))
 		{
 			player.y = p0Lup - 73;
-			Game.dialogShow = true;
+			//Game.dialogShow = true;
 			//System.out.println("DownCollision");
 		}
 				
 		if(player.DownCollision(this.platform1RTopBounds()))
 		{
 			player.y = p1Lup - 73;
-			Game.dialogShow = true;
+			//Game.dialogShow = true;
 			//System.out.println("DownCollision");
 		}
 				
 			if(player.DownCollision(this.platform5TopBounds()))
 		{
 			player.y = p5up - 73;
-			Game.dialogShow = true;
+			//Game.dialogShow = true;
 			//System.out.println("DownCollision");
 		}
 		

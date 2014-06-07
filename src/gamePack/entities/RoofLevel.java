@@ -46,6 +46,7 @@ public class RoofLevel implements CurrentLevel
 	public Line2D door1Line = new Line2D.Float();
 	public Line2D enemyRight = new Line2D.Float();
 	public Line2D enemyLeft= new Line2D.Float();
+	public Line2D friendRight = new Line2D.Float();
 	
 
 	//bounds for floor
@@ -72,14 +73,14 @@ public class RoofLevel implements CurrentLevel
 		if(player.LeftCollision(enemyRightBounds()))
 		{
 			player.x = (int) (enemyRight.getX1() - 73);
-			Game.dialogShow = true;
+			//Game.dialogShow = true;
 			System.out.println("Enemy Collision");
 		}
 
 		if(player.rightCollision(enemyLeftBounds()))
 		{
 			player.x =  (int)(enemyLeft.getX1() - 73);
-			Game.dialogShow = true;
+			//Game.dialogShow = true;
 			System.out.println("Enemy Collision");
 		}
 		
@@ -89,6 +90,25 @@ public class RoofLevel implements CurrentLevel
 			//Game.dialogShow = true;
 			//System.out.println("Down Collision");
 		}
+		
+		if(Game.player.rightCollision(this.enemyRight()))
+		{
+			System.out.print("Enemy being hit");
+			Game.dialogShow2 = true;
+			Game.player.x = 512;
+			Game.dialogCount = 4;
+			Game.dialog.dialogDisplay2(24, 27);
+		}
+		
+		/*if((Game.player.x < 512 && (Game.player.y < 736 || Game.player.y > 700)))
+		{
+			System.out.println("You are winning!");
+			Game.dialogShow2 = true;
+			Game.player.x = 512;
+			Game.dialogCount = 4;
+			Game.dialog.dialogDisplay2(24, 27);
+		}*/
+		
 		player.tick();
 	}
 	
@@ -143,6 +163,25 @@ public class RoofLevel implements CurrentLevel
 		{
 			platform2RTop.setLine(960, 1024, 608, 608);
 			return enemyLeft;
+		}
+		
+		//collison lines for rooftop dialog
+		public Line2D enemyRight()
+		{
+			enemyRight.setLine(512, 320, 512, 736);
+			return enemyRight;
+		}
+		
+		public Line2D enemyLeft()
+		{
+			enemyLeft.setLine(448, 320, 448, 736);
+			return enemyLeft;
+		}
+		
+		public Line2D friendRight()
+		{
+			friendRight.setLine(192, 672, 192, 736);
+			return friendRight;
 		}
 		
 	//----------------------------------------------------
