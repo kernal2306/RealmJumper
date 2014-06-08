@@ -22,6 +22,9 @@ public class Game extends Canvas implements Runnable
 	private static final long serialVersionUID = 1L;
 	public static final int WIDTH = 512, HEIGHT = 384, SCALE = 2;
 	public static boolean running = false;
+	public static boolean ladyDialog = false;
+	public static boolean ladyDialog2 = false;
+	public static int dialogBool=0;
 	public Thread gameThread;
 
 	public static  JFrame frame;
@@ -32,6 +35,8 @@ public class Game extends Canvas implements Runnable
 	public  int count;	
 	private BufferedImage spriteSheet1;
 	private BufferedImage background1, background2;
+	public static BufferedImage back2NoLady;
+	public static BufferedImage Back2NoLady1;
 	private ImageManager im;
 	private Image bg;
 	public static Player player;
@@ -41,14 +46,16 @@ public class Game extends Canvas implements Runnable
 	public static RoofLevel  roof;
 	private  Editor editor;
 	public static CurrentLevel curr;
-	private  Background back, back2;
+	private  Background back;
+	public static Background back2;
 	public static  Dialog dialog;
 	private KeyManager key;
 	public static int dialogCount = 0;
-	public static int dialogStart =0;
+	public static int dialogStart =5;
 	public static int dialogStop = 0;
 	int t = 0;
 	public int setBack = 1;
+	public static Background back2Again;
 	
 	public void init()
 	{
@@ -56,6 +63,7 @@ public class Game extends Canvas implements Runnable
 		spriteSheet1 = loader.load("/SpriteSheet.png");
 		background1 = loader.load("/background.png");
 		background2 = loader.load("/background2.png");
+		back2NoLady = loader.load("/Back2NoLady.png");
 		SpriteSheet ss = new SpriteSheet(spriteSheet1);
 		im = new ImageManager(ss);
 		
@@ -70,6 +78,7 @@ public class Game extends Canvas implements Runnable
 		editor = new Editor();
 		back = new Background(background1);
 		back2 = new Background(background2);
+		back2Again = new Background(back2NoLady);
 		curr = intro;
 		dialog = new Dialog();
 		key = new KeyManager();
@@ -143,7 +152,14 @@ public class Game extends Canvas implements Runnable
 		}
 		if (curr == roof)
 		{
-			back2.render(g);
+			if(ladyDialog2 == false)
+			{
+				back2.render(g);
+			}
+			if(ladyDialog2 == true)
+			{
+				back2Again.render(g);
+			}
 			player.render(g);
 			dialog.render(g);
 			//lady.render(g);

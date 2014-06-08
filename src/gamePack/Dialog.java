@@ -68,10 +68,10 @@ public class Dialog implements Serializable{
 			g.fill3DRect(300, 300, 400, 200, true);
 			g.setFont(g.getFont().deriveFont(30f));
 			g.setColor(Color.WHITE);
-			g.drawString(line1, 305, 305);
-			g.drawString(line2, 305, 345);
-			g.drawString(line3, 305, 385);
-			g.drawString(line4, 305, 420);
+			g.drawString(line1, 320, 340);
+			g.drawString(line2, 320, 380);
+			g.drawString(line3, 320, 420);
+			g.drawString(line4, 320, 460);
 			//drawStringEdit(g, getDialog(), 320, 300);
 			g.setColor(Color.GREEN);
 			g.setFont(g.getFont().deriveFont(15f));
@@ -93,6 +93,11 @@ public class Dialog implements Serializable{
 		for(int i=0; i<4; i++)
 		{
 			arrayLine = dialogArray[count];
+			if(count == 100)
+			{
+				Game.ladyDialog2 = true;
+				Game.back2 = Game.back2Again;
+			}
 			count++;
 		}
 	}
@@ -130,6 +135,7 @@ public class Dialog implements Serializable{
 		line2 = dialogArray[Game.dialogStart +1];
 		line3 = dialogArray[Game.dialogStart +2];
 		line4 = dialogArray[Game.dialogStart +3];
+		
 		
 		return displayDialog;
 	}

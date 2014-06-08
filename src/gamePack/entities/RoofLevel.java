@@ -47,6 +47,7 @@ public class RoofLevel implements CurrentLevel
 	public Line2D enemyRight = new Line2D.Float();
 	public Line2D enemyLeft= new Line2D.Float();
 	public Line2D friendRight = new Line2D.Float();
+	public Line2D portalRight = new Line2D.Float();
 	
 
 	//bounds for floor
@@ -60,6 +61,7 @@ public class RoofLevel implements CurrentLevel
 				
 	}
 	
+	@SuppressWarnings("unused")
 	public void tick()
 	{
 		
@@ -95,13 +97,13 @@ public class RoofLevel implements CurrentLevel
 		{
 			System.out.print("Enemy being hit");
 			Game.dialogShow2 = true;
-			Game.player.x = 512;
+			Game.player.x = 525;
 			//Game.dialogCount = 104;
 			Game.dialogStart = 104;
-			Game.dialogStop = 111;
+			Game.dialogStop = 107;
 			//Game.dialog.dialogDisplay2(24, 27);
 			
-;		}
+		}
 		
 		if(Game.player.LeftCollision(this.enemyLeft()))
 		{
@@ -110,22 +112,58 @@ public class RoofLevel implements CurrentLevel
 			Game.player.x = 430;
 			//Game.dialogCount = 104;
 			Game.dialogStart = 104;
-			Game.dialogStop = 111;
+			Game.dialogStop = 107;
 			//Game.dialog.dialogDisplay2(24, 27);
 			
-;		}
+		}
 		
 		if(Game.player.rightCollision(this.friendRight()))
 		{
-			System.out.print("Enemy being hit");
+			System.out.print("Friend being hit");
 			Game.dialogShow2 = true;
 			Game.player.x = 192;
 			//Game.dialogCount = 104;
 			Game.dialogStart = 0;
-			Game.dialogStop = 7;
+			Game.dialogStop = 103;
+			/*if((Game.dialogStart+4 >= Game.dialogStop))
+			{
+				Game.ladyDialog = false;
+			}*/
 			//Game.dialog.dialogDisplay2(24, 27);
 			
-;		}
+		}
+		
+		if(Game.player.rightCollision(this.friendRight()))
+		{
+			System.out.print("Friend being hit");
+			Game.dialogShow2 = true;
+			Game.player.x = 852;
+			//Game.dialogCount = 104;
+			Game.dialogStart = 0;
+			Game.dialogStop = 104;
+			/*if((Game.dialogStart+4 >= Game.dialogStop))
+			{
+				Game.ladyDialog = false;
+			}*/
+			//Game.dialog.dialogDisplay2(24, 27);
+			
+		}
+		
+		if(Game.player.rightCollision(this.portalRight()))
+		{
+			System.out.print("portal collision");
+			Game.dialogShow2 = true;
+			Game.player.x = 65;
+			//Game.dialogCount = 104;
+			Game.dialogStart = 108;
+			Game.dialogStop = 115;
+			/*if((Game.dialogStart+4 >= Game.dialogStop))
+			{
+				Game.ladyDialog = false;
+			}*/
+			//Game.dialog.dialogDisplay2(24, 27);
+			
+		}
 		
 		/*if((Game.player.x < 512 && (Game.player.y < 736 || Game.player.y > 700)))
 		{
@@ -195,7 +233,7 @@ public class RoofLevel implements CurrentLevel
 		//collison lines for rooftop dialog
 		public Line2D enemyRight()
 		{
-			enemyRight.setLine(512, 320, 512, 736);
+			enemyRight.setLine(520, 320, 520, 736);
 			return enemyRight;
 		}
 		
@@ -207,8 +245,28 @@ public class RoofLevel implements CurrentLevel
 		
 		public Line2D friendRight()
 		{
-			friendRight.setLine(180, 500, 180, 736);
+			
+			
+			if(Game.dialogStart >= 100)
+			{
+				Game.back2 = Game.back2Again;
+				friendRight.setLine(0, 500, 0, 736);
+			}
+			else
+			{
+				friendRight.setLine(180, 500, 180, 736);
+			}
+			//System.out.println("lady false");
+			
 			return friendRight;
+			
+		}
+		
+		public Line2D portalRight()
+		{
+			portalRight.setLine(60,500, 60, 736);
+			//System.out.println("portal collisions");
+			return portalRight;
 		}
 		
 	//----------------------------------------------------
