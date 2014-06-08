@@ -59,13 +59,34 @@ public class Realm2_2 implements CurrentLevel{
 		
 		public void render(Graphics g)
 		{
-			g.drawImage(im.roof, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
+			g.drawImage(im.realm2_2, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
 		}
 
 		@Override
-		public void tick() {
+		public void tick() 
+		{
+			if (player.y >= this.floorBounds().getY1() - 73)
+			{
+				player.y = floor -73;
+				//Game.dialogShow = true;
+				//System.out.println("DownCollision");
+				
+			}
+			
 			
 			player.tick();
+		}
+		
+		public void floor()
+		{
+			im.intro = ss.crop(0, 0, 32, 32);
+		}
+		
+		//create lines for collision detection on intro level
+		public Line2D floorBounds()
+		{
+			floorLine.setLine(-100, floor, 1024, floor);
+			return floorLine;
 		}
 			
 		

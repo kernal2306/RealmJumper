@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 
 public class ImageManager 
 {
-	public BufferedImage player, lady, intro, roof;
+	public BufferedImage player, lady, intro, roof, realm2_2;
 	public int floorLength;
 	SpriteSheet character[];
 	SpriteSheet objects[];
