@@ -186,18 +186,18 @@ public class IntroLevel implements CurrentLevel, Serializable
 	
 	public void fillArray()
 	{
+		String str = null;
 		try
 		{
+			
 			BufferedReader br = new BufferedReader(new FileReader("res/rooftopNewCoord.txt"));
-			StringTokenizer st = new StringTokenizer(str, ",");
-			String input = br.readLine();
+			StringTokenizer nCoord = new StringTokenizer(str, ",");
+			String nextLine = br.readLine();
 			int num;
-			while(input != null)
+			int count;
+			while(nextLine != null)
 			{
-				if(input.equals(null))
-				{
-					
-				}
+				
 			}
 			
 		}
