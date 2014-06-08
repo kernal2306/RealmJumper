@@ -247,7 +247,7 @@ public class RoofLevel implements CurrentLevel
 		{
 			
 			
-			if(Game.dialogStart >= 100)
+			if(Game.dialogStart == 100)
 			{
 				Game.back2 = Game.back2Again;
 				friendRight.setLine(0, 500, 0, 736);
