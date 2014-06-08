@@ -156,7 +156,7 @@ public class RoofLevel implements CurrentLevel
 			Game.player.x = 65;
 			//Game.dialogCount = 104;
 			Game.dialogStart = 108;
-			Game.dialogStop = 115;
+			Game.dialogStop = 119;
 			/*if((Game.dialogStart+4 >= Game.dialogStop))
 			{
 				Game.ladyDialog = false;
@@ -265,6 +265,10 @@ public class RoofLevel implements CurrentLevel
 		public Line2D portalRight()
 		{
 			portalRight.setLine(60,500, 60, 736);
+			if(Game.dialogStart == 116)
+			{
+				Game.curr = Game.realm2_2;
+			}
 			//System.out.println("portal collisions");
 			return portalRight;
 		}

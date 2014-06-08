@@ -5,11 +5,13 @@ import gamePack.Edit.Editor;
 import gamePack.entities.IntroLevel;
 import gamePack.entities.Lady;
 import gamePack.entities.Player;
+import gamePack.entities.Realm2_2;
 import gamePack.entities.RoofLevel;
 import gamePack.gfx.Background;
 import gamePack.gfx.ImageLoader;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
+
 import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferStrategy;
@@ -34,7 +36,7 @@ public class Game extends Canvas implements Runnable
 	public  Line2D downObjects[];
 	public  int count;	
 	private BufferedImage spriteSheet1;
-	private BufferedImage background1, background2;
+	private BufferedImage background1, background2, background2_2;
 	public static BufferedImage back2NoLady;
 	public static BufferedImage Back2NoLady1;
 	private ImageManager im;
@@ -44,10 +46,12 @@ public class Game extends Canvas implements Runnable
 	private  Lady lady;
 	public static IntroLevel intro;
 	public static RoofLevel  roof;
+	public static Realm2_2 realm2_2;
 	private  Editor editor;
 	public static CurrentLevel curr;
 	private  Background back;
 	public static Background back2;
+	private Background back2_2;
 	public static  Dialog dialog;
 	private KeyManager key;
 	public static int dialogCount = 0;
@@ -64,6 +68,7 @@ public class Game extends Canvas implements Runnable
 		background1 = loader.load("/background.png");
 		background2 = loader.load("/background2.png");
 		back2NoLady = loader.load("/Back2NoLady.png");
+		background2_2 = loader.load("/background2_2.png");
 		SpriteSheet ss = new SpriteSheet(spriteSheet1);
 		im = new ImageManager(ss);
 		
@@ -79,6 +84,7 @@ public class Game extends Canvas implements Runnable
 		back = new Background(background1);
 		back2 = new Background(background2);
 		back2Again = new Background(back2NoLady);
+		back2_2 = new Background(background2_2);
 		curr = intro;
 		dialog = new Dialog();
 		key = new KeyManager();
@@ -163,6 +169,11 @@ public class Game extends Canvas implements Runnable
 			player.render(g);
 			dialog.render(g);
 			//lady.render(g);
+		}
+		if(curr == realm2_2)
+		{
+			back2_2.render(g);
+			player.render(g);
 		}
 		
 		
