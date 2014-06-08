@@ -1,15 +1,10 @@
 package gamePack.entities;
-
 import java.awt.Graphics;
-import java.awt.Rectangle;
 import java.awt.geom.Line2D;
-import java.awt.geom.Line2D.Float;
-import java.awt.image.BufferedImage;
 import gamePack.Game;
 import gamePack.Physics;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
-import java.awt.Rectangle;
 
 
 public class Player 
@@ -29,6 +24,7 @@ public class Player
 	Line2D rtLine = new Line2D.Float();
 	Line2D upLine = new Line2D.Float();
 	Line2D downLine = new Line2D.Float();
+	public Object player;
 
 	
 	public Player(int x, int y, ImageManager im, SpriteSheet ss)
@@ -162,20 +158,14 @@ public class Player
 	//player tick method
 	public void tick()
 	{
-		
-		
 		if (up)
 		{
-
 			y -= SPEED;
-
 			
-
 		}
 		if (down)
 		{
-			y += SPEED;
-
+			//y += SPEED;
 		}
 		if (lt)
 		{
@@ -193,7 +183,7 @@ public class Player
 			{
 				this.x = 0;
 			}
-			x -= SPEED * 1.5;
+			this.x -= SPEED * 1.5;
 		}
 		if(rt)
 		{
@@ -216,33 +206,29 @@ public class Player
 		if (jump)
 		{
 			y -= (p.Jump(y, x, count));
+		}
 			
-			if(count > 1)
-			{
-				//y += (p.falling(y, x, t)) / 2;
-			}
+		if(jump && rt)
+		{
+			y -= (p.Jump(y, x, count)) / 5;
+			x += SPEED * 2;
+		}
+		if(jump && lt)
+		{
+			y -= (p.Jump(y, x, count)) / 5;
+			x -= SPEED * 2;
 		}
 		else
 		{
-			y += (p.falling(y, x, t)) / 2;
-				//y += SPEED * 3;
+			this.y += (p.falling(y, x, t)) / 3.5;
+				y += SPEED * 3;
 		}
+		
 	}
 	
 	public void render(Graphics g)
 	{
 		g.drawImage(im.player, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
-		//top line
-		g.drawLine(x+1, y-1, x+60, y-1);
-		
-		//bottom Line
-		g.drawLine(x+1, y+63, x+60, y+63);
-		
-		//right Line
-		g.drawLine(x+60, y-1, x+60, y+63);
-		
-		//Left Line
-		g.drawLine(x, y-1, x, y+63);
 	}
 	
 	public void stop()

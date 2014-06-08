@@ -1,20 +1,15 @@
 package gamePack.entities;
-
 import java.awt.Graphics;
 import java.awt.geom.Line2D;
 
+import gamePack.CurrentLevel;
 import gamePack.Game;
 import gamePack.Physics;
 import gamePack.gfx.ImageManager;
 import gamePack.gfx.SpriteSheet;
 
-public class IntroLevel 
+public class IntroLevel implements CurrentLevel
 {
-
-
-
-
-
 	public int x;
 	public int y;
 	private int t;
@@ -24,31 +19,30 @@ public class IntroLevel
 	private ImageManager im;
 	Physics p = new Physics();
 	private SpriteSheet ss;
+	private Player player;
+	private Lady lady;
 	Line2D introObjects[];
 	public Line2D floorLine = new Line2D.Float();
 	public Line2D rtLine = new Line2D.Float();
 	public Line2D upLine = new Line2D.Float();
 	public Line2D downLine = new Line2D.Float();
 	public Line2D platform1Top = new Line2D.Float();
-
 	public Line2D platform0RTop = new Line2D.Float();
 	public Line2D platform0LTop = new Line2D.Float();
 	public Line2D platform1RTop = new Line2D.Float();
 	public Line2D platform1LTop = new Line2D.Float();
 	public Line2D platform2RTop = new Line2D.Float();
 	public Line2D platform2LTop = new Line2D.Float();
-
 	public Line2D platform3LTop = new Line2D.Float();
-
 	public Line2D platform2Top = new Line2D.Float();
 	public Line2D platform3Top = new Line2D.Float();
-
 	public Line2D platform4Top = new Line2D.Float();
 	public Line2D platform5Top = new Line2D.Float();
 	public Line2D platform1Bottom = new Line2D.Float();
 	public Line2D platform1Right = new Line2D.Float();
 	public Line2D platform1Left = new Line2D.Float();
 	public Line2D door1Line = new Line2D.Float();
+	
 	
 	//bounds for floor
 	public int floor = 640;
@@ -94,30 +88,90 @@ public class IntroLevel
 	public int p0Lright;	
 	
 	
-	public IntroLevel(int x, int y, ImageManager im, SpriteSheet ss)
+	public IntroLevel(int x, int y, ImageManager im, SpriteSheet ss, Player plyr)
 	{
-		this.x = x;
-		this.y = y;
 		this.im = im;
 		this.ss = ss;
-		floorLine.setLine(-100, floor, 1024, floor);
-
+		player = plyr;	
 	}
 	
 	public void tick()
 	{
-		drawLevel();
+		
+		//test if player is colliding with the floor
+		if (player.y >= this.floorBounds().getY1() - 73)
+		{
+			player.y = floor -73;
+			//Game.dialogShow = true;
+			//System.out.println("DownCollision");
+			
+		}
+		//test if player is colliding with platforms top
+		if(player.DownCollision(this.platform1TopBounds()))
+		{
+			player.y = p1up - 73;
+			//Game.dialogShow = true;
+			//System.out.println("DownCollision");
+		}
+
+		if(player.DownCollision(this.platform1LTopBounds()))
+		{
+			player.y = p1Lup - 73;
+			//Game.dialogShow = true;
+			//System.out.println("DownCollision");
+		}
+		
+		if(player.DownCollision(this.platform2LTopBounds()))
+		{
+			player.y = p2Lup - 73;
+			//Game.dialogShow = true;
+			//System.out.println("DownCollision");
+		}
+		
+		if(player.DownCollision(this.platform0LTopBounds()))
+		{
+			player.y = p0Lup - 73;
+			//Game.dialogShow = true;
+			//System.out.println("DownCollision");
+		}
+				
+		if(player.DownCollision(this.platform2RTopBounds()))
+		{
+			player.y =p2Lup - 73;
+			//Game.dialogShow = true;
+			//System.out.println("DownCollision");
+		}
+		
+		if(player.DownCollision(this.platform0RTopBounds()))
+		{
+			player.y = p0Lup - 73;
+			//Game.dialogShow = true;
+			//System.out.println("DownCollision");
+		}
+				
+		if(player.DownCollision(this.platform1RTopBounds()))
+		{
+			player.y = p1Lup - 73;
+			//Game.dialogShow = true;
+			//System.out.println("DownCollision");
+		}
+				
+			if(player.DownCollision(this.platform5TopBounds()))
+		{
+			player.y = p5up - 73;
+			//Game.dialogShow = true;
+			//System.out.println("DownCollision");
+		}
+		
+		if(player.DownCollision(this.door()) && player.up == true)
+		{
+			//System.out.println(Game.dialog.dialogArray[23]);
+			Game.curr = Game.roof;
+		}
+		
+		player.tick();
 	}
 	
-	public void drawLevel()
-	{
-		//floor
-		this.x += 32;
-		if(count <= 1024)
-		{
-		im.intro = ss.crop(1,2,32,32);
-		}
-	}
 	
 	public void floor()
 	{
@@ -185,7 +239,7 @@ public class IntroLevel
 	public Line2D platform2TopBounds()
 	{
 		platform2Top.setLine(100, 500, 300, 500);
-		return platform1Top;
+		return platform2Top;
 	}
 	public Line2D platform3TopBounds()
 
@@ -226,7 +280,8 @@ public class IntroLevel
 		int testLinex = 767;
 		int testLine2x = testLinex + 95;
 
-		g.drawImage(im.intro, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
+		g.drawImage(im.intro, x, y, 32*Game.SCALE, 32*Game.SCALE, null);getClass();
+		
 		//floor line 
 		g.drawLine(-100, floor, 1024, floor);
 		

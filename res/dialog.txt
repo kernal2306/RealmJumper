@@ -101,20 +101,19 @@ she is incapable of lying.
 Without knowing why or
 even realizing he is doing
 it, he takes her hand and
-<<<<<<< HEAD
-<<<<<<< HEAD
-follows her through the door.
-=======
-=======
->>>>>>> 1650100fd1029953629a254f8c88b56309d9cebe
 follows her through the door.
              Enemy:
       You have no idea what
       you are getting into
       my advice, walk away.
-<<<<<<< HEAD
->>>>>>> 9a60eedc09c1646cf7321294f7c12e616dd6aa0b
-=======
+As you enter the portal it
+feels like your brain is on 
+fire and you suddenly know
+everything in the world.
+It seems to be too much
+as you find yourself
+slowly slipping into 
+unconsciousness.
 You awaken to find yourself
 in what seems like a cave.  
 All around you see glowing
@@ -188,4 +187,26 @@ Frank:
 	and do something that neither
 	of us is going to like."
 	
->>>>>>> 1650100fd1029953629a254f8c88b56309d9cebe
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+

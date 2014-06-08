@@ -20,6 +20,7 @@ public class ImageManager
 		player = ss.crop(0, 0, 32, 32);
 		lady = ss.crop(0, 0, 32,32);
 		intro = ss.crop(2, 0, 32, 32);
+		roof = ss.crop(2,0,32,32);
 	}
 	
 	public void intro(SpriteSheet ss)
@@ -39,7 +40,7 @@ public class ImageManager
 		{
 			x += 32;
 			y += 32;
-			intro = ss.crop(y, x, width, hieght);
+			roof = ss.crop(y, x, width, hieght);
 			floor[i] = intro;
 		}
 
