@@ -28,6 +28,7 @@ public class RoofLevel implements CurrentLevel
 	CollRect cRect;
 	private SpriteSheet ss;
 	private Player player;
+	File cFile = new File("res/rooftopNewCoord.txt");
 	public ArrayList<CollRect> roofObjects = new ArrayList<CollRect>();
 	
 	public Line2D floorLine = new Line2D.Float();
@@ -70,27 +71,6 @@ public class RoofLevel implements CurrentLevel
 			//System.out.println("DownCollision");
 			
 		}
-		
-//		if(player.LeftCollision(enemyRightBounds()))
-//		{
-//			player.x = (int) (enemyRight.getX1() - 73);
-//			Game.dialogShow = true;
-//			System.out.println("Enemy Collision");
-//		}
-//
-//		if(player.rightCollision(enemyLeftBounds()))
-//		{
-//			player.x =  (int)(enemyLeft.getX1() - 73);
-//			Game.dialogShow = true;
-//			System.out.println("Enemy Collision");
-//		}
-//		
-//		if(player.DownCollision(this.platform2TopBounds()))
-//		{
-//			player.y = 256;
-//			Game.dialogShow = true;
-//			System.out.println("Down Collision");
-//		}
 		player.tick();
 	}
 	
@@ -100,7 +80,7 @@ public class RoofLevel implements CurrentLevel
 		try
 		{
 			int tmp[] = {0,0,0,0};
-			Scanner scan = new Scanner(new File("res/rooftopNewCoord.txt"));
+			Scanner scan = new Scanner(cFile);
 			
 			while(scan.hasNextLine())
 			{

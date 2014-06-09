@@ -33,6 +33,7 @@ public class IntroLevel implements CurrentLevel, Serializable
 	private Lady lady;
 	public RoofLevel roof;
 	public CollRect rect;
+	File cFile = new File("res/introNewCoord.txt");
 	public ArrayList<CollRect> introObjects = new ArrayList<CollRect>();
 	
 	
@@ -56,7 +57,7 @@ public class IntroLevel implements CurrentLevel, Serializable
 		this.im = im;
 		this.ss = ss;
 		player = plyr;	
-		//fillArray();
+		fillArray();
 	}
 	
 	public void tick()
@@ -91,7 +92,7 @@ public class IntroLevel implements CurrentLevel, Serializable
 		try
 		{
 			int tmp[] = {0,0,0,0};
-			Scanner scan = new Scanner(new File("res/rooftopNewCoord.txt"));
+			Scanner scan = new Scanner(cFile);
 			
 			while(scan.hasNextLine())
 			{
