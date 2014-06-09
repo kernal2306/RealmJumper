@@ -20,6 +20,7 @@ public class Player
 	Physics p = new Physics();
 	private SpriteSheet ss;
 	private IntroLevel intro;
+	private Realm2_2 realm2_2;
 	Line2D lfLine = new Line2D.Float();
 	Line2D rtLine = new Line2D.Float();
 	Line2D upLine = new Line2D.Float();

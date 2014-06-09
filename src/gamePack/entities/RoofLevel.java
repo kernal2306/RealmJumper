@@ -162,7 +162,7 @@ public class RoofLevel implements CurrentLevel
 				Game.ladyDialog = false;
 			}*/
 			//Game.dialog.dialogDisplay2(24, 27);
-			
+			//Game.curr = Game.realm2_2;
 		}
 		
 		/*if((Game.player.x < 512 && (Game.player.y < 736 || Game.player.y > 700)))

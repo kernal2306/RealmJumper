@@ -54,6 +54,8 @@ public class Realm2_2 implements CurrentLevel{
 			this.im = im;
 			this.ss = ss;
 			player = plyr;
+			this.x = x;
+			this.y = y;
 					
 		}
 		
@@ -62,7 +64,7 @@ public class Realm2_2 implements CurrentLevel{
 			g.drawImage(im.realm2_2, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
 		}
 
-		@Override
+		@SuppressWarnings("unused")
 		public void tick() 
 		{
 			if (player.y >= this.floorBounds().getY1() - 73)
