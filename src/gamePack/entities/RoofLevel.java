@@ -42,17 +42,32 @@ public class RoofLevel implements CurrentLevel
 		this.im = im;
 		this.ss = ss;
 		player = plyr;
+		fillArray();
 				
 	}
 	
 	public void tick()
 	{
+		for(CollRect rect: roofObjects)
+		{
+			if(player.DownCollision(rect.top()))
+			{
+				player.y = rect.y - 73;
+				System.out.println("Collision");
+			}
+			if(player.UpCollision(rect.bottom()))
+			{
+				player.jump = false;
+				player.p.falling(y, x, count);
+				System.out.println("up Collision");
+			}
+		}
 		
 		if (player.y >= this.floorBounds().getY1() - 73)
 		{
 			player.y = floor -73;
 			Game.dialogShow = true;
-			System.out.println("DownCollision");
+			//System.out.println("DownCollision");
 			
 		}
 		

@@ -31,6 +31,7 @@ public class IntroLevel implements CurrentLevel, Serializable
 	private SpriteSheet ss;
 	private Player player;
 	private Lady lady;
+	public RoofLevel roof;
 	public CollRect rect;
 	public ArrayList<CollRect> introObjects = new ArrayList<CollRect>();
 	
@@ -78,7 +79,7 @@ public class IntroLevel implements CurrentLevel, Serializable
 		if(player.DownCollision(this.door()) && player.up == true)
 		{
 			Game.curr = Game.roof;
-			fillArray();
+			
 		}
 		
 		player.tick();
