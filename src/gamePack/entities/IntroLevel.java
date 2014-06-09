@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.FileReader;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -31,7 +32,7 @@ public class IntroLevel implements CurrentLevel, Serializable
 	private Player player;
 	private Lady lady;
 	public CollRect rect;
-	public CollRect introObjects[];
+	public ArrayList<CollRect> introObjects = new ArrayList<CollRect>();
 	
 	
 	public Line2D floorLine = new Line2D.Float();
@@ -107,6 +108,7 @@ public class IntroLevel implements CurrentLevel, Serializable
 		this.im = im;
 		this.ss = ss;
 		player = plyr;	
+		fillArray();
 	}
 	
 	public void tick()
@@ -187,33 +189,50 @@ public class IntroLevel implements CurrentLevel, Serializable
 	
 	public void fillArray()
 	{
-		String str = null;
+		
 		try
 		{
+			int tmp[] = {0,0,0,0};
+			Scanner scan = new Scanner(new File("res/rooftopNewCoord.txt"));
 			
-			BufferedReader br = new BufferedReader(new FileReader("res/rooftopNewCoord.txt"));
-			String nLine = br.readLine();
-			StringTokenizer nCoord = new StringTokenizer(nLine, ",");
-			int tmp[] = null;
-			int num = 0;
-			while(nLine != null)
+			while(scan.hasNextLine())
 			{
-				for(int i = 0; i <= 4; i++)
+				String line = scan.nextLine();
+				
+				Scanner scan2 = new Scanner(line);
+				scan2.useDelimiter(",");
+				int count = 0;
+				while(scan2.hasNextInt())
 				{
-					if(nCoord.hasMoreElements())
+					for(int i = 0; i <= 3; i++)
 					{
-						num = (int) nCoord.nextElement();
-						tmp[i] = num;
+						//System.out.println(scan2.nextInt());
+						tmp[i] = scan2.nextInt();
+						//System.out.println(tmp[i]);
 					}
+					//System.out.println();
+					introObjects.add(new CollRect(tmp[0], tmp[1], tmp[2], tmp[3]));
+					count++;
 				}
-				introObjects[num] = new CollRect(num, num, num, num);
-				num++;
-			}
-			br.close();
+			}	
+			printArray();
+				
 		}
 		catch(IOException e)
 		{
 			e.printStackTrace();
+		}
+	}
+	
+	public void printArray()
+	{
+		for(CollRect rect: introObjects)
+		{
+			System.out.println(rect.x);
+			System.out.println(rect.y);
+			System.out.println(rect.height);
+			System.out.println(rect.width);
+			System.out.println();
 		}
 	}
 	
