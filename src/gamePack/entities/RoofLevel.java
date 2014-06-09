@@ -4,6 +4,10 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 import gamePack.CurrentLevel;
 import gamePack.Game;
@@ -24,7 +28,7 @@ public class RoofLevel implements CurrentLevel
 	CollRect cRect;
 	private SpriteSheet ss;
 	private Player player;
-	Line2D roofObjects[];
+	public ArrayList<CollRect> roofObjects = new ArrayList<CollRect>();
 	
 	public Line2D floorLine = new Line2D.Float();
 //	public Line2D rtLine = new Line2D.Float();
@@ -94,6 +98,56 @@ public class RoofLevel implements CurrentLevel
 //		}
 		player.tick();
 	}
+	
+	public void fillArray()
+	{
+		
+		try
+		{
+			int tmp[] = {0,0,0,0};
+			Scanner scan = new Scanner(new File("res/rooftopNewCoord.txt"));
+			
+			while(scan.hasNextLine())
+			{
+				String line = scan.nextLine();
+				
+				Scanner scan2 = new Scanner(line);
+				scan2.useDelimiter(",");
+				int count = 0;
+				while(scan2.hasNextInt())
+				{
+					for(int i = 0; i <= 3; i++)
+					{
+						//System.out.println(scan2.nextInt());
+						tmp[i] = scan2.nextInt();
+						//System.out.println(tmp[i]);
+					}
+					//System.out.println();
+					roofObjects.add(new CollRect(tmp[0], tmp[1], tmp[2], tmp[3]));
+					count++;
+				}
+			}	
+			printArray();
+				
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void printArray()
+	{
+		for(CollRect rect: roofObjects)
+		{
+			System.out.println(rect.x);
+			System.out.println(rect.y);
+			System.out.println(rect.height);
+			System.out.println(rect.width);
+			System.out.println();
+		}
+	}
+	
 	
 	public void floor()
 	{
