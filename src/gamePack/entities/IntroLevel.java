@@ -30,7 +30,8 @@ public class IntroLevel implements CurrentLevel, Serializable
 	private SpriteSheet ss;
 	private Player player;
 	private Lady lady;
-	public Line2D roofObjects[];
+	public CollRect rect;
+	public CollRect introObjects[];
 	
 	
 	public Line2D floorLine = new Line2D.Float();
@@ -191,15 +192,24 @@ public class IntroLevel implements CurrentLevel, Serializable
 		{
 			
 			BufferedReader br = new BufferedReader(new FileReader("res/rooftopNewCoord.txt"));
-			StringTokenizer nCoord = new StringTokenizer(str, ",");
-			String nextLine = br.readLine();
-			int num;
-			int count;
-			while(nextLine != null)
+			String nLine = br.readLine();
+			StringTokenizer nCoord = new StringTokenizer(nLine, ",");
+			int tmp[] = null;
+			int num = 0;
+			while(nLine != null)
 			{
-				
+				for(int i = 0; i <= 4; i++)
+				{
+					if(nCoord.hasMoreElements())
+					{
+						num = (int) nCoord.nextElement();
+						tmp[i] = num;
+					}
+				}
+				introObjects[num] = new CollRect(num, num, num, num);
+				num++;
 			}
-			
+			br.close();
 		}
 		catch(IOException e)
 		{
