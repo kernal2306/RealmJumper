@@ -19,10 +19,7 @@ public class RoofLevel implements CurrentLevel
 {
 	public int x;
 	public int y;
-	private int t;
-	int numTiles = 50;
-	double count = 1;
-	int tickCount = 1;
+	private int t, count;
 	private ImageManager im;
 	Physics p = new Physics();
 	CollRect cRect;
