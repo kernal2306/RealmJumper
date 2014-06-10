@@ -23,6 +23,7 @@ public class IntroLevel implements CurrentLevel, Serializable
 	public int x;
 	public int y;
 	private int t;
+	int count;
 	private ImageManager im;
 	Physics p = new Physics();
 	private SpriteSheet ss;
@@ -39,7 +40,7 @@ public class IntroLevel implements CurrentLevel, Serializable
 	int walkObjects;
 	
 	//bounds for floor
-	public int floor = 640;
+	public int floor = 728;
 
 	//bounds for platform 5 platform
 	public int p5up =97;
@@ -59,20 +60,44 @@ public class IntroLevel implements CurrentLevel, Serializable
 	
 	public void tick()
 	{
-		for(CollRect rect: introObjects)
+		
+		if(player.DownCollision(this.floorLine))
 		{
+
 
 			//player.y = floor -73;
 			//Game.dialogShow = true;
 			//System.out.println("DownCollision");
-			
 
+			player.y = floor -73;
+
+			
+		}
+		for(CollRect rect: introObjects)
+		{
 			if(player.DownCollision(rect.top()))
 			{
-				player.x = rect.x;
+				player.y = rect.y - 73;
 				System.out.println("Collision");
 			}
+			if(player.UpCollision(rect.bottom()))
+			{
+				player.jump = false;
+				
+				player.p.falling(y, x, count);
+				System.out.println("up Collision");
+			}
+		}
+		if (player.y >= this.floorBounds().getY1() - 73)
+		{
+			player.y = floor -73;
 
+			//Game.dialogShow = true;
+
+			Game.dialogShow = true;
+
+			//System.out.println("DownCollision");
+			
 		}
 		if(player.DownCollision(this.door()) && player.up == true)
 		{
@@ -158,7 +183,7 @@ public class IntroLevel implements CurrentLevel, Serializable
 	//create lines for collision detection on intro level
 	public Line2D floorBounds()
 	{
-		floorLine.setLine(-100, floor, 1024, floor);
+		floorLine.setLine(0, floor, 1024, floor);
 		return floorLine;
 	}
 	
