@@ -31,7 +31,7 @@ public class Realm2_2 implements CurrentLevel{
 	public Line2D enemyRight = new Line2D.Float();
 	public Line2D enemyLeft= new Line2D.Float();
 	public Line2D friendRight = new Line2D.Float();
-	public Line2D portalRight = new Line2D.Float();
+	public Line2D bottomLeft = new Line2D.Float();
 	
 	//bounds for floor
 		public int floor = 730;
@@ -119,11 +119,11 @@ public class Realm2_2 implements CurrentLevel{
 				
 			}*/
 			
-			if(Game.player.rightCollision(this.portalRight()))
+			if(Game.player.rightCollision(this.bottomLeft()))
 			{
 				System.out.println("portal collision");
 				Game.curr = Game.realm2_1;
-				player.x = 1000;
+				player.x = 924;
 				//Game.dialogShow2 = true;
 				//Game.player.x = 65;
 				//Game.dialogCount = 104;
@@ -235,16 +235,16 @@ public class Realm2_2 implements CurrentLevel{
 				
 			}*/
 			
-			public Line2D portalRight()
+			public Line2D bottomLeft()
 			{
-				portalRight.setLine(10, 500, 10, 736);
+				bottomLeft.setLine(10, 500, 10, 736);
 				/*if(Game.dialogStart == 116)
 				{
 					Game.curr = Game.realm2_1;
 					player.x = 1000;
 				}*/
 				//System.out.println("portal collisions");
-				return portalRight;
+				return bottomLeft;
 			}
 			
 		//----------------------------------------------------
