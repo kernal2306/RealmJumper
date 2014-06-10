@@ -23,7 +23,7 @@ public class Realm2_2 implements CurrentLevel{
 	CollRect rect;
 	private SpriteSheet ss;
 	private Player player;
-	File cFile = new File("res/newRealm2_2Coord.txt");
+	File cFile = new File("res/realm2_2Coord.txt");
 	public ArrayList<CollRect> realm2_2Objects = new ArrayList<CollRect>();
 	
 	public Line2D floorLine = new Line2D.Float();
