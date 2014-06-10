@@ -77,7 +77,6 @@ public class RoofLevel implements CurrentLevel
 
 			Game.dialogShow = true;
 
-			//System.out.println("DownCollision");
 			
 		}
 		player.tick();
@@ -102,11 +101,8 @@ public class RoofLevel implements CurrentLevel
 				{
 					for(int i = 0; i <= 3; i++)
 					{
-						//System.out.println(scan2.nextInt());
 						tmp[i] = scan2.nextInt();
-						//System.out.println(tmp[i]);
 					}
-					//System.out.println();
 					roofObjects.add(new CollRect(tmp[0], tmp[1], tmp[2], tmp[3]));
 					count++;
 				}
@@ -117,11 +113,6 @@ public class RoofLevel implements CurrentLevel
 		}
 		catch(IOException e)
 		{
-
-			player.x =  (int)(enemyLeft.getX1() - 73);
-			//Game.dialogShow = true;
-			//System.out.println("Enemy Collision");
-
 			e.printStackTrace();
 
 		}
@@ -132,9 +123,6 @@ public class RoofLevel implements CurrentLevel
 		for(CollRect rect: roofObjects)
 		{
 
-			player.y = 256;
-			//Game.dialogShow = true;
-			//System.out.println("Down Collision");
 		}
 		
 		if(Game.player.rightCollision(this.enemyRight()))
