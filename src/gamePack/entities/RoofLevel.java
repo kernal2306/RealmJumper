@@ -79,7 +79,7 @@ public class RoofLevel implements CurrentLevel
 
 			
 		}
-<<<<<<< HEAD
+
 		player.tick();
 	}
 	
@@ -118,141 +118,13 @@ public class RoofLevel implements CurrentLevel
 
 		}
 	}
-	
+
 	public void printArray()
 	{
 		for(CollRect rect: roofObjects)
 		{
 
-		}
-		
-=======
->>>>>>> dc45a1f875dffa793c0190518d7265e4731bca39
-		if(Game.player.rightCollision(this.enemyRight()))
-		{
-			System.out.print("Enemy being hit");
-			Game.dialogShow2 = true;
-			Game.player.x = 525;
-			//Game.dialogCount = 104;
-			Game.dialogStart = 104;
-			Game.dialogStop = 107;
-			//Game.dialog.dialogDisplay2(24, 27);
-			
-		}
-		
-		if(Game.player.LeftCollision(this.enemyLeft()))
-		{
-			System.out.print("Enemy being hit");
-			Game.dialogShow2 = true;
-			Game.player.x = 430;
-			//Game.dialogCount = 104;
-			Game.dialogStart = 104;
-			Game.dialogStop = 107;
-			//Game.dialog.dialogDisplay2(24, 27);
-			
-		}
-		
-		if(Game.player.rightCollision(this.friendRight()))
-		{
-			System.out.print("Friend being hit");
-			Game.dialogShow2 = true;
-			Game.player.x = 192;
-			//Game.dialogCount = 104;
-			Game.dialogStart = 0;
-			Game.dialogStop = 103;
-			/*if((Game.dialogStart+4 >= Game.dialogStop))
-			{
-				Game.ladyDialog = false;
-			}*/
-			//Game.dialog.dialogDisplay2(24, 27);
-			
-		}
-		
-		if(Game.player.rightCollision(this.friendRight()))
-		{
-			System.out.print("Friend being hit");
-			Game.dialogShow2 = true;
-			Game.player.x = 852;
-			//Game.dialogCount = 104;
-			Game.dialogStart = 0;
-			Game.dialogStop = 104;
-			/*if((Game.dialogStart+4 >= Game.dialogStop))
-			{
-				Game.ladyDialog = false;
-			}*/
-			//Game.dialog.dialogDisplay2(24, 27);
-			
-		}
-		
-		if(Game.player.rightCollision(this.portalRight()))
-		{
-			System.out.print("portal collision");
-			Game.dialogShow2 = true;
-			Game.player.x = 65;
-			//Game.dialogCount = 104;
-			Game.dialogStart = 108;
-			Game.dialogStop = 119;
-			/*if((Game.dialogStart+4 >= Game.dialogStop))
-			{
-				Game.ladyDialog = false;
-			}*/
-			//Game.dialog.dialogDisplay2(24, 27);
-			//Game.curr = Game.realm2_2;
-		}
-
-		player.tick();
-	}
-	
-	public void fillArray()
-	{
-		
-		try
-		{
-			int tmp[] = {0,0,0,0};
-			Scanner scan = new Scanner(cFile);
-			
-			while(scan.hasNextLine())
-			{
-				String line = scan.nextLine();
-				
-				Scanner scan2 = new Scanner(line);
-				scan2.useDelimiter(",");
-				int count = 0;
-				while(scan2.hasNextInt())
-				{
-					for(int i = 0; i <= 3; i++)
-					{
-						//System.out.println(scan2.nextInt());
-						tmp[i] = scan2.nextInt();
-						//System.out.println(tmp[i]);
-					}
-					//System.out.println();
-					roofObjects.add(new CollRect(tmp[0], tmp[1], tmp[2], tmp[3]));
-					count++;
-				}
-			}	
-			printArray();
-			scan.close();
-
-		}
-		catch(IOException e)
-		{
-
-			player.x =  (int)(enemyLeft.getX1() - 73);
-			//Game.dialogShow = true;
-			//System.out.println("Enemy Collision");
-
-			e.printStackTrace();
-
-		}
-	}
-	
-	public void printArray()
-	{
-		for(CollRect rect: roofObjects)
-		{
-
-			player.y = 256;
+			//player.y = 256;
 			//Game.dialogShow = true;
 			//System.out.println("Down Collision");
 		}
