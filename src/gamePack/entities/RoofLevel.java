@@ -29,24 +29,6 @@ public class RoofLevel implements CurrentLevel
 	public ArrayList<CollRect> roofObjects = new ArrayList<CollRect>();
 	
 	public Line2D floorLine = new Line2D.Float();
-	public Line2D rtLine = new Line2D.Float();
-	public Line2D upLine = new Line2D.Float();
-	public Line2D downLine = new Line2D.Float();
-	public Line2D platform1Top = new Line2D.Float();
-	public Line2D platform0RTop = new Line2D.Float();
-	public Line2D platform0LTop = new Line2D.Float();
-	public Line2D platform1RTop = new Line2D.Float();
-	public Line2D platform1LTop = new Line2D.Float();
-	public Line2D platform2RTop = new Line2D.Float();
-	public Line2D platform2LTop = new Line2D.Float();
-	public Line2D platform3LTop = new Line2D.Float();
-	public Line2D platform2Top = new Line2D.Float();
-	public Line2D platform3Top = new Line2D.Float();
-	public Line2D platform4Top = new Line2D.Float();
-	public Line2D platform5Top = new Line2D.Float();
-	public Line2D platform1Bottom = new Line2D.Float();
-	public Line2D platform1Right = new Line2D.Float();
-	public Line2D platform1Left = new Line2D.Float();
 	public Line2D door1Line = new Line2D.Float();
 	public Line2D enemyRight = new Line2D.Float();
 	public Line2D enemyLeft= new Line2D.Float();
@@ -106,11 +88,6 @@ public class RoofLevel implements CurrentLevel
 		
 		try
 		{
-
-			player.x = (int) (enemyRight.getX1() - 73);
-			//Game.dialogShow = true;
-			//System.out.println("Enemy Collision");
-
 			int tmp[] = {0,0,0,0};
 			Scanner scan = new Scanner(cFile);
 			
