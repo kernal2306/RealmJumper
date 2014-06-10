@@ -121,7 +121,9 @@ public class Realm2_2 implements CurrentLevel{
 			
 			if(Game.player.rightCollision(this.portalRight()))
 			{
-				System.out.print("portal collision");
+				System.out.println("portal collision");
+				Game.curr = Game.realm2_1;
+				player.x = 1000;
 				//Game.dialogShow2 = true;
 				//Game.player.x = 65;
 				//Game.dialogCount = 104;
@@ -236,11 +238,11 @@ public class Realm2_2 implements CurrentLevel{
 			public Line2D portalRight()
 			{
 				portalRight.setLine(10, 500, 10, 736);
-				if(Game.dialogStart == 116)
+				/*if(Game.dialogStart == 116)
 				{
 					Game.curr = Game.realm2_1;
 					player.x = 1000;
-				}
+				}*/
 				//System.out.println("portal collisions");
 				return portalRight;
 			}
