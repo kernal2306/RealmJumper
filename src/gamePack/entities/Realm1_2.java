@@ -23,13 +23,9 @@ public class Realm1_2 implements CurrentLevel
 	CollRect rect;
 	private SpriteSheet ss;
 	private Player player;
-<<<<<<< HEAD
-	File cFile = new File("res/realm2_2Coord.txt");
-	public ArrayList<CollRect> realm2_2Objects = new ArrayList<CollRect>();
-=======
+
 	File cFile = new File("res/realm1_2Coord.txt");
 	public ArrayList<CollRect> realm1_2Objects = new ArrayList<CollRect>();
->>>>>>> bc3e038cb869f892a9e55ef96354e31aef632493
 	
 	public Line2D floorLine = new Line2D.Float();
 	public Line2D door1Line = new Line2D.Float();

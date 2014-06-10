@@ -23,7 +23,7 @@ public class Realm1_1 implements CurrentLevel
 	CollRect rect;
 	private SpriteSheet ss;
 	private Player player;
-	File cFile = new File("res/Realm1_1Coord.txt");
+	File cFile = new File("res/realm1_1Coord.txt");
 	public ArrayList<CollRect> realm1_1Objects = new ArrayList<CollRect>();
 	
 	public Line2D floorLine = new Line2D.Float();
