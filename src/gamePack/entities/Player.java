@@ -27,132 +27,142 @@ public class Player
 	Line2D downLine = new Line2D.Float();
 	public Object player;
 
+
+	//right/left collision line (top)
+	Line2D rltLineT = new Line2D.Float();
 	
+	//right/left collision line (middle)
+	Line2D rltLineM = new Line2D.Float();
+	
+	//right/left collision line (bottom)
+	Line2D rltLineB = new Line2D.Float();
+	
+	//down/up collision line (right)
+	Line2D downUpRight = new Line2D.Float();
+	
+	//down/up collision line (middle)
+	Line2D downUpMiddle = new Line2D.Float();
+	
+	//down/up collision line (left)
+	Line2D downUpLeft = new Line2D.Float();
+
+
 	public Player(int x, int y, ImageManager im, SpriteSheet ss)
 	{
 		this.x = x;
 		this.y = y;
 		this.im = im;
 		this.ss = ss;
-		//downLine.setLine(x+1, y+63, x+60, y+63);
 		
 	}
 	//collisionDetection for player class
-	public Line2D downBoundsLeft()
+//---------------------------------------------------//
+	
+	public Line2D downUpBoundsLeft()
 	{
-		downLine.setLine(x, y+53, x, y+63);
-		return downLine;
+		downUpLeft.setLine(x, y, x, y+63);
+		return downUpLeft;
 	}
-	public Line2D downBoundsRight()
+	public Line2D downUpBoundsMid()
 	{
-		downLine.setLine(x+60, y+53, x+60, y+63);
-		return downLine;
+		downUpMiddle.setLine(x+30,y,x+30,y+63);
+		return downUpMiddle;
 	}
-	public Line2D upBoundsLeft()
+	public Line2D downUpBoundsRight()
 	{
-		upLine.setLine(x, y, x, y+10);
-		return upLine;
-	}
-	public Line2D upBoundsRight()
-	{
-		upLine.setLine(x+60, y, x+60, y+10);
-		return upLine;
-	}
-	public Line2D upBoundsMid()
-	{
-		upLine.setLine(x+30, y-1, x + 30, y-1);
-		return upLine;
-	}
-	public Line2D leftBoundsTop()
-	{
-		lfLine.setLine(x+60, y-1, x+60, y+63);
-		return lfLine;
-	}
-	public Line2D leftBoundsBottom()
-	{
-		lfLine.setLine(x+60, y-1, x+60, y+63);
-		return lfLine;
-	}
-	public Line2D rightBoundsTop()
-	{
-		rtLine.setLine(x, y-1, x, y+63);
-		return rtLine;
-	}
-	public Line2D rightBoundsBottom()
-	{
-		rtLine.setLine(x+50, y-63, x+60, y-63);
-		return rtLine;
+		downUpRight.setLine(x+60, y, x+60, y+63);
+		return downUpRight;
 	}
 	
+//----------------------------------------------------//
+	
+	public Line2D leftRightBoundsTop()
+	{
+		rltLineT.setLine(x, y, x+60, y);
+		return rltLineT;
+	}
+	public Line2D leftRightBoundsMiddle()
+	{
+		rltLineM.setLine(x,y+33,x+60,y+33);
+		return rltLineM;
+	}
+	public Line2D leftRightBoundsBottom()
+	{
+		rltLineB.setLine(x,y+63,x+60,y+63);
+		return rltLineB;
+	}
+	
+//-----------------------------------------------------//
+	
+	//test for a collision on the bottom of the player
 	public boolean DownCollision(Line2D down)
 	{		
-		if(downBoundsLeft().intersectsLine(down))
+		if(downUpBoundsLeft().intersectsLine(down))
 		{
 			return true;
 		}
-		if(downBoundsRight().intersectsLine(down))
+		if(downUpBoundsRight().intersectsLine(down))
 		{
 			return true;
 		}
-		else return false;
+		if(downUpBoundsMid().intersectsLine(down))
+		{
+			return true;
+		}
+		return false;
 	}
+	//tests for a collision on the top of the player
 	public boolean UpCollision(Line2D up)
 	{
-		if(upBoundsLeft().intersectsLine(up))
+		if(downUpBoundsLeft().intersectsLine(up))
 		{
 			return true;
 		}
-		if(upBoundsRight().intersectsLine(up))
+		if(downUpBoundsRight().intersectsLine(up))
 		{
 			return true;
 		}
-		else return false;
+		if(downUpBoundsMid().intersectsLine(up))
+		{
+			return true;
+		}
+		return false;
 	}
+	//tests for a collision on the left of the player
 	public boolean LeftCollision(Line2D Left)
 	{
-		if(leftBoundsTop().intersectsLine(Left))
+		if(leftRightBoundsTop().intersectsLine(Left))
 		{
 			return true;
 		}
-		if(leftBoundsBottom().intersectsLine(Left))
+		if(leftRightBoundsMiddle().intersectsLine(Left))
 		{
 			return true;
 		}
-		else return false;
+		if(leftRightBoundsBottom().intersectsLine(Left))
+		{
+			return true;
+		}
+		
+		return false;
 	}
+	//tests for a collision on the right of the player
 	public boolean rightCollision(Line2D right)
 	{
-		if(rightBoundsTop().intersectsLine(right))
+		if(leftRightBoundsTop().intersectsLine(right))
 		{
 			return true;
 		}
-		if(rightBoundsBottom().intersectsLine(right))
+		if(leftRightBoundsBottom().intersectsLine(right))
 		{
 			return true;
 		}
-		else return false;
-	}
-	
-	//collisionDetection for player class
-	public Line2D downBounds()
-	{
-		downLine = new Line2D.Double(x, y+16, 32, 32);
-		return downLine;
-	}
-	public Line2D upBounds()
-	{
-		upLine = new Line2D.Double(x, y-16, 32, 32);
-		return upLine;
-	}
-	public Line2D leftBounds()
-	{
-		lfLine = new Line2D.Double(x-16, y, 32, 32);
-		return lfLine;
-	}
-	public Line2D rightBounds()
-	{
-		rtLine = new Line2D.Double(x+16, y, 32 ,32);
-		return rtLine;
+		if(leftRightBoundsBottom().intersectsLine(right))
+		{
+			return true;
+		}
+		
+		return false;
 	}
 	
 	
@@ -230,16 +240,19 @@ public class Player
 	public void render(Graphics g)
 	{
 		g.drawImage(im.player, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
-	}
-	
-	public void stop()
-	{
-		up = false;
-		down = false;
-		lt = false;
-		rt = false;
-		jump = false;
 		
+		//left vertical collision line
+		g.drawLine(x, y, x, y+63);
+		//right vertical collision line
+		g.drawLine(x+60, y, x+60, y+63);
+		//middle vertical collision line
+		g.drawLine(x+30,y,x+30,y+63);
+		//top horizontal collision line
+		g.drawLine(x, y, x+60, y);
+		//middle horizontal collision line
+		g.drawLine(x,y+33,x+60,y+33);
+		//bottom horizontal collision line
+		g.drawLine(x,y+63,x+60,y+63);
 	}
 	
 }
