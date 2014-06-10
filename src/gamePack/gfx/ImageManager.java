@@ -21,6 +21,7 @@ public class ImageManager
 		lady = ss.crop(0, 0, 32,32);
 		intro = ss.crop(2, 0, 32, 32);
 		roof = ss.crop(2,0,32,32);
+		realm2_2 = ss.crop(0, 0, 32, 32);
 	}
 	
 	public void intro(SpriteSheet ss)
@@ -44,5 +45,16 @@ public class ImageManager
 			floor[i] = intro;
 		}
 
+	}
+	
+	public void realm2_2(SpriteSheet ss)
+	{
+		for (int i = 0; i <= floorLength; i++)
+		{
+			x += 32;
+			y += 32;
+			realm2_2 = ss.crop(y, x, width, hieght);
+			floor[i] = intro;
+		}
 	}
 }

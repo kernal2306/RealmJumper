@@ -20,12 +20,8 @@ public class CollRect
 		this.y = startY;
 	}
 	
-	/*public Line2D top()
+	public Line2D top()
 	{
-<<<<<<< HEAD
-		
-	}*/
-=======
 		top.setLine(x, y, x + width, y);
 		return top;
 	}
@@ -47,6 +43,6 @@ public class CollRect
 		right.setLine(x + width, y, x + width, y + height);
 		return right;
 	}
->>>>>>> tBranch2
+
 	
 }

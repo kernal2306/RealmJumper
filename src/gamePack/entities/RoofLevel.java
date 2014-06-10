@@ -22,14 +22,13 @@ public class RoofLevel implements CurrentLevel
 	private int t, count;
 	private ImageManager im;
 	Physics p = new Physics();
-	CollRect cRect;
+	CollRect rect;
 	private SpriteSheet ss;
 	private Player player;
 	File cFile = new File("res/rooftopNewCoord.txt");
 	public ArrayList<CollRect> roofObjects = new ArrayList<CollRect>();
 	
 	public Line2D floorLine = new Line2D.Float();
-<<<<<<< HEAD
 	public Line2D rtLine = new Line2D.Float();
 	public Line2D upLine = new Line2D.Float();
 	public Line2D downLine = new Line2D.Float();
@@ -53,9 +52,9 @@ public class RoofLevel implements CurrentLevel
 	public Line2D enemyLeft= new Line2D.Float();
 	public Line2D friendRight = new Line2D.Float();
 	public Line2D portalRight = new Line2D.Float();
-=======
 
->>>>>>> tBranch2
+
+
 	
 
 	//bounds for floor
@@ -91,11 +90,11 @@ public class RoofLevel implements CurrentLevel
 		if (player.y >= this.floorBounds().getY1() - 73)
 		{
 			player.y = floor -73;
-<<<<<<< HEAD
+
 			//Game.dialogShow = true;
-=======
+
 			Game.dialogShow = true;
->>>>>>> tBranch2
+
 			//System.out.println("DownCollision");
 			
 		}
@@ -107,11 +106,11 @@ public class RoofLevel implements CurrentLevel
 		
 		try
 		{
-<<<<<<< HEAD
+
 			player.x = (int) (enemyRight.getX1() - 73);
 			//Game.dialogShow = true;
 			//System.out.println("Enemy Collision");
-=======
+
 			int tmp[] = {0,0,0,0};
 			Scanner scan = new Scanner(cFile);
 			
@@ -137,17 +136,17 @@ public class RoofLevel implements CurrentLevel
 			}	
 			printArray();
 			scan.close();
->>>>>>> tBranch2
+
 		}
 		catch(IOException e)
 		{
-<<<<<<< HEAD
+
 			player.x =  (int)(enemyLeft.getX1() - 73);
 			//Game.dialogShow = true;
 			//System.out.println("Enemy Collision");
-=======
+
 			e.printStackTrace();
->>>>>>> tBranch2
+
 		}
 	}
 	
@@ -155,7 +154,7 @@ public class RoofLevel implements CurrentLevel
 	{
 		for(CollRect rect: roofObjects)
 		{
-<<<<<<< HEAD
+
 			player.y = 256;
 			//Game.dialogShow = true;
 			//System.out.println("Down Collision");
@@ -230,7 +229,7 @@ public class RoofLevel implements CurrentLevel
 				Game.ladyDialog = false;
 			}*/
 			//Game.dialog.dialogDisplay2(24, 27);
-			
+			//Game.curr = Game.realm2_2;
 		}
 		
 		/*if((Game.player.x < 512 && (Game.player.y < 736 || Game.player.y > 700)))
@@ -243,15 +242,7 @@ public class RoofLevel implements CurrentLevel
 		}*/
 		
 		player.tick();
-=======
-			System.out.println(rect.x);
-			System.out.println(rect.y);
-			System.out.println(rect.height);
-			System.out.println(rect.width);
-			System.out.println();
 		}
->>>>>>> tBranch2
-	}
 	
 	
 	public void floor()

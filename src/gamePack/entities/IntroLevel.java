@@ -61,62 +61,21 @@ public class IntroLevel implements CurrentLevel, Serializable
 	{
 		for(CollRect rect: introObjects)
 		{
-<<<<<<< HEAD
+
 			player.y = floor -73;
 			//Game.dialogShow = true;
 			//System.out.println("DownCollision");
 			
-=======
+
 			if(player.DownCollision(rect.top()))
 			{
 				player.x = rect.x;
 				System.out.println("Collision");
 			}
->>>>>>> tBranch2
-		}
-		if (player.y >= this.floorBounds().getY1() - 73)
-		{
-<<<<<<< HEAD
-			player.y = p1up - 73;
-			//Game.dialogShow = true;
-			//System.out.println("DownCollision");
-		}
 
-		if(player.DownCollision(this.platform1LTopBounds()))
-		{
-			player.y = p1Lup - 73;
-			//Game.dialogShow = true;
-			//System.out.println("DownCollision");
 		}
-=======
-			player.y = floor -73;
-			Game.dialogShow = true;
-			System.out.println("DownCollision");
-		}
->>>>>>> tBranch2
-		
 		if(player.DownCollision(this.door()) && player.up == true)
 		{
-<<<<<<< HEAD
-			player.y = p2Lup - 73;
-			//Game.dialogShow = true;
-			//System.out.println("DownCollision");
-		}
-		
-		if(player.DownCollision(this.platform0LTopBounds()))
-		{
-			player.y = p0Lup - 73;
-			//Game.dialogShow = true;
-			//System.out.println("DownCollision");
-		}
-				
-		if(player.DownCollision(this.platform2RTopBounds()))
-		{
-			player.y =p2Lup - 73;
-			//Game.dialogShow = true;
-			//System.out.println("DownCollision");
-		}
-=======
 			Game.curr = Game.roof;
 			
 		}
@@ -126,22 +85,11 @@ public class IntroLevel implements CurrentLevel, Serializable
 	
 	public void fillArray()
 	{
->>>>>>> tBranch2
+
 		
 		try
 		{
-<<<<<<< HEAD
-			player.y = p0Lup - 73;
-			//Game.dialogShow = true;
-			//System.out.println("DownCollision");
-		}
-				
-		if(player.DownCollision(this.platform1RTopBounds()))
-		{
-			player.y = p1Lup - 73;
-			//Game.dialogShow = true;
-			//System.out.println("DownCollision");
-=======
+
 			int tmp[] = {0,0,0,0};
 			Scanner scan = new Scanner(cFile);
 			
@@ -166,18 +114,17 @@ public class IntroLevel implements CurrentLevel, Serializable
 				}
 			}	
 			printArray();
-			scan.close();
->>>>>>> tBranch2
+
 		}
 		catch(IOException e)
 		{
-<<<<<<< HEAD
+
 			player.y = p5up - 73;
 			//Game.dialogShow = true;
 			//System.out.println("DownCollision");
-=======
+
 			e.printStackTrace();
->>>>>>> tBranch2
+
 		}
 	}
 	
@@ -185,16 +132,13 @@ public class IntroLevel implements CurrentLevel, Serializable
 	{
 		for(CollRect rect: introObjects)
 		{
-<<<<<<< HEAD
 			//System.out.println(Game.dialog.dialogArray[23]);
 			Game.curr = Game.roof;
-=======
 			System.out.println(rect.x);
 			System.out.println(rect.y);
 			System.out.println(rect.height);
 			System.out.println(rect.width);
 			System.out.println();
->>>>>>> tBranch2
 		}
 	}
 	
