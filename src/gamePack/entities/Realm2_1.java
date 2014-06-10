@@ -237,11 +237,13 @@ public class Realm2_1 implements CurrentLevel
 			
 			public Line2D portalRight()
 			{
-				portalRight.setLine(1014, 500, 1014, 736);
+				portalRight.setLine(1014, 0, 1014, 736);
 				
 				//System.out.println("portal collisions");
 				return portalRight;
 			}
+			
+			
 			
 		//----------------------------------------------------
 

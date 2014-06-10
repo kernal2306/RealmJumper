@@ -30,7 +30,7 @@ public class Realm2_2 implements CurrentLevel{
 	public Line2D door1Line = new Line2D.Float();
 	public Line2D enemyRight = new Line2D.Float();
 	public Line2D enemyLeft= new Line2D.Float();
-	public Line2D friendRight = new Line2D.Float();
+	public Line2D top = new Line2D.Float();
 	public Line2D bottomLeft = new Line2D.Float();
 	
 	//bounds for floor
@@ -41,7 +41,7 @@ public class Realm2_2 implements CurrentLevel{
 			this.im = im;
 			this.ss = ss;
 			player = plyr;
-					
+			fillArray();
 		}
 		
 		@SuppressWarnings("unused")
@@ -77,6 +77,18 @@ public class Realm2_2 implements CurrentLevel{
 				System.out.println("portal collision");
 				Game.curr = Game.realm2_1;
 				player.x = 924;
+				//Game.dialogShow2 = true;
+				//Game.player.x = 65;
+				//Game.dialogCount = 104;
+				//Game.dialogStart = 108;
+				//Game.dialogStop = 119;
+			}
+			
+			if(Game.player.UpCollision(this.top()))
+			{
+				System.out.println("portal collision");
+				Game.curr = Game.realm1_2;
+				player.y = 720;
 				//Game.dialogShow2 = true;
 				//Game.player.x = 65;
 				//Game.dialogCount = 104;
@@ -161,9 +173,16 @@ public class Realm2_2 implements CurrentLevel{
 			
 			public Line2D bottomLeft()
 			{
-				bottomLeft.setLine(10, 500, 10, 736);
+				bottomLeft.setLine(10, 0, 10, 736);
 				
 				return bottomLeft;
+			}
+			
+			public Line2D top()
+			{
+				top.setLine(10, 0, 10, 736);
+				
+				return top;
 			}
 			
 		//----------------------------------------------------
