@@ -38,7 +38,7 @@ public class Dialog implements Serializable{
 		{
 		
 			dialogArray[count] = line;
-			System.out.println(dialogArray[count]);
+			//System.out.println(dialogArray[count]);
 			count++;
 		}
 		System.out.println(dialogArray[0]);

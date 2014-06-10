@@ -62,7 +62,7 @@ public class IntroLevel implements CurrentLevel, Serializable
 		for(CollRect rect: introObjects)
 		{
 
-			player.y = floor -73;
+			//player.y = floor -73;
 			//Game.dialogShow = true;
 			//System.out.println("DownCollision");
 			
@@ -77,6 +77,8 @@ public class IntroLevel implements CurrentLevel, Serializable
 		if(player.DownCollision(this.door()) && player.up == true)
 		{
 			Game.curr = Game.roof;
+			player.x = 900;
+			player.y = 700;
 			
 		}
 		
@@ -134,10 +136,9 @@ public class IntroLevel implements CurrentLevel, Serializable
 		for(CollRect rect: introObjects)
 		{
 			//System.out.println(Game.dialog.dialogArray[23]);
-			Game.curr = Game.roof;
+			//Game.curr = Game.roof;
 
-			player.x = 900;
-			player.y = 700;
+			
 
 			System.out.println(rect.x);
 			System.out.println(rect.y);
