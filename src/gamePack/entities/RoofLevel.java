@@ -79,6 +79,7 @@ public class RoofLevel implements CurrentLevel
 
 			
 		}
+<<<<<<< HEAD
 		player.tick();
 	}
 	
@@ -125,6 +126,8 @@ public class RoofLevel implements CurrentLevel
 
 		}
 		
+=======
+>>>>>>> dc45a1f875dffa793c0190518d7265e4731bca39
 		if(Game.player.rightCollision(this.enemyRight()))
 		{
 			System.out.print("Enemy being hit");
@@ -196,18 +199,72 @@ public class RoofLevel implements CurrentLevel
 			//Game.dialog.dialogDisplay2(24, 27);
 			//Game.curr = Game.realm2_2;
 		}
+
+		player.tick();
+	}
+	
+	public void fillArray()
+	{
 		
-		/*if((Game.player.x < 512 && (Game.player.y < 736 || Game.player.y > 700)))
+		try
 		{
-			System.out.println("You are winning!");
-			Game.dialogShow2 = true;
-			Game.player.x = 512;
-			Game.dialogCount = 4;
-			Game.dialog.dialogDisplay2(24, 27);
-		}*/
+			int tmp[] = {0,0,0,0};
+			Scanner scan = new Scanner(cFile);
+			
+			while(scan.hasNextLine())
+			{
+				String line = scan.nextLine();
+				
+				Scanner scan2 = new Scanner(line);
+				scan2.useDelimiter(",");
+				int count = 0;
+				while(scan2.hasNextInt())
+				{
+					for(int i = 0; i <= 3; i++)
+					{
+						//System.out.println(scan2.nextInt());
+						tmp[i] = scan2.nextInt();
+						//System.out.println(tmp[i]);
+					}
+					//System.out.println();
+					roofObjects.add(new CollRect(tmp[0], tmp[1], tmp[2], tmp[3]));
+					count++;
+				}
+			}	
+			printArray();
+			scan.close();
+
+		}
+		catch(IOException e)
+		{
+
+			player.x =  (int)(enemyLeft.getX1() - 73);
+			//Game.dialogShow = true;
+			//System.out.println("Enemy Collision");
+
+			e.printStackTrace();
+
+		}
+	}
+	
+	public void printArray()
+	{
+		for(CollRect rect: roofObjects)
+		{
+
+			player.y = 256;
+			//Game.dialogShow = true;
+			//System.out.println("Down Collision");
+		}
+		
+
 		
 		player.tick();
-		}
+	}
+	
+	
+	
+	
 	
 	
 	public void floor()
@@ -223,47 +280,7 @@ public class RoofLevel implements CurrentLevel
 	}
 	
 	
-	//-----------------------------------------------------------	
-	
-//		//area2 rooftop platforms
-//		public Line2D platform1LTopBounds()
-//		{
-//			platform1LTop.setLine(0, 96, 384, 384);
-//			return platform1LTop;
-//		}
-//		public Line2D platform2TopBounds()
-//		{
-//			platform2Top.setLine(256, 256,736, 256);
-//			return platform2Top;
-//		}
-//		public Line2D platform0LTopBounds()
-//		{
-//			platform0LTop.setLine(736, 832, 448, 448);
-//			return platform1LTop;
-//		}
-//		
-//		public Line2D platform1RTopBounds()
-//		{
-//			platform1LTop.setLine(928, 1024, 288, 288);
-//			return platform1LTop;
-//		}
-//		public Line2D platform2RTopBounds()
-//		{
-//			platform2RTop.setLine(960, 1024, 608, 608);
-//			return platform2RTop;
-//		}
-//		public Line2D enemyRightBounds()
-//		{
-//			platform1LTop.setLine(512,512,320,736);
-//			return enemyRight;
-//		}
-//		public Line2D enemyLeftBounds()
-//		{
-//			platform2RTop.setLine(960, 1024, 608, 608);
-//			return enemyLeft;
-//		}
-		
-		//collison lines for rooftop dialog
+
 		public Line2D enemyRight()
 		{
 			enemyRight.setLine(520, 320, 520, 736);
