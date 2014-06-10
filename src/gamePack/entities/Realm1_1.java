@@ -23,8 +23,8 @@ public class Realm1_1 implements CurrentLevel
 	CollRect rect;
 	private SpriteSheet ss;
 	private Player player;
-	File cFile = new File("res/Reaml2_2Coord.txt");
-	public ArrayList<CollRect> realm2_2Objects = new ArrayList<CollRect>();
+	File cFile = new File("res/Realm1_1Coord.txt");
+	public ArrayList<CollRect> realm1_1Objects = new ArrayList<CollRect>();
 	
 	public Line2D floorLine = new Line2D.Float();
 	public Line2D door1Line = new Line2D.Float();
@@ -41,13 +41,13 @@ public class Realm1_1 implements CurrentLevel
 			this.im = im;
 			this.ss = ss;
 			player = plyr;
-					
+			fillArray();		
 		}
 		
 		@SuppressWarnings("unused")
 		public void tick()
 		{
-			for(CollRect rect: realm2_2Objects)
+			for(CollRect rect: realm1_1Objects)
 			{
 				if(player.DownCollision(rect.top()))
 				{
@@ -70,15 +70,21 @@ public class Realm1_1 implements CurrentLevel
 				
 			}
 			
-			/*if(Game.player.rightCollision(this.enemyRight()))
+			if(Game.player.rightCollision(this.friendRight()))
 			{
-				System.out.print("Enemy being hit");
+				System.out.print("Friend being hit");
 				Game.dialogShow2 = true;
-				//Game.player.x = 900;
-				Game.dialogStart = 120;
-				Game.dialogStop = 131;
+				Game.player.x = 185;
+				//Game.dialogCount = 104;
+				Game.dialogStart = 136;
+				Game.dialogStop = 199;
+				/*if((Game.dialogStart+4 >= Game.dialogStop))
+				{
+					Game.ladyDialog = false;
+				}*/
+				//Game.dialog.dialogDisplay2(24, 27);
 				
-			}*/
+			}
 			
 			/*if(Game.player.LeftCollision(this.enemyLeft()))
 			{
@@ -122,6 +128,8 @@ public class Realm1_1 implements CurrentLevel
 			if(Game.player.rightCollision(this.portalRight()))
 			{
 				System.out.print("portal collision");
+				Game.curr = Game.realm1_2;
+				player.x = 100;
 				//Game.dialogShow2 = true;
 				//Game.player.x = 65;
 				//Game.dialogCount = 104;
@@ -153,7 +161,7 @@ public class Realm1_1 implements CurrentLevel
 						{
 							tmp[i] = scan2.nextInt();
 						}
-						realm2_2Objects.add(new CollRect(tmp[0], tmp[1], tmp[2], tmp[3]));
+						realm1_1Objects.add(new CollRect(tmp[0], tmp[1], tmp[2], tmp[3]));
 						count++;
 					}
 				}	
@@ -170,7 +178,7 @@ public class Realm1_1 implements CurrentLevel
 
 		public void printArray()
 		{
-			for(CollRect rect: realm2_2Objects)
+			for(CollRect rect: realm1_1Objects)
 			{
 
 				//player.y = 256;
@@ -235,14 +243,21 @@ public class Realm1_1 implements CurrentLevel
 			
 			public Line2D portalRight()
 			{
-				portalRight.setLine(0, 500, 0, 736);
-				if(Game.dialogStart == 116)
-				{
-					Game.curr = Game.realm2_2;
-					player.x = 900;
-				}
-				//System.out.println("portal collisions");
+				portalRight.setLine(1014,0, 1014, 736);
 				return portalRight;
+			}
+			
+			public Line2D friendRight()
+			{
+				
+				
+				
+				friendRight.setLine(180, 500, 180, 736);
+				
+				//System.out.println("lady false");
+				
+				return friendRight;
+				
 			}
 			
 		//----------------------------------------------------

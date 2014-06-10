@@ -23,15 +23,20 @@ public class Realm1_2 implements CurrentLevel
 	CollRect rect;
 	private SpriteSheet ss;
 	private Player player;
+<<<<<<< HEAD
 	File cFile = new File("res/realm2_2Coord.txt");
 	public ArrayList<CollRect> realm2_2Objects = new ArrayList<CollRect>();
+=======
+	File cFile = new File("res/realm1_2Coord.txt");
+	public ArrayList<CollRect> realm1_2Objects = new ArrayList<CollRect>();
+>>>>>>> bc3e038cb869f892a9e55ef96354e31aef632493
 	
 	public Line2D floorLine = new Line2D.Float();
 	public Line2D door1Line = new Line2D.Float();
 	public Line2D enemyRight = new Line2D.Float();
 	public Line2D enemyLeft= new Line2D.Float();
 	public Line2D friendRight = new Line2D.Float();
-	public Line2D portalRight = new Line2D.Float();
+	public Line2D bottomLeft = new Line2D.Float();
 	
 	//bounds for floor
 		public int floor = 730;
@@ -41,13 +46,13 @@ public class Realm1_2 implements CurrentLevel
 			this.im = im;
 			this.ss = ss;
 			player = plyr;
-					
+			fillArray();
 		}
 		
 		@SuppressWarnings("unused")
 		public void tick()
 		{
-			for(CollRect rect: realm2_2Objects)
+			for(CollRect rect: realm1_2Objects)
 			{
 				if(player.DownCollision(rect.top()))
 				{
@@ -119,9 +124,11 @@ public class Realm1_2 implements CurrentLevel
 				
 			}*/
 			
-			if(Game.player.rightCollision(this.portalRight()))
+			if(Game.player.rightCollision(this.bottomLeft()))
 			{
 				System.out.print("portal collision");
+				Game.curr = Game.realm1_1;
+				player.x = 924;
 				//Game.dialogShow2 = true;
 				//Game.player.x = 65;
 				//Game.dialogCount = 104;
@@ -153,7 +160,7 @@ public class Realm1_2 implements CurrentLevel
 						{
 							tmp[i] = scan2.nextInt();
 						}
-						realm2_2Objects.add(new CollRect(tmp[0], tmp[1], tmp[2], tmp[3]));
+						realm1_2Objects.add(new CollRect(tmp[0], tmp[1], tmp[2], tmp[3]));
 						count++;
 					}
 				}	
@@ -170,7 +177,7 @@ public class Realm1_2 implements CurrentLevel
 
 		public void printArray()
 		{
-			for(CollRect rect: realm2_2Objects)
+			for(CollRect rect: realm1_2Objects)
 			{
 
 				//player.y = 256;
@@ -196,54 +203,18 @@ public class Realm1_2 implements CurrentLevel
 		//create lines for collision detection on intro level
 		public Line2D floorBounds()
 		{
-			floorLine.setLine(-100, floor, 1024, floor);
+			floorLine.setLine(-100, floor, 736, floor);
 			return floorLine;
 		}
 		
 		
-
-			/*public Line2D enemyRight()
-			{
-				enemyRight.setLine(900, 700, 900, 768);
-				return enemyRight;
-			}
 			
-			public Line2D enemyLeft()
-			{
-				enemyLeft.setLine(448, 320, 448, 736);
-				return enemyLeft;
-			}
+		public Line2D bottomLeft()
+		{
+			bottomLeft.setLine(32, 0, 10, 736);
 			
-			public Line2D friendRight()
-			{
-				
-				
-				if(Game.dialogStart == 100)
-				{
-					Game.back2 = Game.back2Again;
-					friendRight.setLine(0, 500, 0, 736);
-				}
-				else
-				{
-					friendRight.setLine(180, 500, 180, 736);
-				}
-				//System.out.println("lady false");
-				
-				return friendRight;
-				
-			}*/
-			
-			public Line2D portalRight()
-			{
-				portalRight.setLine(0, 500, 0, 736);
-				if(Game.dialogStart == 116)
-				{
-					Game.curr = Game.realm2_2;
-					player.x = 900;
-				}
-				//System.out.println("portal collisions");
-				return portalRight;
-			}
+			return bottomLeft;
+		}
 			
 		//----------------------------------------------------
 
