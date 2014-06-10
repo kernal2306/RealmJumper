@@ -40,7 +40,7 @@ public class RoofLevel implements CurrentLevel
 	
 
 	//bounds for floor
-	public int floor = 700;
+	public int floor = 735;
 	
 	public RoofLevel(int x, int y, ImageManager im, SpriteSheet ss, Player plyr)
 	{

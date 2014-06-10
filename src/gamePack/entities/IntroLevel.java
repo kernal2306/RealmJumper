@@ -39,7 +39,7 @@ public class IntroLevel implements CurrentLevel, Serializable
 	public Line2D door1Line = new Line2D.Float();
 	
 	//bounds for floor
-	public int floor = 728;
+	public int floor = 755;
 
 	//bounds for platform 5 platform
 	public int p5up =97;
