@@ -39,7 +39,6 @@ public class CurrLevel
 		this.ss = ss;
 		this.x = x;
 		this.y = y;
-		
 		player = new Player(50,200,im, ss);
 	
 	}

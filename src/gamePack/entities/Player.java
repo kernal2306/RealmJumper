@@ -242,17 +242,17 @@ public class Player
 		g.drawImage(im.player, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
 		
 		//left vertical collision line
-		g.drawLine(x, y, x, y+63);
+		//g.drawLine(x, y, x, y+63);
 		//right vertical collision line
-		g.drawLine(x+60, y, x+60, y+63);
+		//g.drawLine(x+60, y, x+60, y+63);
 		//middle vertical collision line
-		g.drawLine(x+30,y,x+30,y+63);
+		//g.drawLine(x+30,y,x+30,y+63);
 		//top horizontal collision line
-		g.drawLine(x, y, x+60, y);
+		//g.drawLine(x, y, x+60, y);
 		//middle horizontal collision line
-		g.drawLine(x,y+33,x+60,y+33);
+		//g.drawLine(x,y+33,x+60,y+33);
 		//bottom horizontal collision line
-		g.drawLine(x,y+63,x+60,y+63);
+		//g.drawLine(x,y+63,x+60,y+63);
 	}
 	
 }

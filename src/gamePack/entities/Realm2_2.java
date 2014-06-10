@@ -17,22 +17,27 @@ public class Realm2_2 implements CurrentLevel{
 	
 	public int x;
 	public int y;
-	private int t, count;
+	private int t;
+	int numTiles = 50;
+	double count = 1;
+	int tickCount = 1;
 	private ImageManager im;
 	Physics p = new Physics();
-	CollRect rect;
 	private SpriteSheet ss;
 	private Player player;
-	File cFile = new File("res/realm2_2Coord.txt");
-	public ArrayList<CollRect> realm2_2Objects = new ArrayList<CollRect>();
-	
+	Line2D introObjects[];
 	public Line2D floorLine = new Line2D.Float();
+	public Line2D bottomLeft = new Line2D.Float();
+	public Line2D top = new Line2D.Float();
 	public Line2D door1Line = new Line2D.Float();
 	public Line2D enemyRight = new Line2D.Float();
 	public Line2D enemyLeft= new Line2D.Float();
-	public Line2D top = new Line2D.Float();
-	public Line2D bottomLeft = new Line2D.Float();
+	public Line2D friendRight = new Line2D.Float();
+	public Line2D portalRight = new Line2D.Float();
+	File cFile = new File("res/realm2_2Coord.txt");
+	public ArrayList<CollRect> realm2_2Objects = new ArrayList<CollRect>();
 	
+
 	//bounds for floor
 		public int floor = 730;
 		

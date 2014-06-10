@@ -24,6 +24,7 @@ public class Realm2_1 implements CurrentLevel
 	private SpriteSheet ss;
 	private Player player;
 	File cFile = new File("res/realm2_1Coord.txt");
+
 	public ArrayList<CollRect> realm2_1Objects = new ArrayList<CollRect>();
 	
 	public Line2D floorLine = new Line2D.Float();

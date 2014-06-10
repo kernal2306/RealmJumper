@@ -140,8 +140,6 @@ public class IntroLevel implements CurrentLevel, Serializable
 			//System.out.println(Game.dialog.dialogArray[23]);
 			//Game.curr = Game.roof;
 
-			
-
 			System.out.println(rect.x);
 			System.out.println(rect.y);
 			System.out.println(rect.height);
