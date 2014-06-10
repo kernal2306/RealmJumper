@@ -4,6 +4,10 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 import gamePack.CurrentLevel;
 import gamePack.Game;
@@ -15,16 +19,17 @@ public class RoofLevel implements CurrentLevel
 {
 	public int x;
 	public int y;
-	private int t;
-	int numTiles = 50;
-	double count = 1;
-	int tickCount = 1;
+	private int t, count;
 	private ImageManager im;
 	Physics p = new Physics();
+	CollRect cRect;
 	private SpriteSheet ss;
 	private Player player;
-	Line2D introObjects[];
+	File cFile = new File("res/rooftopNewCoord.txt");
+	public ArrayList<CollRect> roofObjects = new ArrayList<CollRect>();
+	
 	public Line2D floorLine = new Line2D.Float();
+<<<<<<< HEAD
 	public Line2D rtLine = new Line2D.Float();
 	public Line2D upLine = new Line2D.Float();
 	public Line2D downLine = new Line2D.Float();
@@ -48,6 +53,9 @@ public class RoofLevel implements CurrentLevel
 	public Line2D enemyLeft= new Line2D.Float();
 	public Line2D friendRight = new Line2D.Float();
 	public Line2D portalRight = new Line2D.Float();
+=======
+
+>>>>>>> tBranch2
 	
 
 	//bounds for floor
@@ -58,36 +66,96 @@ public class RoofLevel implements CurrentLevel
 		this.im = im;
 		this.ss = ss;
 		player = plyr;
+		fillArray();
 				
 	}
 	
 	@SuppressWarnings("unused")
 	public void tick()
 	{
+		for(CollRect rect: roofObjects)
+		{
+			if(player.DownCollision(rect.top()))
+			{
+				player.y = rect.y - 73;
+				System.out.println("Collision");
+			}
+			if(player.UpCollision(rect.bottom()))
+			{
+				player.jump = false;
+				player.p.falling(y, x, count);
+				System.out.println("up Collision");
+			}
+		}
 		
 		if (player.y >= this.floorBounds().getY1() - 73)
 		{
 			player.y = floor -73;
+<<<<<<< HEAD
 			//Game.dialogShow = true;
+=======
+			Game.dialogShow = true;
+>>>>>>> tBranch2
 			//System.out.println("DownCollision");
 			
 		}
-		if(player.LeftCollision(enemyRightBounds()))
+		player.tick();
+	}
+	
+	public void fillArray()
+	{
+		
+		try
 		{
+<<<<<<< HEAD
 			player.x = (int) (enemyRight.getX1() - 73);
 			//Game.dialogShow = true;
 			//System.out.println("Enemy Collision");
+=======
+			int tmp[] = {0,0,0,0};
+			Scanner scan = new Scanner(cFile);
+			
+			while(scan.hasNextLine())
+			{
+				String line = scan.nextLine();
+				
+				Scanner scan2 = new Scanner(line);
+				scan2.useDelimiter(",");
+				int count = 0;
+				while(scan2.hasNextInt())
+				{
+					for(int i = 0; i <= 3; i++)
+					{
+						//System.out.println(scan2.nextInt());
+						tmp[i] = scan2.nextInt();
+						//System.out.println(tmp[i]);
+					}
+					//System.out.println();
+					roofObjects.add(new CollRect(tmp[0], tmp[1], tmp[2], tmp[3]));
+					count++;
+				}
+			}	
+			printArray();
+			scan.close();
+>>>>>>> tBranch2
 		}
-
-		if(player.rightCollision(enemyLeftBounds()))
+		catch(IOException e)
 		{
+<<<<<<< HEAD
 			player.x =  (int)(enemyLeft.getX1() - 73);
 			//Game.dialogShow = true;
 			//System.out.println("Enemy Collision");
+=======
+			e.printStackTrace();
+>>>>>>> tBranch2
 		}
-		
-		if(player.DownCollision(this.platform2TopBounds()))
+	}
+	
+	public void printArray()
+	{
+		for(CollRect rect: roofObjects)
 		{
+<<<<<<< HEAD
 			player.y = 256;
 			//Game.dialogShow = true;
 			//System.out.println("Down Collision");
@@ -175,7 +243,16 @@ public class RoofLevel implements CurrentLevel
 		}*/
 		
 		player.tick();
+=======
+			System.out.println(rect.x);
+			System.out.println(rect.y);
+			System.out.println(rect.height);
+			System.out.println(rect.width);
+			System.out.println();
+		}
+>>>>>>> tBranch2
 	}
+	
 	
 	public void floor()
 	{
@@ -192,43 +269,43 @@ public class RoofLevel implements CurrentLevel
 	
 	//-----------------------------------------------------------	
 	
-		//area2 rooftop platforms
-		public Line2D platform1LTopBounds()
-		{
-			platform1LTop.setLine(0, 96, 384, 384);
-			return platform1LTop;
-		}
-		public Line2D platform2TopBounds()
-		{
-			platform2Top.setLine(256, 256,736, 256);
-			return platform2Top;
-		}
-		public Line2D platform0LTopBounds()
-		{
-			platform0LTop.setLine(736, 832, 448, 448);
-			return platform1LTop;
-		}
-		
-		public Line2D platform1RTopBounds()
-		{
-			platform1LTop.setLine(928, 1024, 288, 288);
-			return platform1LTop;
-		}
-		public Line2D platform2RTopBounds()
-		{
-			platform2RTop.setLine(960, 1024, 608, 608);
-			return platform2RTop;
-		}
-		public Line2D enemyRightBounds()
-		{
-			platform1LTop.setLine(512,512,320,736);
-			return enemyRight;
-		}
-		public Line2D enemyLeftBounds()
-		{
-			platform2RTop.setLine(960, 1024, 608, 608);
-			return enemyLeft;
-		}
+//		//area2 rooftop platforms
+//		public Line2D platform1LTopBounds()
+//		{
+//			platform1LTop.setLine(0, 96, 384, 384);
+//			return platform1LTop;
+//		}
+//		public Line2D platform2TopBounds()
+//		{
+//			platform2Top.setLine(256, 256,736, 256);
+//			return platform2Top;
+//		}
+//		public Line2D platform0LTopBounds()
+//		{
+//			platform0LTop.setLine(736, 832, 448, 448);
+//			return platform1LTop;
+//		}
+//		
+//		public Line2D platform1RTopBounds()
+//		{
+//			platform1LTop.setLine(928, 1024, 288, 288);
+//			return platform1LTop;
+//		}
+//		public Line2D platform2RTopBounds()
+//		{
+//			platform2RTop.setLine(960, 1024, 608, 608);
+//			return platform2RTop;
+//		}
+//		public Line2D enemyRightBounds()
+//		{
+//			platform1LTop.setLine(512,512,320,736);
+//			return enemyRight;
+//		}
+//		public Line2D enemyLeftBounds()
+//		{
+//			platform2RTop.setLine(960, 1024, 608, 608);
+//			return enemyLeft;
+//		}
 		
 		//collison lines for rooftop dialog
 		public Line2D enemyRight()
