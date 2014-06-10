@@ -41,7 +41,7 @@ public class Realm1_1 implements CurrentLevel
 			this.im = im;
 			this.ss = ss;
 			player = plyr;
-					
+			fillArray();		
 		}
 		
 		@SuppressWarnings("unused")
