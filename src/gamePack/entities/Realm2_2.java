@@ -70,54 +70,7 @@ public class Realm2_2 implements CurrentLevel{
 				
 			}
 			
-			/*if(Game.player.rightCollision(this.enemyRight()))
-			{
-				System.out.print("Enemy being hit");
-				Game.dialogShow2 = true;
-				//Game.player.x = 900;
-				Game.dialogStart = 120;
-				Game.dialogStop = 131;
-				
-			}*/
 			
-			/*if(Game.player.LeftCollision(this.enemyLeft()))
-			{
-				System.out.print("Enemy being hit");
-				Game.dialogShow2 = true;
-				Game.player.x = 370;
-				//Game.dialogCount = 104;
-				Game.dialogStart = 104;
-				Game.dialogStop = 107;
-				//Game.dialog.dialogDisplay2(24, 27);
-				
-			}*/
-			
-			/*if(Game.player.rightCollision(this.friendRight()))
-			{
-				System.out.print("Friend being hit");
-				Game.dialogShow2 = true;
-				Game.player.x = 192;
-				//Game.dialogCount = 104;
-				Game.dialogStart = 0;
-				Game.dialogStop = 103;
-				
-			}*/
-			
-			/*if(Game.player.rightCollision(this.friendRight()))
-			{
-				System.out.print("Friend being hit");
-				Game.dialogShow2 = true;
-				Game.player.x = 852;
-				//Game.dialogCount = 104;
-				Game.dialogStart = 0;
-				Game.dialogStop = 104;
-				if((Game.dialogStart+4 >= Game.dialogStop))
-				{
-					Game.ladyDialog = false;
-				}
-				//Game.dialog.dialogDisplay2(24, 27);
-				
-			}*/
 			
 			if(Game.player.rightCollision(this.bottomLeft()))
 			{
@@ -204,46 +157,12 @@ public class Realm2_2 implements CurrentLevel{
 		
 		
 
-			/*public Line2D enemyRight()
-			{
-				enemyRight.setLine(900, 700, 900, 768);
-				return enemyRight;
-			}
 			
-			public Line2D enemyLeft()
-			{
-				enemyLeft.setLine(448, 320, 448, 736);
-				return enemyLeft;
-			}
-			
-			public Line2D friendRight()
-			{
-				
-				
-				if(Game.dialogStart == 100)
-				{
-					Game.back2 = Game.back2Again;
-					friendRight.setLine(0, 500, 0, 736);
-				}
-				else
-				{
-					friendRight.setLine(180, 500, 180, 736);
-				}
-				//System.out.println("lady false");
-				
-				return friendRight;
-				
-			}*/
 			
 			public Line2D bottomLeft()
 			{
 				bottomLeft.setLine(10, 500, 10, 736);
-				/*if(Game.dialogStart == 116)
-				{
-					Game.curr = Game.realm2_1;
-					player.x = 1000;
-				}*/
-				//System.out.println("portal collisions");
+				
 				return bottomLeft;
 			}
 			
