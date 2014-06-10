@@ -23,8 +23,8 @@ public class Realm2_1 implements CurrentLevel
 	CollRect rect;
 	private SpriteSheet ss;
 	private Player player;
-	File cFile = new File("res/reaml2_2Coord.txt");
-	public ArrayList<CollRect> realm2_2Objects = new ArrayList<CollRect>();
+	File cFile = new File("res/realm2_1Coord.txt");
+	public ArrayList<CollRect> realm2_1Objects = new ArrayList<CollRect>();
 	
 	public Line2D floorLine = new Line2D.Float();
 	public Line2D door1Line = new Line2D.Float();
@@ -41,13 +41,13 @@ public class Realm2_1 implements CurrentLevel
 			this.im = im;
 			this.ss = ss;
 			player = plyr;
-					
+			fillArray();
 		}
 		
 		@SuppressWarnings("unused")
 		public void tick()
 		{
-			for(CollRect rect: realm2_2Objects)
+			for(CollRect rect: realm2_1Objects)
 			{
 				if(player.DownCollision(rect.top()))
 				{
@@ -155,7 +155,7 @@ public class Realm2_1 implements CurrentLevel
 						{
 							tmp[i] = scan2.nextInt();
 						}
-						realm2_2Objects.add(new CollRect(tmp[0], tmp[1], tmp[2], tmp[3]));
+						realm2_1Objects.add(new CollRect(tmp[0], tmp[1], tmp[2], tmp[3]));
 						count++;
 					}
 				}	
@@ -172,7 +172,7 @@ public class Realm2_1 implements CurrentLevel
 
 		public void printArray()
 		{
-			for(CollRect rect: realm2_2Objects)
+			for(CollRect rect: realm2_1Objects)
 			{
 
 				//player.y = 256;
