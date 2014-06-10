@@ -5,6 +5,9 @@ import gamePack.Edit.Editor;
 import gamePack.entities.IntroLevel;
 import gamePack.entities.Lady;
 import gamePack.entities.Player;
+import gamePack.entities.Realm1_1;
+import gamePack.entities.Realm1_2;
+import gamePack.entities.Realm2_1;
 import gamePack.entities.Realm2_2;
 import gamePack.entities.RoofLevel;
 import gamePack.gfx.Background;
@@ -36,7 +39,7 @@ public class Game extends Canvas implements Runnable
 	public  Line2D downObjects[];
 	public  int count;	
 	private BufferedImage spriteSheet1;
-	private BufferedImage background1, background2, background2_2;
+	private BufferedImage background1, background2, background2_2, background2_1, background1_2, background1_1;
 	public static BufferedImage back2NoLady;
 	public static BufferedImage Back2NoLady1;
 	private ImageManager im;
@@ -47,11 +50,14 @@ public class Game extends Canvas implements Runnable
 	public static IntroLevel intro;
 	public static RoofLevel  roof;
 	public static Realm2_2 realm2_2;
+	public static Realm2_1 realm2_1;
+	public static Realm1_2 realm1_2;
+	public static Realm1_1 realm1_1;
 	private  Editor editor;
 	public static CurrentLevel curr;
 	private  Background back;
 	public static Background back2;
-	private Background back2_2;
+	private Background back2_2, back2_1, back1_1, back1_2;
 	public static  Dialog dialog;
 	private KeyManager key;
 	public static int dialogCount = 0;
@@ -69,6 +75,9 @@ public class Game extends Canvas implements Runnable
 		background2 = loader.load("/background2.png");
 		back2NoLady = loader.load("/Back2NoLady.png");
 		background2_2 = loader.load("/background2_2.png");
+		background2_1 = loader.load("/background2_1.png");
+		background1_2 = loader.load("/background1_2.png");
+		background1_1 = loader.load("/background1_1.png");
 		SpriteSheet ss = new SpriteSheet(spriteSheet1);
 		im = new ImageManager(ss);
 		
@@ -80,12 +89,18 @@ public class Game extends Canvas implements Runnable
 		intro = new IntroLevel(500, 700, im, ss, player);
 		roof = new RoofLevel(500, 700, im, ss, player);
 		realm2_2 = new Realm2_2(500, 700, im, ss, player);
+		realm2_1 = new Realm2_1(500, 700, im, ss, player);
+		realm1_2 = new Realm1_2(500, 700, im, ss, player);
+		realm1_1 = new Realm1_1(500, 700, im, ss, player);
 		lady = new Lady(800, 200, im, ss);
 		editor = new Editor();
 		back = new Background(background1);
 		back2 = new Background(background2);
 		back2Again = new Background(back2NoLady);
 		back2_2 = new Background(background2_2);
+		back2_1 = new Background(background2_1);
+		back1_2 = new Background(background1_2);
+		back1_1 = new Background(background1_1);
 		curr = intro;
 		dialog = new Dialog();
 		key = new KeyManager();
@@ -174,10 +189,29 @@ public class Game extends Canvas implements Runnable
 		if(curr == realm2_2)
 		{
 			back2_2.render(g);
+			player.render(g);			
+			dialog.render(g);
+		}
+		if(curr == realm2_1)
+		{
+			back2_1.render(g);
 			player.render(g);
+			dialog.render(g);
 			
+		}
+		if(curr == realm1_2)
+		{
+			back1_2.render(g);
+			player.render(g);
+			dialog.render(g);
 			
-			//dialog.render(g);
+		}
+		if(curr == realm1_1)
+		{
+			back1_1.render(g);
+			player.render(g);
+			dialog.render(g);
+			
 		}
 		
 		

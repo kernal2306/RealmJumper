@@ -123,13 +123,17 @@ in what seems like a cave.
 All around you see glowing
 stones in the wall so you 
 can see perfectly well.
-Then the memories come back
-and you can't believe that
-you went through the portal.
-You don't see the strange 
-woman anywhere so you decide
-that you are going to go
-look for her.
+Then the memories come
+back and you can't believe
+that you went through the 
+portal. You don't see the 
+strange woman anywhere 
+so you decide that you are 
+going to go look for her.
+
+
+
+
 				Strange Woman:
 	"You found me.  I was 
 	worried	that I had lost
