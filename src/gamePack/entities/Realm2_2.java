@@ -15,44 +15,29 @@ import gamePack.gfx.SpriteSheet;
 
 public class Realm2_2 implements CurrentLevel{
 	
-<<<<<<< HEAD
-		public int x;
-		public int y;
-		private int t;
-		int numTiles = 50;
-		double count = 1;
-		int tickCount = 1;
-		private ImageManager im;
-		Physics p = new Physics();
-		private SpriteSheet ss;
-		private Player player;
-		Line2D introObjects[];
-		public Line2D floorLine = new Line2D.Float();
-		public Line2D door1Line = new Line2D.Float();
-		public Line2D enemyRight = new Line2D.Float();
-		public Line2D enemyLeft= new Line2D.Float();
-		public Line2D friendRight = new Line2D.Float();
-		public Line2D portalRight = new Line2D.Float();
-=======
 	public int x;
 	public int y;
-	private int t, count;
+	private int t;
+	int numTiles = 50;
+	double count = 1;
+	int tickCount = 1;
 	private ImageManager im;
 	Physics p = new Physics();
-	CollRect rect;
 	private SpriteSheet ss;
 	private Player player;
-	File cFile = new File("res/realm2_2Coord.txt");
-	public ArrayList<CollRect> realm2_2Objects = new ArrayList<CollRect>();
-	
+	Line2D introObjects[];
 	public Line2D floorLine = new Line2D.Float();
+	public Line2D bottomLeft = new Line2D.Float();
+	public Line2D top = new Line2D.Float();
 	public Line2D door1Line = new Line2D.Float();
 	public Line2D enemyRight = new Line2D.Float();
 	public Line2D enemyLeft= new Line2D.Float();
-	public Line2D top = new Line2D.Float();
-	public Line2D bottomLeft = new Line2D.Float();
+	public Line2D friendRight = new Line2D.Float();
+	public Line2D portalRight = new Line2D.Float();
+	File cFile = new File("res/realm2_2Coord.txt");
+	public ArrayList<CollRect> realm2_2Objects = new ArrayList<CollRect>();
 	
->>>>>>> c1eb493cfbe5d408dac282c046741ac5a4773e8b
+
 	//bounds for floor
 		public int floor = 730;
 		
