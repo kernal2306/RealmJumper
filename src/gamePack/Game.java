@@ -85,7 +85,7 @@ public class Game extends Canvas implements Runnable
 		//make floor
 		
 		
-		player = new Player(50,200,im, ss);
+		player = new Player(50,700,im, ss);
 		intro = new IntroLevel(500, 700, im, ss, player);
 		roof = new RoofLevel(500, 700, im, ss, player);
 		realm2_2 = new Realm2_2(500, 700, im, ss, player);

@@ -70,15 +70,21 @@ public class Realm1_1 implements CurrentLevel
 				
 			}
 			
-			/*if(Game.player.rightCollision(this.enemyRight()))
+			if(Game.player.rightCollision(this.friendRight()))
 			{
-				System.out.print("Enemy being hit");
+				System.out.print("Friend being hit");
 				Game.dialogShow2 = true;
-				//Game.player.x = 900;
-				Game.dialogStart = 120;
-				Game.dialogStop = 131;
+				Game.player.x = 185;
+				//Game.dialogCount = 104;
+				Game.dialogStart = 136;
+				Game.dialogStop = 199;
+				/*if((Game.dialogStart+4 >= Game.dialogStop))
+				{
+					Game.ladyDialog = false;
+				}*/
+				//Game.dialog.dialogDisplay2(24, 27);
 				
-			}*/
+			}
 			
 			/*if(Game.player.LeftCollision(this.enemyLeft()))
 			{
@@ -239,6 +245,19 @@ public class Realm1_1 implements CurrentLevel
 			{
 				portalRight.setLine(1014,0, 1014, 736);
 				return portalRight;
+			}
+			
+			public Line2D friendRight()
+			{
+				
+				
+				
+				friendRight.setLine(180, 500, 180, 736);
+				
+				//System.out.println("lady false");
+				
+				return friendRight;
+				
 			}
 			
 		//----------------------------------------------------
