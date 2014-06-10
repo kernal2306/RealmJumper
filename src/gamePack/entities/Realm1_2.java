@@ -1,5 +1,11 @@
 package gamePack.entities;
 
+import gamePack.CurrentLevel;
+import gamePack.Game;
+import gamePack.Physics;
+import gamePack.gfx.ImageManager;
+import gamePack.gfx.SpriteSheet;
+
 import java.awt.Graphics;
 import java.awt.geom.Line2D;
 import java.io.File;
@@ -7,14 +13,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import gamePack.CurrentLevel;
-import gamePack.Game;
-import gamePack.Physics;
-import gamePack.gfx.ImageManager;
-import gamePack.gfx.SpriteSheet;
-
-public class Realm2_2 implements CurrentLevel{
-	
+public class Realm1_2 implements CurrentLevel
+{
 	public int x;
 	public int y;
 	private int t, count;
@@ -36,7 +36,7 @@ public class Realm2_2 implements CurrentLevel{
 	//bounds for floor
 		public int floor = 730;
 		
-		public Realm2_2(int x, int y, ImageManager im, SpriteSheet ss, Player plyr)
+		public Realm1_2(int x, int y, ImageManager im, SpriteSheet ss, Player plyr)
 		{
 			this.im = im;
 			this.ss = ss;
@@ -235,11 +235,11 @@ public class Realm2_2 implements CurrentLevel{
 			
 			public Line2D portalRight()
 			{
-				portalRight.setLine(10, 500, 10, 736);
+				portalRight.setLine(0, 500, 0, 736);
 				if(Game.dialogStart == 116)
 				{
-					Game.curr = Game.realm2_1;
-					player.x = 1000;
+					Game.curr = Game.realm2_2;
+					player.x = 900;
 				}
 				//System.out.println("portal collisions");
 				return portalRight;
@@ -252,9 +252,5 @@ public class Realm2_2 implements CurrentLevel{
 		{
 			g.drawImage(im.roof, x, y, 32*Game.SCALE, 32*Game.SCALE, null);
 		}
-		
-		
-		
-		
 
 }
