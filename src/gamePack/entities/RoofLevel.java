@@ -96,7 +96,7 @@ public class RoofLevel implements CurrentLevel
 		{
 			System.out.print("Enemy being hit");
 			Game.dialogShow2 = true;
-			Game.player.x = 430;
+			Game.player.x = 370;
 			//Game.dialogCount = 104;
 			Game.dialogStart = 104;
 			Game.dialogStop = 107;
@@ -263,6 +263,9 @@ public class RoofLevel implements CurrentLevel
 			{
 				Game.curr = Game.realm2_2;
 				player.x = 900;
+				Game.dialogShow2 = true;
+				Game.dialogStart = 120;
+				Game.dialogStop = 131;
 			}
 			//System.out.println("portal collisions");
 			return portalRight;

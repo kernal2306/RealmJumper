@@ -174,10 +174,8 @@ public class Game extends Canvas implements Runnable
 		if(curr == realm2_2)
 		{
 			back2_2.render(g);
-			player.render(g);
-			
-			
-			//dialog.render(g);
+			player.render(g);			
+			dialog.render(g);
 		}
 		
 		
