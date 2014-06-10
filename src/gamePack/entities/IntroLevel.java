@@ -36,8 +36,7 @@ public class IntroLevel implements CurrentLevel, Serializable
 	
 	
 	public Line2D floorLine = new Line2D.Float();
-	public Line2D door1Line = new Line2D.Float();  
-	int walkObjects;
+	public Line2D door1Line = new Line2D.Float();
 	
 	//bounds for floor
 	public int floor = 728;
@@ -60,19 +59,6 @@ public class IntroLevel implements CurrentLevel, Serializable
 	
 	public void tick()
 	{
-		
-		if(player.DownCollision(this.floorLine))
-		{
-
-
-			//player.y = floor -73;
-			//Game.dialogShow = true;
-			//System.out.println("DownCollision");
-
-			player.y = floor -73;
-
-			
-		}
 		for(CollRect rect: introObjects)
 		{
 			if(player.DownCollision(rect.top()))
@@ -112,11 +98,9 @@ public class IntroLevel implements CurrentLevel, Serializable
 	
 	public void fillArray()
 	{
-
 		
 		try
 		{
-
 			int tmp[] = {0,0,0,0};
 			Scanner scan = new Scanner(cFile);
 			
@@ -126,35 +110,28 @@ public class IntroLevel implements CurrentLevel, Serializable
 				
 				Scanner scan2 = new Scanner(line);
 				scan2.useDelimiter(",");
-				int count = 0;
+				//int count = 0;
 				while(scan2.hasNextInt())
 				{
 					for(int i = 0; i <= 3; i++)
 					{
-						//System.out.println(scan2.nextInt());
 						tmp[i] = scan2.nextInt();
-						//System.out.println(tmp[i]);
 					}
-					//System.out.println();
 					introObjects.add(new CollRect(tmp[0], tmp[1], tmp[2], tmp[3]));
 					count++;
 				}
 			}	
 			printArray();
-			scan.close();
-			//scan2.close();
+			//scan.close();
+
 		}
 		catch(IOException e)
 		{
-
-			player.y = p5up - 73;
-			//Game.dialogShow = true;
-			//System.out.println("DownCollision");
-
 			e.printStackTrace();
 
 		}
 	}
+
 	
 	public void printArray()
 	{

@@ -158,7 +158,6 @@ public class RoofLevel implements CurrentLevel
 	
 	public void fillArray()
 	{
-		
 		try
 		{
 			int tmp[] = {0,0,0,0};
