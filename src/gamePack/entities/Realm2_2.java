@@ -91,9 +91,10 @@ public class Realm2_2 implements CurrentLevel{
 			
 			if(Game.player.UpCollision(this.top()))
 			{
-				System.out.println("portal collision");
+				System.out.println("top of screen collision collision");
 				Game.curr = Game.realm1_2;
 				player.y = 720;
+				player.x = 700;
 				//Game.dialogShow2 = true;
 				//Game.player.x = 65;
 				//Game.dialogCount = 104;
@@ -178,14 +179,14 @@ public class Realm2_2 implements CurrentLevel{
 			
 			public Line2D bottomLeft()
 			{
-				bottomLeft.setLine(10, 0, 10, 736);
+				bottomLeft.setLine(32, 0, 10, 736);
 				
 				return bottomLeft;
 			}
 			
 			public Line2D top()
 			{
-				top.setLine(10, 0, 10, 736);
+				top.setLine(0,20, 1024, 20);
 				
 				return top;
 			}
