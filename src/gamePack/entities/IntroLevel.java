@@ -167,6 +167,8 @@ public class IntroLevel implements CurrentLevel
 		{
 			//System.out.println(Game.dialog.dialogArray[23]);
 			Game.curr = Game.roof;
+			player.x = 900;
+			player.y = 700;
 		}
 		
 		player.tick();

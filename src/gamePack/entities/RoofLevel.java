@@ -268,6 +268,7 @@ public class RoofLevel implements CurrentLevel
 			if(Game.dialogStart == 116)
 			{
 				Game.curr = Game.realm2_2;
+				player.x = 900;
 			}
 			//System.out.println("portal collisions");
 			return portalRight;
