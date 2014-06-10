@@ -79,6 +79,79 @@ public class RoofLevel implements CurrentLevel
 
 			
 		}
+		
+		if(Game.player.rightCollision(this.enemyRight()))
+		{
+			System.out.print("Enemy being hit");
+			Game.dialogShow2 = true;
+			Game.player.x = 525;
+			//Game.dialogCount = 104;
+			Game.dialogStart = 104;
+			Game.dialogStop = 107;
+			//Game.dialog.dialogDisplay2(24, 27);
+			
+		}
+		
+		if(Game.player.LeftCollision(this.enemyLeft()))
+		{
+			System.out.print("Enemy being hit");
+			Game.dialogShow2 = true;
+			Game.player.x = 430;
+			//Game.dialogCount = 104;
+			Game.dialogStart = 104;
+			Game.dialogStop = 107;
+			//Game.dialog.dialogDisplay2(24, 27);
+			
+		}
+		
+		if(Game.player.rightCollision(this.friendRight()))
+		{
+			System.out.print("Friend being hit");
+			Game.dialogShow2 = true;
+			Game.player.x = 192;
+			//Game.dialogCount = 104;
+			Game.dialogStart = 0;
+			Game.dialogStop = 103;
+			/*if((Game.dialogStart+4 >= Game.dialogStop))
+			{
+				Game.ladyDialog = false;
+			}*/
+			//Game.dialog.dialogDisplay2(24, 27);
+			
+		}
+		
+		if(Game.player.rightCollision(this.friendRight()))
+		{
+			System.out.print("Friend being hit");
+			Game.dialogShow2 = true;
+			Game.player.x = 852;
+			//Game.dialogCount = 104;
+			Game.dialogStart = 0;
+			Game.dialogStop = 104;
+			/*if((Game.dialogStart+4 >= Game.dialogStop))
+			{
+				Game.ladyDialog = false;
+			}*/
+			//Game.dialog.dialogDisplay2(24, 27);
+			
+		}
+		
+		if(Game.player.rightCollision(this.portalRight()))
+		{
+			System.out.print("portal collision");
+			Game.dialogShow2 = true;
+			Game.player.x = 65;
+			//Game.dialogCount = 104;
+			Game.dialogStart = 108;
+			Game.dialogStop = 119;
+			/*if((Game.dialogStart+4 >= Game.dialogStop))
+			{
+				Game.ladyDialog = false;
+			}*/
+			//Game.dialog.dialogDisplay2(24, 27);
+			
+		}
+
 
 		player.tick();
 	}
