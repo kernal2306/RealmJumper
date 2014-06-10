@@ -100,7 +100,7 @@ public class RoofLevel implements CurrentLevel
 				}
 			}	
 			printArray();
-				
+			scan.close();
 		}
 		catch(IOException e)
 		{

@@ -112,7 +112,7 @@ public class IntroLevel implements CurrentLevel, Serializable
 				}
 			}	
 			printArray();
-				
+			scan.close();
 		}
 		catch(IOException e)
 		{
