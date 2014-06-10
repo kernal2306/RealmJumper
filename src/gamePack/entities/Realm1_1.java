@@ -70,7 +70,7 @@ public class Realm1_1 implements CurrentLevel
 				
 			}
 			
-			if(Game.player.rightCollision(this.friendRight()))
+			if(Game.player.RightCollision(this.friendRight()))
 			{
 				System.out.print("Friend being hit");
 				Game.dialogShow2 = true;
@@ -125,7 +125,7 @@ public class Realm1_1 implements CurrentLevel
 				
 			}*/
 			
-			if(Game.player.rightCollision(this.portalRight()))
+			if(Game.player.RightCollision(this.portalRight()))
 			{
 				System.out.print("portal collision");
 				Game.curr = Game.realm1_2;

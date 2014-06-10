@@ -147,7 +147,7 @@ public class Player
 		return false;
 	}
 	//tests for a collision on the right of the player
-	public boolean rightCollision(Line2D right)
+	public boolean RightCollision(Line2D right)
 	{
 		if(leftRightBoundsTop().intersectsLine(right))
 		{

@@ -120,7 +120,7 @@ public class Realm1_2 implements CurrentLevel
 				
 			}*/
 			
-			if(Game.player.rightCollision(this.bottomLeft()))
+			if(Game.player.RightCollision(this.bottomLeft()))
 			{
 				System.out.print("portal collision");
 				Game.curr = Game.realm1_1;

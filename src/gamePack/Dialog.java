@@ -145,7 +145,7 @@ public class Dialog implements Serializable{
 		
 		if(Game.curr == Game.roof)
 		{
-		if(Game.player.rightCollision(this.enemyRight()))
+		if(Game.player.RightCollision(this.enemyRight()))
 		{
 			System.out.print("Enemy being hit");
 		}

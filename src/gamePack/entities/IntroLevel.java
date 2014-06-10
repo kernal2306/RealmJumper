@@ -69,6 +69,19 @@ public class IntroLevel implements CurrentLevel, Serializable
 			if(player.UpCollision(rect.bottom()))
 			{
 				player.jump = false;
+				player.p.falling(y, x, count);
+				System.out.println("up Collision");
+			}
+			if(player.RightCollision(rect.bottom()))
+			{
+				player.rt = false;
+				
+				player.p.falling(y, x, count);
+				System.out.println("up Collision");
+			}
+			if(player.LeftCollision(rect.bottom()))
+			{
+				player.lt = false;;
 				
 				player.p.falling(y, x, count);
 				System.out.println("up Collision");

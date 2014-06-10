@@ -80,7 +80,7 @@ public class RoofLevel implements CurrentLevel
 			
 		}
 		
-		if(Game.player.rightCollision(this.enemyRight()))
+		if(Game.player.RightCollision(this.enemyRight()))
 		{
 			System.out.print("Enemy being hit");
 			Game.dialogShow2 = true;
@@ -104,7 +104,7 @@ public class RoofLevel implements CurrentLevel
 			
 		}
 		
-		if(Game.player.rightCollision(this.friendRight()))
+		if(Game.player.RightCollision(this.friendRight()))
 		{
 			System.out.print("Friend being hit");
 			Game.dialogShow2 = true;
@@ -120,7 +120,7 @@ public class RoofLevel implements CurrentLevel
 			
 		}
 		
-		if(Game.player.rightCollision(this.friendRight()))
+		if(Game.player.RightCollision(this.friendRight()))
 		{
 			System.out.print("Friend being hit");
 			Game.dialogShow2 = true;
@@ -136,7 +136,7 @@ public class RoofLevel implements CurrentLevel
 			
 		}
 		
-		if(Game.player.rightCollision(this.portalRight()))
+		if(Game.player.RightCollision(this.portalRight()))
 		{
 			System.out.print("portal collision");
 			Game.dialogShow2 = true;
